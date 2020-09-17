@@ -1,0 +1,118 @@
+/* FONTS IMPORT*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+/* --# ALL HTML CONTENT #-- */
+*{
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+
+/* --# CABECERA #-- */
+.nav{
+	list-style-type: none;
+	padding-top: 1rem;
+	position: fixed center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(240,240,240);
+}
+.nav > li {
+	padding-left: 2rem;
+}
+
+.logo > a > img{
+	width: 15rem;
+	flex-grow: 1;	
+}
+
+.titulo{
+	font-weight: bold;
+	font-size: 1.6rem;
+	flex-grow: 3;
+	
+}
+.nav-item{
+	padding-right: 1.5rem;
+}
+.nav-item > a:hover{
+	cursor: pointer;
+	color: rgb(0,122,205);
+}
+
+/* --# CUERPO #-- */
+
+.col-left{
+	width: 25%;
+}
+.col-center{
+	width: 50%;
+}
+.col-right{
+	width: 25%;
+}
+
+
+/* --# PIE #-- */
+footer{
+	
+}
+
+/* --# BREAKPOINTS #-- */
+
+
+/*laptops*/
+@media screen and (max-width: 1025px){
+	/* CABECERA */
+	.espacio-titulo{
+		display: none;
+	}
+	.intro-titulo{
+		display: none;
+	}
+	.titulo{
+		font-size: 1.4rem;
+	}
+}
+@media screen and (max-width: 992px){
+	.nav-item{
+		display: none;
+	}
+}
+/*tablet breakpoint*/
+@media screen and (max-width: 769px){
+
+	/* CABECERA */
+	.logo > a > img{
+		width: 10rem;
+	}
+	.titulo{
+		font-size: 1.2rem;
+	}
+	.nav-item{
+		display: none;
+	}
+}
+
+/*smartphone breakpoint*/
+@media screen and (max-width: 600px){
+
+	/* CABECERA */
+	.nav{
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	.titulo{
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		font-size: 0.9rem;
+	}
+}
