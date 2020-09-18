@@ -17,6 +17,19 @@ a:hover{
 	color: rgb(0,122,205);
 }
 
+/* --# WALLPAPER #-- */
+
+#videoBackground{
+	position: fixed;
+	z-index: -1;
+	width: 100%;
+	filter: blur(10px);
+	-webkit-filter:blur(10px);
+	height: auto;
+}
+#videoPhoneBackground{
+	display: none;
+}
 /* --# CABECERA #-- */
 .nav{
 	list-style-type: none;
@@ -28,7 +41,7 @@ a:hover{
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	background-color: rgb(240,240,240);
+	background-color: rgba(240,240,240,0.4);
 }
 .nav > li {
 	padding-left: 2rem;
@@ -171,6 +184,23 @@ footer{
 /*tablet breakpoint*/
 @media screen and (max-width: 769px){
 
+	/* WALLPAPER*/
+
+	#videoBackground{
+		display: none;
+	}
+
+	#videoPhoneBackground{
+		display: block;
+		position: fixed;
+		z-index: -1;
+		width: 100%;
+		filter: blur(10px);
+		-webkit-filter:blur(10px);
+		height: auto;
+
+	}
+
 	/* CABECERA */
 	.logo > a > img{
 		width: 10rem;
@@ -181,6 +211,7 @@ footer{
 	.nav-item{
 		display: none;
 	}
+
 }
 
 /*smartphone breakpoint*/
