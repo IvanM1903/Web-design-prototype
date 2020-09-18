@@ -16,7 +16,8 @@ a{
 /* --# CABECERA #-- */
 .nav{
 	list-style-type: none;
-	padding-top: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.1rem;
 	position: fixed center;
 	display: flex;
 	flex-direction: row;
@@ -30,7 +31,7 @@ a{
 
 .logo > a > img{
 	width: 15rem;
-	flex-grow: 1;	
+	flex-grow: 1;
 }
 
 .titulo{
@@ -48,17 +49,35 @@ a{
 }
 
 /* --# CUERPO #-- */
-
+.cuerpo{
+	display: flex;
+	flex-direction: row;
+}
 .col-left{
 	width: 25%;
+	background-color: #f8f8f8;
+	border-right: 1px solid #ccc;
 }
 .col-center{
 	width: 50%;
+	background-color: white;
 }
 .col-right{
 	width: 25%;
+	background-color: blue;
 }
-
+/* --# LEFT COLUMN #-- */
+.menu-left-tag{
+	padding-left: 1rem;
+	padding-top: 1rem;
+}
+.menu-left{
+	list-style-type: none;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	padding-left: 1rem;
+ 	
+}
 
 /* --# PIE #-- */
 footer{
