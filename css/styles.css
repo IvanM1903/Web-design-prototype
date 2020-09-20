@@ -93,7 +93,8 @@ a:hover{
 	list-style-type: none;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
-	padding-left: 1rem;	
+	padding-left: 1rem;
+	font-size: 1.2rem;
 }
 
 /* --#CENTER COLUMN #-- */
@@ -107,15 +108,77 @@ a:hover{
 
 /* --#RIGHT COLUMN #-- */
 .col-right{
-	text-align: right;
-	flox-grow:1;
-	background-color: blue;
+	flex-grow:1;
+	background-color: #f8f8f8;
+	border-left: 1px solid #ccc;
 }
-
-
-
-
-
+.col-right > h2{
+	text-align: right;
+	padding-right: 1rem;
+	padding-top: 1rem;
+}
+.menu-right{
+	text-align: center;
+	list-style-type: none;
+	padding-right: 1rem;
+	padding-top: 1rem;
+	font-size: 1.2rem;
+}
+.table-calendario{
+	display: flex; /* Necesario para alinear la tabla*/
+	text-align: center;
+	justify-content: center;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border-spacing: 0.5rem;
+}
+.calendario{
+	padding-left: 1rem;
+}
+.calendario > p{
+	color: white;
+	text-shadow: 1px 1px black;
+	border:1px solid #000;
+	border-radius: 4rem;
+	background-color: rgba(195,176,145,0.5);
+	
+}
+.weekend{
+	color: red;
+}
+.fecha-entrega{
+	background-color: #228b22;
+	color: white;
+	padding: 0.2rem;
+	border-radius: 0.3rem;
+}
+.tutoria{
+	padding-left: 1rem;
+}
+.tutoria > p{
+	color: white;
+	text-shadow: 1px 1px black;
+	border:1px solid #000;
+	border-radius: 4rem;
+	background-color: rgba(195,176,145,0.5);
+}
+.tutoria-name{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.actividad-reciente{
+	padding-left: 1rem;
+}
+.actividad-reciente > p{
+	color: white;
+	text-shadow: 1px 1px black;
+	border:1px solid #000;
+	border-radius: 4rem;
+	background-color: rgba(195,176,145,0.5);
+}
+.actividad-reciente > div{
+	padding-top: 1rem;
+}
 /* --# PIE #-- */
 footer{
 	position: fixed;
