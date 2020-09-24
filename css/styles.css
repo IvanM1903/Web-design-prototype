@@ -36,7 +36,9 @@ iframe{
 	margin-bottom: 1rem;
 	border-spacing: 1rem;
 }
-
+.alumnos img{
+	border-radius: 10rem;
+}
 
 /* --# WALLPAPER #-- */
 
@@ -293,7 +295,7 @@ footer{
 		align-content: : center;
 		width: 100%;
 		filter: blur(10px);
-		-webkit-filter:blur(0px);
+		-webkit-filter:blur(10px);
 		height: auto;
 	}
 	#bg-image{
