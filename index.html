@@ -7,8 +7,10 @@
 	<title>Práctica 1 - Interfaces de Usuario</title>
 </head>
 <body>
-	<img src="images/video-background.gif" id="bg-image" alt="background animado">
-	<img src="images/video-phone.gif" id="videoPhoneBackground" alt="background animado para móviles">
+	<!-- 
+		<img src="images/video-background.gif" id="bg-image" alt="background animado">
+		<img src="images/video-phone.gif" id="videoPhoneBackground" alt="background animado para móviles">
+	-->
 	<!-- CABECERA -->
 
 
@@ -32,8 +34,35 @@
 				<li class="nav-item">
 					<a href="#bottom">PROGRAMA DE GRADO</a>
 				</li>
+				<li class="nav-item nav-icon">
+						<div class="icon"></div>
+				</li>
+				<li class="menu-movil-hover">
+						<ul class="ul-menu-movil">
+							<h2>INTERFACES DE USUARIO</h2>
+							<li class="default-content">
+								<a href="iframes/contenido.html" target="iframe">Contenido de la asignatura</a>
+							</li>
+							<li class="student-list">
+								<a href="iframes/estudiantes.html" target="iframe">Lista de Estudiantes</a>
+							</li>
+							<li class="forum">
+								<a href="iframes/foro.html" target="iframe">Foro de la Asignarura</a>
+							</li>
+							<li class="grades">
+								<a href="iframes/contenido.html" target="iframe">Calificaciones</a>
+							</li>
+						</ul>
+				</li>
 			</ul>
+
+
+
+
 		</section>
+
+
+
 
 	<!-- BODY -->
 
@@ -42,21 +71,21 @@
 		<div class="main-row">
 			<div class="col-left column">
 				<h2>INTERFACES DE USUARIO</h2>
-			<ul class="menu-left">
-				<li class="student-list">
-					<a href="iframes/estudiantes.html" target="iframe">Lista de Estudiantes</a>
-				</li>
-				<li class="forum">
-					<a target="iframe-2">Foro de la Asignarura</a>
-				</li>
-				<li class="grades">
-					<a href="#top">Calificaciones</a>
-				</li>
-			</ul>
-		</div>
-
-
-
+					<ul class="menu-left">
+						<li class="default-content">
+							<a href="iframes/contenido.html" target="iframe">Contenido de la asignatura</a>
+						</li>
+						<li class="student-list">
+							<a href="iframes/estudiantes.html" target="iframe">Lista de Estudiantes</a>
+						</li>
+						<li class="forum">
+							<a href="iframes/foro.html" target="iframe">Foro de la Asignarura</a>
+						</li>
+						<li class="grades">
+							<a href="iframes/contenido.html" target="iframe">Calificaciones</a>
+						</li>
+					</ul>
+			</div>
 
 
 		<div class="col-center column">
@@ -64,10 +93,6 @@
 			<iframe frameborder="0" name="iframe" height="750"></iframe>
 
 		</div>
-
-
-
-
 
 
 		<div class="col-right column">
@@ -139,7 +164,7 @@
 				</li>
 				<li>
 					<div class="tutoria">
-						<p><b><b>TUTORÍA</b></b></p>
+						<p><b>TUTORÍA</b></p>
 							<div class="tutoria-name">
 								<h5>IVÁN MARTÍN PRIETO</h5>
 								<p>Pendiente de introducir tutorías</p>
