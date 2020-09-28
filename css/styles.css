@@ -100,8 +100,6 @@ a:hover{
 	padding-right: 1.5rem;
 	order: 1;
 }
-
-
 .menu-movil-hover{
 	order: 2;
 	display: none;
@@ -313,11 +311,8 @@ footer{
 /*laptops*/
 @media screen and (max-width: 1025px){
 	/* CABECERA */
-	.espacio-titulo{
-		display: none;
-	}
-	.intro-titulo{
-		display: none;
+	.nav{
+		justify-content: center;
 	}
 	.titulo{
 		font-size: 1.4rem;
@@ -331,6 +326,11 @@ footer{
 @media screen and (max-width: 992px){
 	
 	/* CABECERA */
+	.nav{
+		justify-content: space-around;
+		text-align: left;
+		flex-direction: left;
+	}
 	.nav-item{
 		font-size: 0.9rem;
 	}
@@ -338,7 +338,7 @@ footer{
 		width: 12rem;
 	}
 	.titulo{
-		font-size: 1.2rem;
+		display: none;
 	}
 }
 /*tablet breakpoint*/
@@ -364,7 +364,18 @@ footer{
 	.menu-right {
 		font-size: 1rem;
 	}
+	.col-right{
+		border-top: 1px solid #ccc;
+	}
 	.col-right > h2{
+		font-size: 1rem;
+	}
+	.col-left > h2{
+		font-size: 1.3rem;
+		text-align: center;
+		padding-right: 1rem;
+	}
+	.menu-left{
 		font-size: 1rem;
 	}
 
@@ -378,61 +389,14 @@ footer{
 		justify-content: space-around;
 		text-align: left;
 		flex-direction: left;
+		flex-wrap: nowrap;
 	}
+	
 	.nav-icon{
 		margin: 1rem;
 		width: 2rem;
 	}
 
-	.nav-icon:before,.nav-icon:after, .icon{
-		 background-color: #1D3BB3;
-		  border-radius: 0.53rem;
-		  content: '';
-		  display: block;
-		  height: 0.32rem;
-		  margin: 0.4rem 0;
-		  transition: all .3s ease-in-out;
-	}
-
-	.nav-icon:hover:before{
-	  transform: translateY(12px) rotate(135deg); /*Rotamos la barra superior del menu*/
-	}
-
-	.nav-icon:hover:after {
-	  transform: translateY(-12px) rotate(-135deg); /*Rotamos la barra inferior del menu*/
-	}
-
-	.nav-icon:hover .icon {
-	  transform: scale(0); /* Hacemos desaparecer la barra del medio de la hamburguesa*/
-	}
-
-	.nav-icon:hover + .menu-movil-hover{
-		display: block;
-	}
-
-	.ul-menu-movil{
-		list-style-type: none;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		background-color: rgba(240,240,240);
-	}
-	.ul-menu-movil h2{
-		padding-bottom: 2rem;
-	}
-	.ul-menu-movil li{
-		padding-bottom: 2rem;
-	}
-
-	.nav-item{
-		padding-right: 0.5rem;
-		font-size: 0.7rem;
-	}
-	.nav > li{
-		padding-left: 0.5rem;
-	}
 	/* CUERPO */
 
 	.col-left{
@@ -441,7 +405,9 @@ footer{
 	.main-row{
 		flex-direction: column;
 	}
-
+	.col-right{
+		border-top: 1px solid #ccc;
+	}
 	/* FOOTER */
 	.footer-column{
 		display: flex;
@@ -470,4 +436,72 @@ footer{
 		padding-bottom: 1rem;
 		order: 2;
 	}
+}
+
+@media screen and (max-width: 426px){
+
+	.nav{
+		flex-wrap: wrap;
+	}
+
+	.nav-item{
+		display: none;
+	}
+
+	/* Menu hamburguesa para la version movil :before = barra de arriba // :after = barra de abajo; */
+	.nav-icon:before,.nav-icon:after, .icon{
+		 background-color: #1D3BB3;
+		  border-radius: 0.53rem;
+		  content: '';
+		  display: block;
+		  height: 0.32rem;
+		  margin: 0.4rem 0;
+		  transition: all .3s ease-in-out;
+	}
+
+	.nav-icon:hover:before{
+	  transform: translateY(12px) rotate(135deg); /*Rotamos la barra superior del menu*/
+	}
+
+	.nav-icon:hover:after {
+	  transform: translateY(-12px) rotate(-135deg); /*Rotamos la barra inferior del menu*/
+	}
+
+	.nav-icon:hover .icon {
+	  transform: scale(0); /* Hacemos desaparecer la barra del medio de la hamburguesa*/
+	}
+
+	.nav-icon:hover + .menu-movil-hover{
+		display: block;
+	}
+
+	.menu-movil-hover:active{
+		display: block;
+	}
+
+	.ul-menu-movil{
+		list-style-type: none;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: rgba(240,240,240);
+	}
+	.ul-menu-movil h2{
+		padding-bottom: 2rem;
+	}
+	.ul-menu-movil li{
+		padding-bottom: 2rem;
+	}
+
+	.nav-item{
+		padding-right: 0;
+		font-size: 0.7rem;
+	}
+	.nav > li{
+		padding-left: 0.5rem;
+	}
+
+	
 }
