@@ -150,6 +150,9 @@ a:hover{
 .menu-movil{
 	display: none;
 }
+.nav-icon{
+	display: none;
+}
 /***************
 **** CUERPO ****
 ***************/
@@ -474,6 +477,7 @@ footer{
 		display: none;
 	}
 	.nav-icon{
+		display: inline-block;
 		margin: 1rem;
 	}
 	/* Menu hamburguesa para la version movil :before = barra de arriba // :after = barra de abajo; */
