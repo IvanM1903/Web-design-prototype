@@ -120,6 +120,7 @@ a:hover{
 .cabecera{
 	width: 100%;
 	position: sticky;
+	top: 0;
 }
 .nav{
 	list-style-type: none;
@@ -145,7 +146,7 @@ a:hover{
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	padding-right: 1rem;
+	margin-right: 2rem;
 }
 .menu-movil{
 	display: none;
@@ -324,29 +325,30 @@ footer{
 .footer-row{
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 	text-align: center;
-	flex-wrap: wrap;
-	width: 100%;
 	font-size: 1.1rem;
+	flex-wrap: wrap;
 }
 .footer-column{
 	display: flex;
 	flex-direction: column;
-	flex-basis: 100%;
-	flex:1;
 }
 .uc3m-resources{
 	border-right: 1px solid rgb(150,150,150);
+	padding-right: 2rem;
 }
 .uc3m-resources > a{
 	font-size: 1rem;
 }
 .copyright{
 	border-right: 1px solid rgb(150,150,150);
+	padding-left: 2rem;
+	padding-right: 2rem;
 }
-.copyright > a{
+.privacy-pol{
+	padding-left: 2rem;
 }
-
 .privacy-pol > p{
 	font-size: 1rem;
 }
@@ -377,9 +379,6 @@ footer{
 		justify-content: space-between;
 		text-align: center;
 	}
-	.links-nav li{
-		font-size: 0.8rem;
-	}
 	/* FOOTER */
 	.copyright > span{
 		font-size: 1rem;
@@ -389,13 +388,71 @@ footer{
 /*tablet breakpoint*/
 @media screen and (max-width: 769px){
 
+/************************
+*** BREAKPOINTS COL-X ***
+************************/
+
+/*Dado que usamos flexbox utilizamos el atributo 'flex' para el tamaño de columnas*/
+.col-s-1{
+	flex:8.3333%;
+	max-width: 8.3333%;
+}
+.col-s-2{
+	flex:16.6666%;
+	max-width: 16.6666%;
+}
+.col-s-3{
+	flex:25%;
+	max-width: 25%;
+}
+.col-s-4{
+	flex:33.3333%;
+	max-width: 33.3333%;
+}
+.col-s-5{
+	flex: 41.6666%;
+	max-width: 41.6666%;
+}
+.col-s-6{
+	flex:50%;
+	max-width: 50%;
+}
+.col-s-7{
+	flex:58.3333%;
+	max-width: 58.3333%;
+}
+.col-s-8{
+	flex:66.6666%;
+	max-width: 66.6666%;
+}
+.col-s-9{
+	flex:75%;
+	max-width: 75%;
+}
+.col-s-10{
+	flex: 83.3333%;
+	max-width: 83.3333%;
+}
+.col-s-11{
+	flex:91.6666%;
+	max-width: 91.6666%;
+}
+.col-s-12{
+	flex: 100%;
+	max-width: 100%;
+}
 
 	/* CABECERA */
 
 	.titulo{
 		display:none;
 	}
-
+	.links-nav{
+		margin-right: 3rem;
+	}
+	.links-nav li{
+		font-size: 0.9rem;
+	}
 	/* CUERPO */
 
 	.menu-right {
@@ -415,6 +472,22 @@ footer{
 	.menu-left{
 		font-size: 1rem;
 	}
+	/* FOOTER */
+
+	.uc3m-resources{
+	border-bottom: 1px solid rgb(150,150,150);
+	padding-bottom: 1rem;
+	}
+
+	.copyright{
+		padding-top: 1rem;
+		order: 2;
+	}
+	.privacy-pol{
+		border-bottom: 1px solid rgb(150,150,150);
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
 
 }
 
@@ -423,6 +496,9 @@ footer{
 
 	/* CABECERA */
 
+	.links-nav li{
+		font-size: 0.8rem; 
+	}
 
 	/* CUERPO */
 
@@ -435,34 +511,6 @@ footer{
 	.col-right{
 		border-top: 1px solid #ccc;
 	}
-	/* FOOTER */
-	.footer-column{
-		display: flex;
-		justify-content: center;
-		text-align: center;
-		flex-wrap: wrap;
-	}
-	.uc3m-resources{
-		flex-basis: auto;
-		margin-right: 0px;
-		border-bottom: 1px solid rgb(150,150,150);
-		padding-bottom: 1rem;
-		order: 1;
-	}
-	.copyright{
-		flex-basis: auto;
-		margin-right: 0px;
-		padding-top: 1rem;
-		order: 3;
-	}
-	.privacy-pol{
-		flex-basis: auto;
-		margin-right: 0px;
-		border-bottom: 1px solid rgb(150,150,150);
-		padding-top: 1rem;
-		padding-bottom: 1rem;
-		order: 2;
-	}
 }
 
 @media screen and (max-width: 426px){
@@ -470,11 +518,11 @@ footer{
 	.nav{
 		flex-wrap: wrap;
 	}
-	.col-2 img{
-		width: 9rem;
-	}
 	.links-nav{
 		display: none;
+	}
+	.col-s-3 img{
+		width: 10rem;
 	}
 	.nav-icon{
 		display: inline-block;
@@ -526,13 +574,17 @@ footer{
 		padding-bottom: 2rem;
 	}
 
-	.nav-item{
+	/*FOOTER*/
+	.uc3m-resources{
+		padding-left: 0;
 		padding-right: 0;
-		font-size: 0.7rem;
 	}
-	.nav > li{
-		padding-left: 0.5rem;
+	.privacy-pol{
+		padding-left: 0;
+		padding-right: 0;
 	}
-
-	
+	.copyright{
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
