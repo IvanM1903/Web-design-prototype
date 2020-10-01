@@ -168,8 +168,7 @@ a:hover{
 
 .column{
 	display: flex;
-	flex-direction: column;
-	 
+	flex-direction: column;	 
 	flex:1;
 }
 
@@ -179,7 +178,6 @@ a:hover{
 ********************/
 
 .col-left{
-	flex-grow: 1;
 	background-color: #f8f8f8;
 	border-right: 1px solid #ccc;
 }
@@ -213,7 +211,6 @@ a:hover{
 **********************/
 
 .col-center{
-	flex-grow: 2;
 	text-align: left;
 	background-color: rgba(#ffffff,0.5);
 }
@@ -223,7 +220,6 @@ a:hover{
 *********************/
 			
 .col-right{
-	flex-grow:1;
 	background-color: #f8f8f8;
 	border-left: 1px solid #ccc;
 }
@@ -494,41 +490,26 @@ footer{
 /*smartphone breakpoint*/
 @media screen and (max-width: 600px){
 
+
+.col-xs-12{
+	flex: 100%;
+	max-width: 100%;
+}
+
 	/* CABECERA */
 
 	.links-nav li{
 		font-size: 0.8rem; 
 	}
-
-	/* CUERPO */
-
-	.col-left{
-		display:none;
-	}
-	.main-row{
-		flex-direction: column;
-	}
-	.col-right{
-		border-top: 1px solid #ccc;
-	}
-}
-
-@media screen and (max-width: 426px){
-
-	.nav{
-		flex-wrap: wrap;
-	}
-	.links-nav{
-		display: none;
-	}
-	.col-s-3 img{
-		width: 10rem;
-	}
 	.nav-icon{
 		display: inline-block;
 		margin: 1rem;
 	}
-	/* Menu hamburguesa para la version movil :before = barra de arriba // :after = barra de abajo; */
+
+	.nav{
+		flex-wrap: wrap;
+	}
+		/* Menu hamburguesa para la version movil :before = barra de arriba // :after = barra de abajo; */
 	.nav-icon:before,.nav-icon:after, .icon{
 		 background-color: #1D3BB3;
 		  border-radius: 0.53rem;
@@ -574,6 +555,28 @@ footer{
 		padding-bottom: 2rem;
 	}
 
+
+	/* CUERPO */
+
+	.col-left{
+		display:none;
+	}
+	.main-row{
+		flex-direction: column;
+	}
+	.col-right{
+		border-top: 1px solid #ccc;
+	}
+}
+
+@media screen and (max-width: 426px){
+
+	.links-nav{
+		display: none;
+	}
+	.col-s-3 img{
+		width: 10rem;
+	}
 	/*FOOTER*/
 	.uc3m-resources{
 		padding-left: 0;
