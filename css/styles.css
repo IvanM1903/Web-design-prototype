@@ -201,7 +201,7 @@ a:hover{
 
 }
 .menu-left a:focus {
-	color: #000099;
+	color: #266fff;
 	font-weight: bold;
 }
 
@@ -291,10 +291,13 @@ a:hover{
 }
 .actividad-reciente{
 	padding-left: 1rem;
+	margin-bottom: 1rem;
 }
-.actividad-reciente > p {
+.actividad-reciente b {
 	color: white;
 	text-shadow: 1px 1px black;
+	padding-left: 1rem;
+	padding-right: 1rem;
 	border:1px solid #000;
 	border-radius: 4rem;
 	background-color: rgba(195,176,145,0.5);
@@ -375,6 +378,42 @@ footer{
 		justify-content: space-between;
 		text-align: center;
 	}
+	/*BODY*/
+	.col-left h2{
+		font-size: 1.2rem;
+	}
+	.menu-left{
+		font-size: 0.9rem;
+	}
+
+	.col-right h2{
+		font-size: 1.2rem;
+	}
+	.table-calendario{
+		margin-left: 1rem;
+	}
+	.calendario b{
+		font-size: 0.9rem;
+	}
+	.days{
+		font-size: 0.9rem;
+	}
+	.days-number{
+		font-size: 0.9rem;
+	}
+	.tutoria b{
+		font-size: 0.9rem;
+	}
+	.tutoria-name{
+		font-size: 1.1rem;
+	}
+	.actividad-reciente b{
+		font-size: 0.9rem;
+	}
+	.actividad-reciente div{
+		font-size: 0.9rem;
+	}
+
 	/* FOOTER */
 	.copyright > span{
 		font-size: 1rem;
@@ -468,6 +507,7 @@ footer{
 	.menu-left{
 		font-size: 1rem;
 	}
+
 	/* FOOTER */
 
 	.uc3m-resources{
