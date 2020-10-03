@@ -132,6 +132,14 @@ a:hover{
 	margin-right: 1rem;
 	width: 75%;
 }
+
+/**************************
+** CALIFICACIONES IFRAME **
+**************************/
+.nota{
+	text-align: center;
+}
+
 /***********************
 **** ALUMNOS IFRAME ****
 ***********************/
