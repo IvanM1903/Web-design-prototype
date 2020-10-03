@@ -84,30 +84,21 @@ a:hover{
 }
 .contenedor-iframe{
 	font-size:1.2rem; 
-	background-color: rgba(100,100,100,0.1);
 }
-
+.background-iframe{
+	background-image: url('../images/background-pattern.png');
+}
 /***********************
 *** CONTENIDO IFRAME ***
 ***********************/
-
-/*ESTO HA SIDO UNA MALA IDEA
-.tema-img{
-	float: left;
+.tema-asignatura{
+	padding-top: 1rem;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	align-items: center;
 }
-.tema-intro-txt{
-	float: right;
-}
-.tema-video{
-	float: left;
-}
-.tema-capitulo-titulo{
-	float: right;
-}
-.tema-capitulo.desc{
-	float: right;
-}
-*/
 
 /***********************
 **** ALUMNOS IFRAME ****
@@ -123,13 +114,20 @@ a:hover{
 .alumnos img{
 	border-radius: 10rem;
 }
+.alumnos tr{
 
+}
 .title-iframe{
 	width:100%;
 	background-color: rgba(0,0,0,0.1);
 	color: white;
 	text-shadow: 1px 1px black;
 }
+
+/****************
+** FORO IFRAME **
+****************/
+
 .fieldset{
 	margin-left:1rem; 
 	margin-right:1rem;
@@ -168,6 +166,9 @@ textarea{
 	padding: 0.3rem;
 	background-color:#d9d9d9;
 }
+
+
+
 /*****************
 **** CABECERA ****
 *****************/
@@ -268,7 +269,6 @@ textarea{
 
 .col-center{
 	text-align: left;
-	background-color: rgba(#ffffff,0.5);
 }
 
 /*********************
