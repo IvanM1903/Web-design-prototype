@@ -80,6 +80,8 @@ a:hover{
 
 .title-iframe{
 	padding-top: 1rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 2px solid rgba(20,20,20,0.4);
 	text-align: center;
 }
 .contenedor-iframe{
@@ -95,11 +97,41 @@ a:hover{
 	padding-top: 1rem;
 	display: flex;
 	justify-content: center;
-	text-align: center;
 	flex-direction: column;
-	align-items: center;
 }
-
+.tema-titulo{
+	padding-left: 1rem;
+	margin-bottom: 1rem;
+	border-bottom: 1.5px solid rgba(20,20,20,0.4);
+	border-top: 1.5px solid rgba(20,20,20,0.4);
+	background-color: rgba(140,140,140,0.4);
+	color: white;
+}
+.tema-img{
+	text-align: center;
+}
+.tema-intro-txt{
+	padding-left: 1rem;
+	padding-right: 1rem;
+	text-align: justify;
+	text-justify;:inter-word;
+}
+.tema-capitulo-titulo{
+	margin-top: 1rem;
+	text-align: center;
+}
+.tema-capitulo-desc{
+	text-align: justify;
+	text-justify:inter-word;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-bottom: 1rem;
+}
+.tema-video{
+	margin-left: 3rem;
+	margin-right: 1rem;
+	width: 75%;
+}
 /***********************
 **** ALUMNOS IFRAME ****
 ***********************/
@@ -204,6 +236,9 @@ textarea{
 	justify-content: flex-end;
 	align-items: center;
 	margin-right: 2rem;
+}
+.links-nav li{
+	padding-right: 1.5rem;
 }
 .menu-movil{
 	display: none;
@@ -587,15 +622,31 @@ footer{
 @media screen and (max-width: 600px){
 
 
-.col-xs-12{
-	flex: 100%;
-	max-width: 100%;
-}
+	.col-xs-12{
+		flex: 100%;
+		max-width: 100%;
+	}
+
+
+	/*IFRAMES - FORO DE LA ASIGNATURA*/
+
+	input[type=text]{
+		width: 45%;	
+	}
+	input[type=text]:focus{
+		width: 65%;	
+	}
+
+	/*IFRAMES - CONTENIDO DE LA ASIGNATURA*/
+
+
+
+
 
 	/* CABECERA */
 
-	.links-nav li{
-		font-size: 0.8rem; 
+	.links-nav{
+		display: none;
 	}
 	.nav-icon{
 		display: inline-block;
@@ -605,7 +656,7 @@ footer{
 	.nav{
 		flex-wrap: wrap;
 	}
-		/* Menu hamburguesa para la version movil :before = barra de arriba // :after = barra de abajo; */
+	/* Menu hamburguesa para la version movil :before = barra de arriba // :after = barra de abajo; */
 	.nav-icon:before,.nav-icon:after, .icon{
 		 background-color: #1D3BB3;
 		  border-radius: 0.53rem;
@@ -627,7 +678,13 @@ footer{
 	.nav-icon:hover .icon {
 	  transform: scale(0); /* Hacemos desaparecer la barra del medio de la hamburguesa*/
 	}
-
+	.menu-movil{
+		width: 100%;
+		position: absolute;
+		top: 90%;
+		left: 0;
+		border-bottom: 2px solid rgba(29,59,179,0.6);
+	}
 	.nav-icon:hover + .menu-movil{
 		display: block;
 	}
@@ -650,7 +707,24 @@ footer{
 	.ul-menu-movil li{
 		padding-bottom: 2rem;
 	}
-
+	.section1-phone a{
+		border: 2px solid black;
+		padding: 7px;
+		border-radius: 9px;
+		background-color: rgb(210,210,210);
+	}
+	hr{
+		width: 200px;
+		border: 1px solid #1D3BB3;
+		opacity: 0.6;
+		border-radius: 3px;
+	}
+	.section2-phone a{
+		border: 2px solid black;
+		padding: 7px;
+		border-radius: 9px;
+		background-color: rgb(210,210,210);
+	}
 
 	/* CUERPO */
 
