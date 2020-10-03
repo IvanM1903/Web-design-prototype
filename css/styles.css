@@ -87,7 +87,27 @@ a:hover{
 	background-color: rgba(100,100,100,0.1);
 }
 
+/***********************
+*** CONTENIDO IFRAME ***
+***********************/
 
+/*ESTO HA SIDO UNA MALA IDEA
+.tema-img{
+	float: left;
+}
+.tema-intro-txt{
+	float: right;
+}
+.tema-video{
+	float: left;
+}
+.tema-capitulo-titulo{
+	float: right;
+}
+.tema-capitulo.desc{
+	float: right;
+}
+*/
 
 /***********************
 **** ALUMNOS IFRAME ****
