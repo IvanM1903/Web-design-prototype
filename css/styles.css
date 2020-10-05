@@ -90,6 +90,9 @@ a:hover{
 .background-iframe{
 	background-image: url('../images/background-pattern.png');
 }
+iframe{
+	border: 0;
+}
 /***********************
 *** CONTENIDO IFRAME ***
 ***********************/
