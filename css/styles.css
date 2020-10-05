@@ -187,6 +187,60 @@ iframe{
 ** FORO IFRAME **
 ****************/
 
+.section-preguntas{
+	display: flex;
+	flex-direction: column;
+}
+.foro-tema{
+	display: flex;
+	margin-top:1rem;
+	margin-bottom: 1rem;
+	margin-left: 6%;
+	margin-right: 7%;
+	border: 2px solid black;
+	box-shadow: 6px 6px #808080;
+}
+.tema-color{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(255,0,0,0.5);
+	border-right: 1px solid rgb(255,0,0);
+}
+.tema-color p{
+	writing-mode: vertical-lr;
+	font-weight: bold;
+	color: white;	
+}
+.tema-fecha{
+	transform: rotate(90deg);
+}
+.tema-contenido{
+	padding-left:0.3rem;
+	padding-right: 0.3rem;
+}
+.contenido-titulo {
+	border-bottom: 2px solid black;
+	padding-top:0.2rem;
+	padding-bottom:0.2rem;
+}
+.tema-respuestas{
+	background-color:#333333;
+}
+.respuestas-img{
+	text-align: center;
+}
+.respuestas-img img{
+	padding-top: 15%;
+	width: 60%;
+}
+.respuestas-cantidad{
+	text-align: center;
+	padding-top: 10%;
+	padding-bottom:10%;
+	color: white;
+	font-weight: bold;
+}
 .fieldset{
 	margin-left:1rem; 
 	margin-right:1rem;
