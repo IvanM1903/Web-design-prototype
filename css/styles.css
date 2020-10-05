@@ -110,14 +110,23 @@ iframe{
 	background-color: rgba(140,140,140,0.4);
 	color: white;
 }
+.tema-intro{
+	display: flex;
+	flex-direction: row;
+}
 .tema-img{
 	text-align: center;
 }
 .tema-intro-txt{
-	padding-left: 1rem;
 	padding-right: 1rem;
 	text-align: justify;
-	text-justify;:inter-word;
+	text-justify: inter-word;
+}
+.tema-capitulo{
+	display: flex;
+	flex-direction: row-reverse;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 .tema-capitulo-titulo{
 	margin-top: 1rem;
@@ -134,14 +143,13 @@ iframe{
 .tema-capitulo-desc{
 	text-align: justify;
 	text-justify:inter-word;
-	padding-left: 1rem;
-	padding-right: 1rem;
 	margin-bottom: 1rem;
+	margin-right: 1rem;
 }
 .tema-video{
-	margin-left: 3rem;
+	margin-left: 1rem;
 	margin-right: 1rem;
-	width: 75%;
+	height: 210px;
 }
 
 /**************************
@@ -247,7 +255,8 @@ textarea{
 .titulo{
 	font-size: 26px;
 	font-weight: bold;
-	text-align: center;
+	text-align: left;
+	padding-left: 2rem;
 }
 .links-nav{
 	list-style-type: none;
@@ -257,7 +266,7 @@ textarea{
 	margin-right: 2rem;
 }
 .links-nav li{
-	padding-right: 1.5rem;
+	text-align: center;
 }
 .menu-movil{
 	display: none;
@@ -481,13 +490,18 @@ footer{
 		text-align: center;
 	}
 	/*BODY*/
+	/*LEFT COLUMN*/
 	.col-left h2{
 		font-size: 19px;
 	}
 	.menu-left{
 		font-size: 14px;
 	}
+	/*CONTENIDO*/
 
+
+
+	/*RIGHT COLUMN*/
 	.col-right h2{
 		font-size: 19px;
 	}
@@ -610,6 +624,12 @@ footer{
 		font-size: 16px;
 	}
 
+	.tema-capitulo{
+		flex-direction: column;
+	}
+	.tema-capitulo-desc{
+		margin-left: 16px; 
+	}
 	/* FOOTER */
 
 	.uc3m-resources{
