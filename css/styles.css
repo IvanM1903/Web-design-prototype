@@ -85,7 +85,7 @@ a:hover{
 	text-align: center;
 }
 .contenedor-iframe{
-	font-size:1.2rem; 
+	font-size:19px; 
 }
 .background-iframe{
 	background-image: url('../images/background-pattern.png');
@@ -119,6 +119,14 @@ a:hover{
 .tema-capitulo-titulo{
 	margin-top: 1rem;
 	text-align: center;
+	border: 1px solid black;
+	padding-bottom: 4px;
+	padding-top: 4px;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 1.3rem;
+	background-color:rgba(200,200,200,0.4);
+	box-shadow: 5px 10px #0086b3;
 }
 .tema-capitulo-desc{
 	text-align: justify;
@@ -181,7 +189,7 @@ input[type=text] {
   	background-repeat: no-repeat;
   	background-position: 10px 10px;
   	padding: 12px 20px 12px 40px;
-  	font-size: 1rem;
+  	font-size: 16px;
 	background-color:white;
 	box-sizing: border-box;
 	border-radius: 0.5rem;
@@ -234,7 +242,7 @@ textarea{
 	width: 100%;
 }
 .titulo{
-	font-size: 1.6rem;
+	font-size: 26px;
 	font-weight: bold;
 	text-align: center;
 }
@@ -294,7 +302,7 @@ textarea{
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 	padding-left: 1rem;
-	font-size: 1.2rem;
+	font-size: 19px;
 }
 .menu-left > li {
 	padding-bottom: 2rem;
@@ -332,7 +340,7 @@ textarea{
 	list-style-type: none;
 	padding-right: 1rem;
 	padding-top: 1rem;
-	font-size: 1.2rem;
+	font-size: 19px;
 }
 .table-calendario{
 	display: flex; /* Necesario para alinear la tabla*/
@@ -425,7 +433,7 @@ footer{
 	flex-direction: row;
 	justify-content: center;
 	text-align: center;
-	font-size: 1.1rem;
+	font-size: 18px;
 	flex-wrap: wrap;
 }
 .footer-column{
@@ -437,7 +445,7 @@ footer{
 	padding-right: 2rem;
 }
 .uc3m-resources > a{
-	font-size: 1rem;
+	font-size: 16px;
 }
 .copyright{
 	border-right: 1px solid rgb(150,150,150);
@@ -448,7 +456,7 @@ footer{
 	padding-left: 2rem;
 }
 .privacy-pol > p{
-	font-size: 1rem;
+	font-size: 16px;
 }
 
 
@@ -456,19 +464,11 @@ footer{
 **** BREAKPOINTS ****
 ********************/
 
-/*laptops*/
-@media screen and (max-width: 1400px){
-
-	.titulo{
-		font-size: 1.4rem;
-	}
-}
-
 /*small laptops*/
 @media screen and (max-width: 1025px){
 	/* CABECERA */
 	.titulo{
-		font-size: 1.2rem;
+		font-size: 19px;
 	}
 	.title-space{
 		display: none;
@@ -479,43 +479,43 @@ footer{
 	}
 	/*BODY*/
 	.col-left h2{
-		font-size: 1.2rem;
+		font-size: 19px;
 	}
 	.menu-left{
-		font-size: 0.9rem;
+		font-size: 14px;
 	}
 
 	.col-right h2{
-		font-size: 1.2rem;
+		font-size: 19px;
 	}
 	.table-calendario{
 		margin-left: 1rem;
 	}
 	.calendario b{
-		font-size: 0.9rem;
+		font-size: 14px;
 	}
 	.days{
-		font-size: 0.9rem;
+		font-size: 14px;
 	}
 	.days-number{
-		font-size: 0.9rem;
+		font-size: 14px;
 	}
 	.tutoria b{
-		font-size: 0.9rem;
+		font-size: 14px;
 	}
 	.tutoria-name{
-		font-size: 1.1rem;
+		font-size: 18px;
 	}
 	.actividad-reciente b{
-		font-size: 0.9rem;
+		font-size: 14px;
 	}
 	.actividad-reciente div{
-		font-size: 0.9rem;
+		font-size: 14px;
 	}
 
 	/* FOOTER */
 	.copyright > span{
-		font-size: 1rem;
+		font-size: 16px;
 	}
 }
 
@@ -585,26 +585,26 @@ footer{
 		margin-right: 3rem;
 	}
 	.links-nav li{
-		font-size: 0.9rem;
+		font-size: 14px;
 	}
 	/* CUERPO */
 
 	.menu-right {
-		font-size: 1rem;
+		font-size: 16px;
 	}
 	.col-right{
 		border-top: 1px solid #ccc;
 	}
 	.col-right > h2{
-		font-size: 1rem;
+		font-size: 16px;
 	}
 	.col-left > h2{
-		font-size: 1.3rem;
+		font-size: 21px;
 		text-align: center;
 		padding-right: 1rem;
 	}
 	.menu-left{
-		font-size: 1rem;
+		font-size: 16px;
 	}
 
 	/* FOOTER */
@@ -691,7 +691,9 @@ footer{
 		position: absolute;
 		top: 90%;
 		left: 0;
-		border-bottom: 2px solid rgba(29,59,179,0.6);
+		border-bottom: 2px solid rgba(20,20,20,0.4);
+		border-top: 2px solid rgba(20,20,20,0.4);
+
 	}
 	.nav-icon:hover + .menu-movil{
 		display: block;
@@ -707,31 +709,39 @@ footer{
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		background-color: rgba(240,240,240);
+		background:url('../images/background-phone-menu.jpg');
+
 	}
 	.ul-menu-movil h2{
+		padding-top: 1rem;
 		padding-bottom: 2rem;
 	}
 	.ul-menu-movil li{
 		padding-bottom: 2rem;
 	}
 	.section1-phone a{
-		border: 2px solid black;
+		border: 2px solid  #003380;
 		padding: 7px;
-		border-radius: 9px;
-		background-color: rgb(210,210,210);
+		border-radius: 4px;
+		color: white;
+		font-weight: bold;
+		background-color:  #006080;
+		box-shadow: 6px 4px #002633;
 	}
 	hr{
 		width: 200px;
-		border: 1px solid #1D3BB3;
+		border: 1px solid rgba(20,20,20,0.4);
 		opacity: 0.6;
 		border-radius: 3px;
 	}
 	.section2-phone a{
-		border: 2px solid black;
+		border: 2px solid  #003380;
 		padding: 7px;
-		border-radius: 9px;
-		background-color: rgb(210,210,210);
+		border-radius: 4px;
+		color: white;
+		font-weight: bold;
+		background-color:  #006080;
+		box-shadow: 6px 4px #002633;
 	}
 
 	/* CUERPO */
