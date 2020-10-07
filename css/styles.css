@@ -177,7 +177,6 @@ iframe{
 
 }
 .title-iframe{
-	width:100%;
 	background-color: rgba(0,0,0,0.1);
 	color: white;
 	text-shadow: 1px 1px black;
@@ -288,7 +287,6 @@ textarea{
 
 
 .cabecera{
-	width: 100%;
 	position: sticky;
 	top: 0;
 }
@@ -337,7 +335,6 @@ textarea{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	width: 100%;
 }
 
 .column{
@@ -487,7 +484,6 @@ textarea{
 
 
 footer{
-	width: 100%;
 	bottom: 0;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
@@ -706,12 +702,10 @@ footer{
 /*smartphone breakpoint*/
 @media screen and (max-width: 600px){
 
-
 	.col-xs-12{
 		flex: 100%;
 		max-width: 100%;
 	}
-
 
 	/*IFRAMES - FORO DE LA ASIGNATURA*/
 
@@ -721,12 +715,6 @@ footer{
 	input[type=text]:focus{
 		width: 65%;	
 	}
-
-	/*IFRAMES - CONTENIDO DE LA ASIGNATURA*/
-
-
-
-
 
 	/* CABECERA */
 
@@ -742,6 +730,12 @@ footer{
 		flex-wrap: wrap;
 	}
 	/* Menu hamburguesa para la version movil :before = barra de arriba // :after = barra de abajo; */
+
+	/* -- DATO --
+	 Solo funciona con herramienta de desarrollador ya que usa atributos hover
+	 Probado en dispositivos móviles y funciona correctamente
+	*/
+
 	.nav-icon:before,.nav-icon:after, .icon{
 		 background-color: #1D3BB3;
 		  border-radius: 0.53rem;
