@@ -3,221 +3,60 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/styles.css">
-	<title>Práctica 1 - Interfaces de Usuario</title>
+	<title>Login uc3m</title>
+
+	<!-- ======= CSS ======= -->
+	<link rel="stylesheet" href="css/styles-login.css">
+
+	<!-- ======= JS ======= -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-
-	<!-- CABECERA -->
-
-		<section class="cabecera col-12">
-			<ul class="nav" id="top">
-				<li class="col-2 col-s-3">
-					<img src="images/logo.png" alt="Logo de la página principal">
-				</li>
-				<li class="col-4 titulo">
-					<i>INGENIERIA INFORMATICA</i><br>
-					<span class="title-space">&nbsp;&nbsp;&nbsp;</span><i>INTERFACES DE USUARIO</i>
-				</li>
-				<li class="col-6">
-					<ul class="links-nav">
-						<li class="col-2">
-							<a href="#top">AULA GLOBAL</a>
-						</li>
-						<li class="col-2">
-							<a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/FormularioTextoDosColumnas/1371206610152/Contacta" target="_blank">AYUDA</a>
-						</li>
-						<li class="col-2">
-							<a href="https://www.uc3m.es/grado/informatica" target="_blank">PROGRAMA DE GRADO</a>
-						</li>
-					</ul>
-				</li>
-
-				<!-- CONTENIDO SOLO DISPONIBLE EN VERSIÓN MÓVIL -->
-				<li class="nav-item nav-icon col-s-1">
-						<div class="icon"></div>
-				</li>
-				<li class="menu-movil col-s-12">
-						<ul class="ul-menu-movil">
-							<li class="ul-h2">
-								<h2>INTERFACES DE USUARIO</h2>
-							</li>
-							<li class="section1-phone">
-								<a href="iframes/contenido.html" target="iframe">Contenido de la asignatura</a>
-							</li>
-							<li class="section1-phone">
-								<a href="iframes/estudiantes.html" target="iframe">Lista de Estudiantes</a>
-							</li>
-							<li class="section1-phone">
-								<a href="iframes/foro.html" target="iframe">Foro de la Asignatura</a>
-							</li>
-							<li class="section1-phone calificaciones">
-								<a href="iframes/calificaciones.html" target="iframe">Calificaciones</a>
-							</li>
-							<li>
-								<hr>
-							</li>
-							<li class="section2-phone">
-								<a href="https://aulaglobal.uc3m.es">Aula Global</a>
-							</li>
-							<li class="section2-phone">
-								<a href="https://www.uc3m.es/grado/informatica">Programa de Grado</a>
-							</li>
-							<li class="section2-phone">
-								<a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/FormularioTextoDosColumnas/1371206610152/Contacta">Ayuda</a>
-							</li>
-						</ul>
-				</li>
-			</ul>
-
-		</section>
-
-	<!-- BODY -->
-
-	<section class="cuerpo">
-		<div class="main-row col-12">
-			<div class="col-left column col-3">
-				<h2>INTERFACES DE USUARIO</h2>
-					<ul class="menu-left">
-						<li class="default-content">
-							<a href="iframes/contenido.html" target="iframe">Contenido de la asignatura</a>
-						</li>
-						<li class="student-list">
-							<a href="iframes/estudiantes.html" target="iframe">Lista de Estudiantes</a>
-						</li>
-						<li class="forum">
-							<a href="iframes/foro.html" target="iframe">Foro de la Asignatura</a>
-						</li>
-						<li class="grades">
-							<a href="iframes/calificaciones.html" target="iframe">Calificaciones</a>
-						</li>
-					</ul>
+<body>	
+	
+	<section class="login-header">
+		<div class="content col-9">
+			<div class="login-form col-5">
+				<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-9">
+				<h1>Identificación de usuario</h1>
+				<form>
+					<i class="fa fa-user" aria-hidden="true"></i>
+					<input type="text" placeholder="NIA" class="col-12">
+					<br><br>
+					<i class="fa fa-lock" aria-hidden="true"></i>
+					<input type="password" placeholder="Contraseña" class="col-12">
+					<br><br>
+					<input type="button" value="Aceptar" class="button-aceptar">
+				</form>
+				<br>
+				<p class="register">
+						¿No eres usuario aún? <a href="#">Regístrate</a>
+				</p>
 			</div>
-
-
-		<div class="col-center column col-6 col-s-9 col-xs-12">
-			
-			<iframe src="iframes/contenido.html" name="iframe" height="750"></iframe>
-
-		</div>
-
-
-		<div class="col-right column col-3 col-s-12">
-			<h2>INFORMACIÓN DE LA ASIGNATURA</h2>
-			<ul class="menu-right">
-				<li>
-					<div class="calendario">
-						<p><b>CALENDARIO</b></p>
-						<table class="table-calendario">
-							<tr>
-								<th colspan='7'>Octubre 2020</th>
-							</tr>
-							<tr class="days">
-								<td>L</td>
-								<td>M</td>
-								<td>X</td>
-								<td>J</td>
-								<td>V</td>
-								<td class="weekend">S</td>
-								<td class="weekend">D</td>
-							</tr>
-							<tr class="days-number">
-								<td class="weekday-other-month">28</td>
-								<td class="weekday-other-month">29</td>
-								<td class="weekday-other-month">30</td>
-								<td>01</td>
-								<td>02</td>
-								<td class="weekend">03</td>
-								<td class="weekend">04</td>
-							</tr>
-							<tr class="days-number">
-								<td>05</td>
-								<td>06</td>
-								<td class="fecha-entrega">07</td>
-								<td>08</td>
-								<td>09</td>
-								<td class="weekend">10</td>
-								<td class="weekend">11</td>
-							</tr>
-							<tr class="days-number">
-								<td>12</td>
-								<td>13</td>
-								<td>14</td>
-								<td>15</td>
-								<td>16</td>
-								<td class="weekend">17</td>
-								<td class="weekend">18</td>
-							</tr>
-							<tr class="days-number">
-								<td>19</td>
-								<td>20</td>
-								<td>21</td>
-								<td>22</td>
-								<td>23</td>
-								<td class="weekend">24</td>
-								<td class="weekend">25</td>
-							</tr>
-							<tr class="days-number">
-								<td>26</td>
-								<td>27</td>
-								<td>28</td>
-								<td>29</td>
-								<td>30</td>
-								<td class="weekend">31</td>
-								<td class="weekend-other-month">01</td>
-							</tr>
-						</table>
-					</div>
-				</li>
-				<li>
-					<div class="tutoria">
-						<p><b>TUTORÍA</b></p>
-							<div class="tutoria-name">
-								<h5>IVÁN MARTÍN PRIETO</h5><br>
-								<p><i>Pendiente de introducir tutorías</i></p>
-							</div>
-							<div class="tutoria-name">
-								<h5>CESAR MARTÍNEZ LARA</h5><br>
-								<p><i>Pendiente de introducir tutorías</i></p>
-							</div>
-					</div>
-				</li>
-				<li>
-					<div class="actividad-reciente">
-						<p><b>ACTIVIDAD RECIENTE</b></p>
-						<div>
-							Sin actividad reciente en esta asignatura desde el día 07 de Octubre.
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
+			<div class="info-container col-7">
+				<h1>SERVICIO DE SINGLE SIGN-ON</h1>
+				<img src="images/uc3m-logo-svg.png" alt="Logo UC3M" class="logo-uc3m">
+				<p class="info-login-text">Una vez que se haya autenticado no será necesario identificarse de nuevo para acceder a otros recursos. <br><br>
+				<b>Para desconectarse, recomendamos que cierre su navegador (cerrando todas las ventanas).</b>
+				</p>
+			</div>
 		</div>
 	</section>
 
-	<!-- FOOTER --> 
-
-	<footer id="bottom" class="col-12">
-		<div class="footer-row">
-			<div class="uc3m-resources footer-column col-3 col-s-12">
-				<b>ACCEDE A LOS CURSOS OCW DEL GRADO</b><br>
-				<a href="http://ocw.uc3m.es/grado-en-ingenieria-informatica?b_start:int=0" target="_blank">Cursos OCW</a>
+	<section class="login-footer">
+		<div class="footer-container">
+			<div class="footer-links">
+				<a href="">Contacta con nosotros</a>
+				<a href=""> Danos tu opinión</a>
+				<a href="">Accesibilidad</a>
+				<a href="">Contratos y perfil del contrantante</a>
+				<a href="">Información legal</a>
 			</div>
-
-			<div class="copyright footer-column col-3 col-s-12">
-				<p>
-					<a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nd/4.0/88x31.png" /></a>
-				</p>
-				<br>
-				<span>&#169;IVÁN MARTÍN PRIETO, CÉSAR MARTÍNEZ LARA. 2020</span>
+			<div class="footer-img">
+				<img src="images/uc3m-footer.jpg" alt="Copyright Universidad Carlos III de Madrid" class="col-4">
 			</div>
+	</section>
 
-			<div class="privacy-pol footer-column col-3 col-s-12"> 
-				<a href="https://www.uc3m.es/inicio/informacion-legal/politica-privacidad" target="_blank"><b>POLÍTICA DE PRIVACIDAD</b></a>
-				<br>
-				<p>Departamento de Informática, Universidad Carlos III de Madrid, Leganés</p>
-			</div>
-		</div>
-	</footer>
+	<!-- ======== MAIN JS ======== -->
+
 </body>
 </html>
