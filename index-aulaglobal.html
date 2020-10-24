@@ -8,6 +8,18 @@
 </head>
 <body>
 
+	<!-- MENU OVERLAY MOBILE-->
+	<div id="SideMenuId" class="side-menu">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <a href="#">Contenido de la asignatura</a>
+	  <a href="#">Lista de Estudiantes</a>
+	  <a href="#">Calificaciones</a>
+	  <a href="#">Foro del curso</a>
+	  <hr>
+	  <a href="#">Programa de Grado</a>
+	  <a href="#">Ayuda</a>
+	</div>
+
 	<!-- CABECERA -->
 
 		<section class="cabecera col-12">
@@ -35,38 +47,7 @@
 
 				<!-- CONTENIDO SOLO DISPONIBLE EN VERSIÓN MÓVIL -->
 				<li class="nav-item nav-icon col-s-1">
-						<div class="icon"></div>
-				</li>
-				<li class="menu-movil col-s-12">
-						<ul class="ul-menu-movil">
-							<li class="ul-h2">
-								<h2>INTERFACES DE USUARIO</h2>
-							</li>
-							<li class="section1-phone">
-								<a href="iframes/contenido.html" target="iframe">Contenido de la asignatura</a>
-							</li>
-							<li class="section1-phone">
-								<a href="iframes/estudiantes.html" target="iframe">Lista de Estudiantes</a>
-							</li>
-							<li class="section1-phone">
-								<a href="iframes/foro.html" target="iframe">Foro de la Asignatura</a>
-							</li>
-							<li class="section1-phone calificaciones">
-								<a href="iframes/calificaciones.html" target="iframe">Calificaciones</a>
-							</li>
-							<li>
-								<hr>
-							</li>
-							<li class="section2-phone">
-								<a href="https://aulaglobal.uc3m.es">Aula Global</a>
-							</li>
-							<li class="section2-phone">
-								<a href="https://www.uc3m.es/grado/informatica">Programa de Grado</a>
-							</li>
-							<li class="section2-phone">
-								<a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/FormularioTextoDosColumnas/1371206610152/Contacta">Ayuda</a>
-							</li>
-						</ul>
+						<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 				</li>
 			</ul>
 
@@ -219,5 +200,9 @@
 			</div>
 		</div>
 	</footer>
+
+
+<script type="text/javascript" src="js/sidebarmenu.js"></script>
+
 </body>
 </html>

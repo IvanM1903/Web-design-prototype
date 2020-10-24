@@ -284,7 +284,9 @@ textarea{
 /*****************
 **** CABECERA ****
 *****************/
-
+.side-menu{
+	display: none;
+}
 
 .cabecera{
 	position: sticky;
@@ -729,91 +731,42 @@ footer{
 	.nav{
 		flex-wrap: wrap;
 	}
-	/* Menu hamburguesa para la version movil :before = barra de arriba // :after = barra de abajo; */
 
-	/* -- DATO --
-	 Solo funciona con herramienta de desarrollador ya que usa atributos hover
-	 Probado en dispositivos móviles y funciona correctamente
-	*/
-
-	.nav-icon:before,.nav-icon:after, .icon{
-		 background-color: #1D3BB3;
-		  border-radius: 0.53rem;
-		  content: '';
-		  display: block;
-		  height: 0.32rem;
-		  margin: 0.4rem 0;
-		  transition: all .3s ease-in-out;
+	.side-menu{
+	  display: block;
+	  height: 100%;
+	  width: 0;
+	  position: fixed;
+	  z-index: 1;
+	  top: 0;
+	  left: 0;
+	  background-color: rgba(2,2,87, 0.9);
+	  overflow-x: hidden;
+	  transition: 0.5s;
+	  padding-top: 60px;
 	}
 
-	.nav-icon:hover:before{
-	  transform: translateY(12px) rotate(135deg); /*Rotamos la barra superior del menu*/
+	.side-menu a {
+	  padding: 8px 8px 8px 32px;
+	  text-decoration: none;
+	  font-size: 25px;
+	  color: #FFF;
+	  display: block;
+	  transition: 0.3s;
 	}
 
-	.nav-icon:hover:after {
-	  transform: translateY(-12px) rotate(-135deg); /*Rotamos la barra inferior del menu*/
+	.side-menu a:hover {
+	  color: #f1f1f1;
 	}
 
-	.nav-icon:hover .icon {
-	  transform: scale(0); /* Hacemos desaparecer la barra del medio de la hamburguesa*/
-	}
-	.menu-movil{
-		width: 100%;
-		position: absolute;
-		top: 90%;
-		left: 0;
-		border-bottom: 2px solid rgba(20,20,20,0.4);
-		border-top: 2px solid rgba(20,20,20,0.4);
-
-	}
-	.nav-icon:hover + .menu-movil{
-		display: block;
+	.side-menu .closebtn {
+	  position: absolute;
+	  top: 0;
+	  right: 25px;
+	  font-size: 36px;
+	  margin-left: 50px;
 	}
 
-	.menu-movil:active{
-		display: block;
-	}
-
-	.ul-menu-movil{
-		list-style-type: none;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		background:url('../images/background-phone-menu.jpg');
-
-	}
-	.ul-menu-movil h2{
-		padding-top: 1rem;
-		padding-bottom: 2rem;
-	}
-	.ul-menu-movil li{
-		padding-bottom: 2rem;
-	}
-	.section1-phone a{
-		border: 2px solid  #003380;
-		padding: 7px;
-		border-radius: 4px;
-		color: white;
-		font-weight: bold;
-		background-color:  #006080;
-		box-shadow: 6px 4px #002633;
-	}
-	hr{
-		width: 200px;
-		border: 1px solid rgba(20,20,20,0.4);
-		opacity: 0.6;
-		border-radius: 3px;
-	}
-	.section2-phone a{
-		border: 2px solid  #003380;
-		padding: 7px;
-		border-radius: 4px;
-		color: white;
-		font-weight: bold;
-		background-color:  #006080;
-		box-shadow: 6px 4px #002633;
-	}
 
 	/* CUERPO */
 
