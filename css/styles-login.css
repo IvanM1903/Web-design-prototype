@@ -103,6 +103,19 @@
 	padding-top: 40px;
 	margin-bottom: 16px;
 }
+.register-form{
+	text-align: center;
+	padding: 12px;
+	border-right: 1px solid  #bfbfbf;
+	padding-right: 40px;
+	display: none;
+}
+.register-form h1{
+	border-top: 2px solid #000;
+	margin-top: 20px;
+	padding-top: 40px;
+	margin-bottom: 16px;
+}
 .register a{
 	text-decoration: none;
 	color:  #ff3333;

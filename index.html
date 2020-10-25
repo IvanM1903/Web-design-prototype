@@ -9,8 +9,11 @@
 	<link rel="stylesheet" href="css/styles-login.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>	
-	
+
+<body>
+
+	<script type="text/javascript" src="js/showPassword.js"></script>
+
 	<section class="login-header">
 		<div class="content col-9 col-sm-10">
 			<div class="login-form col-5 col-sm-12">
@@ -21,7 +24,9 @@
 					<input type="text" placeholder="NIA" class="col-12">
 					<br><br>
 					<i class="fa fa-lock" aria-hidden="true"></i>
-					<input type="password" placeholder="Contraseña" class="col-12">
+					<input type="password" placeholder="Contraseña" class="col-12" id="inputPassword">
+					<br><br>
+					<input type="checkbox" onclick="showPassword()" class="col-12">Mostrar Contraseña
 					<br><br>
 					<input type="button" value="Aceptar" class="button-aceptar">
 				</form>
@@ -30,6 +35,28 @@
 						¿No eres usuario aún? <a href="#">Regístrate</a>
 				</p>
 			</div>
+			<div class="register-form col-5 col-sm-12">
+				<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-9">
+				<h1>Registro de usuario</h1>
+				<form>
+					<i class="fa fa-user" aria-hidden="true"></i>
+					<input type="text" placeholder="NIA" class="col-12">
+					<br><br>
+					<i class="fa fa-lock" aria-hidden="true"></i>
+					<input type="password" placeholder="Contraseña" class="col-12">
+					<br><br>
+					<i class="fa fa-lock" aria-hidden="true"></i>
+					<input type="password" placeholder="Confirma Contraseña" class="col-12">
+					<br><br>
+					<input type="checkbox" onclick="showPassword()" class="col-12">Mostrar Contraseña
+					<br><br>
+					<input type="button" value="Registrarme" class="button-aceptar">
+				</form>
+				<br>
+				<p class="register">
+						¿Ya tienes un usuario? <a href="#">Inicia sesión</a>
+				</p>
+			</div>			
 			<div class="info-container col-7 col-sm-12">
 				<h1>SERVICIO DE SINGLE SIGN-ON</h1>
 				<img src="images/uc3m-logo-svg.png" alt="Logo UC3M" class="logo-uc3m">
