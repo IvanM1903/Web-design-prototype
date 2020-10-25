@@ -8,6 +8,11 @@
 	<!-- ======= CSS ======= -->
 	<link rel="stylesheet" href="css/styles-login.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- ====== JS ====== -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/login-validation.js"></script>
+	<script type="text/javascript" src="js/register-validation.js"></script>
 </head>
 
 <body>
@@ -19,42 +24,111 @@
 			<div class="login-form col-5 col-sm-12">
 				<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-9">
 				<h1>Identificación de usuario</h1>
-				<form>
+				<p id="error-log"></p>
+				<form action ="/" id="loginForm" method="post">
+
 					<i class="fa fa-user" aria-hidden="true"></i>
-					<input type="text" placeholder="NIA" class="col-12">
+					<input type="text" placeholder="Correo" class="col-12" id="inputEmailLogin" name="inputEmail" required>
 					<br><br>
 					<i class="fa fa-lock" aria-hidden="true"></i>
-					<input type="password" placeholder="Contraseña" class="col-12" id="inputPassword">
+					<input type="password" placeholder="Contraseña" class="col-12" id="inputPasswordLogin" name="inputPassword" required>
 					<br><br>
-					<input type="checkbox" onclick="showPassword()" class="col-12">Mostrar Contraseña
+					<input type="checkbox" onclick="showPassword()" class="col-12">&nbsp;Mostrar Contraseña
 					<br><br>
-					<input type="button" value="Aceptar" class="button-aceptar">
+					<button type="submit" class="button-aceptar" onclick="checkLogin()">Aceptar</button>
+
 				</form>
+
 				<br>
 				<p class="register">
-						¿No eres usuario aún? <a href="#">Regístrate</a>
+						¿No eres usuario aún? <a href="#" id="AbrirRegistro">Regístrate</a>
 				</p>
 			</div>
-			<div class="register-form col-5 col-sm-12">
-				<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-9">
+			<div class="register-form col-5 col-sm-12" id="Registration">
+				<div class="register-image col-12">
+					<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-9">
+				</div>
 				<h1>Registro de usuario</h1>
-				<form>
-					<i class="fa fa-user" aria-hidden="true"></i>
-					<input type="text" placeholder="NIA" class="col-12">
+				<form id="registration" class="col-12">
+					<i class="fa fa-user col-sm-1" aria-hidden="true"></i>
+					<input type="text" placeholder="Nombre de Usuario" class="col-4 col-sm-11" id="registerName" required>
+
+					<i class="fa fa-user col-sm-1" aria-hidden="true"></i>
+					<input type="text" placeholder="NIA" class="col-4 col-sm-11" id="registerNia" required>
 					<br><br>
-					<i class="fa fa-lock" aria-hidden="true"></i>
-					<input type="password" placeholder="Contraseña" class="col-12">
+
+					<i class="fa fa-lock col-sm-1" aria-hidden="true"></i>
+					<input type="password" placeholder="Contraseña" class="col-4 col-sm-11" id="registerPassword" required>
+
 					<br><br>
-					<i class="fa fa-lock" aria-hidden="true"></i>
-					<input type="password" placeholder="Confirma Contraseña" class="col-12">
+					<input type="checkbox" onclick="showPassword()" class="col-12">&nbsp;Mostrar Contraseña
 					<br><br>
-					<input type="checkbox" onclick="showPassword()" class="col-12">Mostrar Contraseña
+
+					<i class="fa fa-user col-sm-1" aria-hidden="true"></i>
+					<input type="text" placeholder="Nombre y apellidos" class="col-4 col-sm-11" id="registerNameSurname" required>
+
+					<i class="fa fa-envelope" aria-hidden="true"></i>
+					<input type="text" placeholder="Correo" class="col-4 col-sm-11" id="registerEmail" required>
 					<br><br>
-					<input type="button" value="Registrarme" class="button-aceptar">
+
+					<label for="date">Fecha de nacimiento</label>
+					<input type="date" placeholder="fecha" class="col-4 col-sm-11" id="registerDate" name="date" required>
+
+					<br><br>
+					<i class="fa fa-address-card-o col-sm-1" aria-hidden="true"></i>
+					<input type="text" placeholder="DNI" class="col-4 col-sm-11" id="registerDNI" required>
+
+					<i class="fa fa-user col-sm-1" aria-hidden="true"></i>
+					<input type="text" value="Universidad Carlos III de Madrid" class="col-4 col-sm-11" id="registerUniversidad" disabled required>
+					<br><br>
+
+					<i class="fa fa-user col-sm-1" aria-hidden="true"></i>
+					<label for="rol">Elige tu rol</label>
+					<select name="rol" id="registerRol" onchange="onlyStudent(this.value)" required>
+						<option value="Estudiante">Estudiante</option>
+						<option value="Profesor">Profesor</option>
+						<option value="Administrador">Administrador</option>
+					</select>
+					<br><br>
+
+					
+
+					<label for="grades">Elige tu grado</label>
+					<select name="grades" id="registerGrades" onchange="setCampus(this.value)" required>
+						<option value="Ingeniería Informática">Ingeniería Informática</option>
+						<option value="Ingeniería Aeronáutica">Ingeniería Aeronáutica</option>
+						<option value="Ingeniería Biomédica">Ingeniería Biomédica</option>
+						<option value="Derecho">Derecho</option>
+					</select>
+					<br><br>
+
+					<label for="campus">Campus</label>
+					<select name="campus" id="registerCampus" disabled required>
+						<option value="Campus de Leganés">Campus de Leganés</option>
+						<option value="Campus de Getafe">Campus de Getafe</option>
+					</select>
+					<br><br>
+
+					<label for="language">Idioma</label>
+					<select name="language" id="registerLanguage">
+						<option value="Español">Español</option>
+						<option value="Inglés">Inglés</option>
+						<option value="Italiano">Italiano</option>
+						<option value="Francés">Francés</option>
+						<option value="Alemán">Alemán</option>
+					</option>
+					</select>
+					<br><br>
+
+					<input type="checkbox" required>&nbsp;He leído y acepto las Condiciones de Uso
+					<br><br>
+
+					<input type="submit" value="Guardar" class="button-aceptar" onclick="registrarUsuario()">
+					<input type="button" value="Borrar" class="button-aceptar" onclick="deleteContent()">
 				</form>
 				<br>
 				<p class="register">
-						¿Ya tienes un usuario? <a href="#">Inicia sesión</a>
+						¿Ya tienes un usuario? <a href="#" id="CerrarRegistro">Inicia sesión</a>
 				</p>
 			</div>			
 			<div class="info-container col-7 col-sm-12">
@@ -70,11 +144,11 @@
 	<section class="login-footer">
 		<div class="footer-container">
 			<div class="footer-links">
-				<a target="_blank" href="https://www.uc3m.es/inicio/contacta">Contacta con nosotros</a>
-				<a target="_blank" href="https://contacta.uc3m.es/s/?language=es"> Danos tu opinión</a>
-				<a target="_blank" href="https://www.uc3m.es/inicio/accesibilidad">Accesibilidad</a>
-				<a target="_blank" href="https://www.uc3m.es/conocenos/contratos-perfil-contratante-convenios-contratos">Contratos y perfil del contrantante</a>
-				<a target="_blank" href="https://www.uc3m.es/inicio/informacion-legal">Información legal</a>
+				<a target="_blank" href="https://www.uc3m.es/inicio/contacta" class="col-2">Contacta con nosotros</a>
+				<a target="_blank" href="https://contacta.uc3m.es/s/?language=es" class="col-2"> Danos tu opinión</a>
+				<a target="_blank" href="https://www.uc3m.es/inicio/accesibilidad" class="col-2">Accesibilidad</a>
+				<a target="_blank" href="https://www.uc3m.es/conocenos/contratos-perfil-contratante-convenios-contratos" class="col-2">Contratos y perfil del contrantante</a>
+				<a target="_blank" href="https://www.uc3m.es/inicio/informacion-legal" class="col-2">Información legal</a>
 			</div>
 			<div class="footer-img">
 				<img src="images/uc3m-footer.jpg" alt="Copyright Universidad Carlos III de Madrid" class="col-3">
@@ -83,6 +157,17 @@
 	</section>
 
 	<!-- ======== MAIN JS ======== -->
-
+	<script>
+		$(document).ready(function(){
+			$("#AbrirRegistro").click(function(){
+				$(".login-form").slideUp();
+				$(".register-form").delay(400).slideDown();
+			});
+			$("#CerrarRegistro").click(function(){
+				$(".register-form").slideUp();
+				$(".login-form").delay(400).slideDown();
+			})
+		})
+	</script>
 </body>
 </html>
