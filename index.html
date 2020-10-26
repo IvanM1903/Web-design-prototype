@@ -20,18 +20,23 @@
 	<script type="text/javascript" src="js/showPassword.js"></script>
 
 	<section class="login-header">
-		<div class="content col-9 col-sm-10">
+		<div class="content col-8 col-sm-10">
 			<div class="login-form col-5 col-sm-12">
 				<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-9">
 				<h1>Identificación de usuario</h1>
 				<p id="error-log"></p>
 				<form action ="/" id="loginForm" method="post">
 
-					<i class="fa fa-user" aria-hidden="true"></i>
-					<input type="text" placeholder="Correo" class="col-12" id="inputEmailLogin" name="inputEmail" required>
+					<label for="inputEmail">
+						<i class="fa fa-user" aria-hidden="true"></i>Correo
+					</label>
+					<br>
+					<input type="text" placeholder="Correo" id="inputEmailLogin" name="inputEmail" required>
 					<br><br>
-					<i class="fa fa-lock" aria-hidden="true"></i>
-					<input type="password" placeholder="Contraseña" class="col-12" id="inputPasswordLogin" name="inputPassword" required>
+					<label for="inputPassword">
+						<i class="fa fa-lock" aria-hidden="true"></i>Contraseña	
+					</label><br>
+					<input type="password" placeholder="Contraseña" id="inputPasswordLog" name="inputPassword" required>
 					<br><br>
 					<input type="checkbox" onclick="showPassword()" class="col-12">&nbsp;Mostrar Contraseña
 					<br><br>
@@ -44,72 +49,92 @@
 						¿No eres usuario aún? <a href="#" id="AbrirRegistro">Regístrate</a>
 				</p>
 			</div>
-			<div class="register-form col-5 col-sm-12" id="Registration">
-				<div class="register-image col-12">
-					<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-9">
+			<div class="info-container col-7 col-sm-12">
+				<h1>SERVICIO DE SINGLE SIGN-ON</h1>
+				<img src="images/uc3m-logo-svg.png" alt="Logo UC3M" class="logo-uc3m">
+				<p class="info-login-text">Una vez que se haya autenticado no será necesario identificarse de nuevo para acceder a otros recursos. <br><br>
+				<b>Para desconectarse, recomendamos que cierre su navegador (cerrando todas las ventanas).</b>
+				</p>
+			</div>
+		</div>
+
+		<div class="register-form col-8 col-sm-10" id="Registration">
+				<div class="register-image col-12 col-sm-12">
+					<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-4 col-sm-12">
 				</div>
 				<h1>Registro de usuario</h1>
 				<form id="registration" class="col-12">
-					<i class="fa fa-user col-sm-1" aria-hidden="true"></i>
-					<input type="text" placeholder="Nombre de Usuario" class="col-4 col-sm-11" id="registerName" required>
-
-					<i class="fa fa-user col-sm-1" aria-hidden="true"></i>
-					<input type="text" placeholder="NIA" class="col-4 col-sm-11" id="registerNia" required>
-					<br><br>
-
-					<i class="fa fa-lock col-sm-1" aria-hidden="true"></i>
-					<input type="password" placeholder="Contraseña" class="col-4 col-sm-11" id="registerPassword" required>
-
-					<br><br>
-					<input type="checkbox" onclick="showPassword()" class="col-12">&nbsp;Mostrar Contraseña
-					<br><br>
-
-					<i class="fa fa-user col-sm-1" aria-hidden="true"></i>
-					<input type="text" placeholder="Nombre y apellidos" class="col-4 col-sm-11" id="registerNameSurname" required>
-
-					<i class="fa fa-envelope" aria-hidden="true"></i>
-					<input type="text" placeholder="Correo" class="col-4 col-sm-11" id="registerEmail" required>
-					<br><br>
-
-					<label for="date">Fecha de nacimiento</label>
-					<input type="date" placeholder="fecha" class="col-4 col-sm-11" id="registerDate" name="date" required>
-
-					<br><br>
-					<i class="fa fa-address-card-o col-sm-1" aria-hidden="true"></i>
-					<input type="text" placeholder="DNI" class="col-4 col-sm-11" id="registerDNI" required>
-
-					<i class="fa fa-user col-sm-1" aria-hidden="true"></i>
-					<input type="text" value="Universidad Carlos III de Madrid" class="col-4 col-sm-11" id="registerUniversidad" disabled required>
-					<br><br>
-
-					<i class="fa fa-user col-sm-1" aria-hidden="true"></i>
-					<label for="rol">Elige tu rol</label>
+					<label for="username">
+						<i class="fa fa-user" aria-hidden="true"></i>Nombre de usuario
+					</label><br>
+					<input type="text" name="username" placeholder="Nombre de Usuario" id="registerName" required>
+					<br>
+					<label for="nia">
+						<i class="fa fa-user col-sm-1" aria-hidden="true"></i>NIA
+					</label><br>
+					<input type="text" name="nia"placeholder="NIA" id="registerNia" required>
+					<br>
+					<label for="password">
+						<i class="fa fa-lock col-sm-1" aria-hidden="true"></i>Contraseña
+					</label><br>
+					<input type="password" name="password" placeholder="Contraseña" id="inputPasswordReg" required>
+					<input type="checkbox" onclick="showPassword()">&nbsp;Mostrar Contraseña
+					<br>
+					<label for="nameandsurname">
+						<i class="fa fa-user col-sm-1" aria-hidden="true"></i>Nombre y Apellidos
+					</label><br>
+					<input type="text" placeholder="Nombre y apellidos" id="registerNameSurname" required>
+					<br>
+					<label for="email">
+						<i class="fa fa-envelope" aria-hidden="true"></i>Correo electrónico
+					</label><br>
+					<input type="text" name="email" placeholder="Correo" id="registerEmail" required>
+					<br>
+					<label for="date">
+						<i class="fa fa-calendar" aria-hidden="true"></i>Fecha de nacimiento
+					</label><br>
+					<input type="date" placeholder="fecha" id="registerDate" name="date" required>
+					<br>
+					<label for="dni">
+						<i class="fa fa-address-card-o col-sm-1" aria-hidden="true"></i>DNI
+					</label><br>
+					<input type="text" placeholder="DNI" name="dni" id="registerDNI" required>
+					<br>
+					<label for="uni">
+						<i class="fa fa-university" aria-hidden="true"></i> Universidad
+					</label>
+					<br>
+					<input type="text" name="uni" value="Universidad Carlos III de Madrid" id="registerUniversidad" disabled required>
+					<br>
+					<label for="rol">
+					<i class="fa fa-user col-sm-1" aria-hidden="true"></i>Elige tu rol
+					</label><br>
 					<select name="rol" id="registerRol" onchange="onlyStudent(this.value)" required>
 						<option value="Estudiante">Estudiante</option>
 						<option value="Profesor">Profesor</option>
 						<option value="Administrador">Administrador</option>
 					</select>
-					<br><br>
-
-					
-
-					<label for="grades">Elige tu grado</label>
+					<br>				
+					<label for="grades">
+						<i class="fa fa-book" aria-hidden="true"></i>
+						Elige tu grado
+					</label><br>
 					<select name="grades" id="registerGrades" onchange="setCampus(this.value)" required>
 						<option value="Ingeniería Informática">Ingeniería Informática</option>
 						<option value="Ingeniería Aeronáutica">Ingeniería Aeronáutica</option>
 						<option value="Ingeniería Biomédica">Ingeniería Biomédica</option>
 						<option value="Derecho">Derecho</option>
 					</select>
-					<br><br>
-
-					<label for="campus">Campus</label>
+					<br>
+					<label for="campus">Campus
+					</label><br>
 					<select name="campus" id="registerCampus" disabled required>
 						<option value="Campus de Leganés">Campus de Leganés</option>
 						<option value="Campus de Getafe">Campus de Getafe</option>
 					</select>
-					<br><br>
-
+					<br>
 					<label for="language">Idioma</label>
+					<br>
 					<select name="language" id="registerLanguage">
 						<option value="Español">Español</option>
 						<option value="Inglés">Inglés</option>
@@ -120,25 +145,21 @@
 					</select>
 					<br><br>
 
-					<input type="checkbox" required>&nbsp;He leído y acepto las Condiciones de Uso
-					<br><br>
+					<div class="registration-buttons">
+						<input type="checkbox" required>&nbsp;He leído y acepto las Condiciones de Uso
+						<br><br>
 
-					<input type="submit" value="Guardar" class="button-aceptar" onclick="registrarUsuario()">
-					<input type="button" value="Borrar" class="button-aceptar" onclick="deleteContent()">
+						<input type="submit" value="Guardar" class="button-aceptar" onclick="registrarUsuario()">
+						<input type="button" value="Borrar" class="button-aceptar" onclick="deleteContent()">
+						</div>
 				</form>
 				<br>
 				<p class="register">
 						¿Ya tienes un usuario? <a href="#" id="CerrarRegistro">Inicia sesión</a>
 				</p>
 			</div>			
-			<div class="info-container col-7 col-sm-12">
-				<h1>SERVICIO DE SINGLE SIGN-ON</h1>
-				<img src="images/uc3m-logo-svg.png" alt="Logo UC3M" class="logo-uc3m">
-				<p class="info-login-text">Una vez que se haya autenticado no será necesario identificarse de nuevo para acceder a otros recursos. <br><br>
-				<b>Para desconectarse, recomendamos que cierre su navegador (cerrando todas las ventanas).</b>
-				</p>
-			</div>
-		</div>
+
+
 	</section>
 
 	<section class="login-footer">
@@ -160,13 +181,13 @@
 	<script>
 		$(document).ready(function(){
 			$("#AbrirRegistro").click(function(){
-				$(".login-form").slideUp();
+				$(".content").slideUp();
 				$(".register-form").delay(400).slideDown();
 			});
 			$("#CerrarRegistro").click(function(){
 				$(".register-form").slideUp();
-				$(".login-form").delay(400).slideDown();
-			})
+				$(".content").delay(400).slideDown();
+			});
 		})
 	</script>
 </body>

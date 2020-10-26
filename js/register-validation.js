@@ -2,7 +2,7 @@
 // ====== Form Register Variables ====== //
 const username = document.getElementById("registerName");
 const nia = document.getElementById("registerNia");
-const registerPassword = document.getElementById("registerPassword");
+const registerPassword = document.getElementById("inputPasswordReg");
 const nameSurname = document.getElementById("registerNameSurname");
 const email = document.getElementById("registerEmail");
 const date = document.getElementById("registerDate");
@@ -37,7 +37,7 @@ function deleteContent(){
 	//Valores por defecto
 	document.getElementById("registerName").value = "";
 	document.getElementById("registerNia").value = "";
-	document.getElementById("registerPassword").value = "";
+	document.getElementById("inputPasswordReg").value = "";
 	document.getElementById("registerNameSurname").value = "";
 	document.getElementById("registerEmail").value = "";
 	document.getElementById("registerDate").value = "";
@@ -83,9 +83,9 @@ function validDate(date){
 
 function registrarUsuario(){
 
-	boolean checkEmail = validEmail(this.email);
-	boolean checkNIA = validNIA(this.nia);
-	boolean checkPassword = validPassword(this.registerPassword);
+	//boolean checkEmail = validEmail(this.email);
+	//boolean checkNIA = validNIA(this.nia);
+	//boolean checkPassword = validPassword(this.registerPassword);
 	if(checkEmail && checKNIA && checkPassword){
 
 		//Crear cookie

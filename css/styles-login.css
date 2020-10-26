@@ -86,16 +86,30 @@
 .content{
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	background-color: #FFF;
 	border-radius: 10px;
 	padding-top: 16px;
-	padding-bottom: 16px;
+	padding-bottom: 16px; 
 }
 .login-form{
 	text-align: center;
 	padding: 12px;
 	border-right: 1px solid  #bfbfbf;
 	padding-right: 40px;
+	padding-left: 40px;
+}
+#inputEmailLogin{
+	margin: 4px 0;
+	padding: 6px 6px;
+	width: 70%;
+	box-sizing: border-box;
+}
+#inputPasswordLog{
+	margin: 4px 0;
+	padding: 6px 6px;
+	width: 70%;
+	box-sizing: border-box;
 }
 .login-form h1{
 	border-top: 2px solid #000;
@@ -103,15 +117,43 @@
 	padding-top: 40px;
 	margin-bottom: 16px;
 }
+.register-image{
+	background-color: #FFF;
+	border-bottom: 2px solid #000;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	position: sticky;
+	top: 0;
+}
+.register-form::-webkit-scrollbar{
+	width: 0;
+	background-color: transparent;
+}
 .register-form{
+	background-color: #FFF;
 	text-align: center;
-	padding: 12px;
 	border-right: 1px solid  #bfbfbf;
+	height: 60vh;
+	padding-left: 40px;
 	padding-right: 40px;
 	display: none;
+	overflow-y: scroll;
+	border-radius: 15px;
+	padding-bottom: 15px;
+}
+.register-form input[type=text],[type=password],[type=date]{
+	margin: 8px 0;
+	padding: 6px 10px;
+	width: 50%;
+	box-sizing: border-box;
+}
+.register-form select{
+	margin:8px 0;
+	width: 25%;
+	box-sizing: border-box;
+	padding: 5px 5px;
 }
 .register-form h1{
-	border-top: 2px solid #000;
 	margin-top: 10px;
 	padding-top: 10px;
 	margin-bottom: 16px;
@@ -121,9 +163,14 @@
 	color:  #ff3333;
 }
 #registration i{
-	margin-left: 7px;
+	margin-right: 10px;
 }
-
+#registration {
+	text-align: left;
+}
+.registration-buttons{
+	text-align: center;
+}
 .button-aceptar{
 	padding: 3px;
 	background-color:#002699;
@@ -210,7 +257,7 @@
 	.content{
 		flex-direction: column;
 		padding-right: 0;
-		margin-bottom: 40px;
+		margin-bottom: 0px;
 	}
 	.login-form{
 		border-right: 0px;
@@ -224,6 +271,22 @@
 	}
 	.login-footer{
 		display: none;
+	}
+	.register-form{
+		height: 80vh;
+
+	}
+	.register-form input[type=text],[type=password],[type=date]{
+		margin: 8px 0;
+		padding: 6px 10px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.register-form select{
+		margin:8px 0;
+		width: 90%;
+		box-sizing: border-box;
+		padding: 5px 5px;
 	}
 }
 @media screen and (max-width:375px){
@@ -247,9 +310,6 @@
 		font-size: 20px;
 		margin-top: 0;
 		padding-top: 10px;
-	}
-	.login-form{
-		padding-bottom: 120px;
 	}
 	#registration i{
 		margin-left: 0;
