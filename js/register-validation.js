@@ -1,19 +1,5 @@
-
-// ====== Form Register Variables ====== //
-const username = document.getElementById("registerName");
-const nia = document.getElementById("registerNia");
-const registerPassword = document.getElementById("inputPasswordReg");
-const nameSurname = document.getElementById("registerNameSurname");
-const email = document.getElementById("registerEmail");
-const date = document.getElementById("registerDate");
-const dni = document.getElementById("registerDNI");
-const rol = document.getElementById("registerRol");
-const campus = document.getElementById("registerCampus");
-const grades = document.getElementById("registerGrades");
-const language = document.getElementById("registerLanguage");
-
-
 // ====== AUXILIAR FUNCTIONS ====== //
+
 function onlyStudent(rol){
 	if(rol != "Estudiante"){
 		document.getElementsByName("grades")[0].value = "-----";
@@ -45,50 +31,103 @@ function deleteContent(){
 	document.getElementById("registerRol").value = "Estudiante";
 	document.getElementById("registerGrades").value = "Ingeniería Informática";
 	document.getElementById("registerLanguage").value = "Español";
-
+	//Reinciamos a la vista de Estudiante (vista por defecto de los roles)
 	onlyStudent("Estudiante");
 }
 
-function validEmail(email) {
-    var filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-    return String(email).search(filter) != -1;
-}
 
+// ====== CHECK FUNCTIONS ====== //
+
+function validEmail(email) {
+    var regEx = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+    if (email.match(regEx)){
+    	alert("El email es valido");
+   		return true;
+    }
+    else{
+    	alert("El email no es valido");
+    	return false;
+    }
+}
 function validNIA(nia){
-	if(nia.substring(0,3) != 100){
-		alert("NIA no válido");
+	//Tiene que ser un número mayor que 100000000 y menor que 100999999
+	if(nia > 100000000 && nia < 100999999){
+		return true;
+	}
+	else{
+		alert("NIA debe ser un número de 9 dígitos que empiece por 100xxxxxx");
 		return false;
 	}
-	if(nia.length < 9 || isNaN(nia)){
-		alert("NIA debe contener 9 números.");
-		return false;
-	}
-	return true;
 }
 
 function validPassword(pass){
 	if(pass.length > 8){
-		alert("Contraseña demasiado corta");
+		alert("Contraseña demasiado larga");
+		return false;
+	}
+	//Comprobamos que contenga a-z A-Z y 0-9
+	var lowerCaseLetters = /[a-z]/g;
+	var upperCaseLetters = /[A-Z]/g;
+	var numbers = /[0-9]/g;
+
+	if((pass.match(lowerCaseLetters) && pass.match(numbers))||
+	(pass.match(upperCaseLetters) && pass.match(numbers))){
+		return true;
+	}
+	else{
+		alert("La contraseña debe contener al menos una mayúscula/minúscula y un número");
 		return false;
 	}
 
-	//Queda comprobar que contenga a-z A-Z y 0-9
-}
-
-function validDate(date){
-	//Comprobar que la fecha es anterior a minimo 17 años atrás
 }
 
 // ====== FUNCTION COOKIE REGISTER ====== //
 
 function registrarUsuario(){
 
-	//boolean checkEmail = validEmail(this.email);
-	//boolean checkNIA = validNIA(this.nia);
-	//boolean checkPassword = validPassword(this.registerPassword);
-	if(checkEmail && checKNIA && checkPassword){
+	// ====== INPUT REGISTER VARIABLES ====== //
 
-		//Crear cookie
+	var inputUsername = document.getElementById("registerName").value;
+	var inputNia = document.getElementById("registerNia").value;
+	var inputPassword = document.getElementById("inputPasswordReg").value;
+	var inputNameSurname = document.getElementById("registerNameSurname").value;
+	var inputEmail = document.getElementById("registerEmail").value;
+	var inputDate = document.getElementById("registerDate");
+	var inputRol = document.getElementById("registerRol").value;
+	var inputCampus = document.getElementById("registerCampus").value;
+	var inputGrades = document.getElementById("registerGrades").value;
+	var inputLanguage = document.getElementById("registerLanguage").value;
+	var formRegistration = document.getElementById("registration");
+
+
+	//Comprobamos que los campos importantes sean correctos
+	if(validNIA(inputNia) && validPassword(inputPassword)
+		&& validEmail(inputEmail)){
+
+		//Como los campos son válidos, creamos la cookie
+		
+		var cookieUsername = "userName="+inputUsername;
+		document.cookie = cookieUsername;
+
+		var cookieNameSurname = "nameSurname="+inputNameSurname;
+		document.cookie = cookieNameSurname;
+
+		var cookieNia = "nia="+inputNia;
+		document.cookie = cookieNia;
+
+		var cookiePassword = "password="+inputPassword;
+		document.cookie = cookiePassword;
+
+		var cookieEmail = "email="+inputEmail;
+		document.cookie = cookieEmail;
+
+		alert(document.cookie);
+
+		return true;
+	}else{
+
+		return false;		
 	}
+	
 
 }

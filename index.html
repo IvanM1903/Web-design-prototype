@@ -13,20 +13,21 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/login-validation.js"></script>
 	<script type="text/javascript" src="js/register-validation.js"></script>
+	<script type="text/javascript" src="js/showPassword.js"></script>
 </head>
 
 <body>
 
-	<script type="text/javascript" src="js/showPassword.js"></script>
-
+	<!-- ======= MAIN CONTAINER ====== -->
 	<section class="login-header">
+		<!-- ====== CENTER CONTENT ====== -->
 		<div class="content col-8 col-sm-10">
+			<!-- ====== LOGIN FORM ====== -->
 			<div class="login-form col-5 col-sm-12">
 				<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-9">
 				<h1>Identificación de usuario</h1>
 				<p id="error-log"></p>
-				<form action ="/" id="loginForm" method="post">
-
+				<form action ="#" id="loginForm">
 					<label for="inputEmail">
 						<i class="fa fa-user" aria-hidden="true"></i>Correo
 					</label>
@@ -40,8 +41,7 @@
 					<br><br>
 					<input type="checkbox" onclick="showPassword()" class="col-12">&nbsp;Mostrar Contraseña
 					<br><br>
-					<button type="submit" class="button-aceptar" onclick="checkLogin()">Aceptar</button>
-
+					<button type="button" class="button-aceptar" onclick="checkLogin()">Aceptar</button>
 				</form>
 
 				<br>
@@ -49,6 +49,8 @@
 						¿No eres usuario aún? <a href="#" id="AbrirRegistro">Regístrate</a>
 				</p>
 			</div>
+
+			<!-- ====== INFO CONTAINER ====== -->
 			<div class="info-container col-7 col-sm-12">
 				<h1>SERVICIO DE SINGLE SIGN-ON</h1>
 				<img src="images/uc3m-logo-svg.png" alt="Logo UC3M" class="logo-uc3m">
@@ -58,12 +60,13 @@
 			</div>
 		</div>
 
+		<!-- ====== REGISTER FORM CONTAINER ====== -->
 		<div class="register-form col-8 col-sm-10" id="Registration">
 				<div class="register-image col-12 col-sm-12">
-					<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-4 col-sm-12">
+					<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-3 col-sm-9">
 				</div>
 				<h1>Registro de usuario</h1>
-				<form id="registration" class="col-12">
+				<form id="registration" class="col-12" action="index-aulaglobal.html">
 					<label for="username">
 						<i class="fa fa-user" aria-hidden="true"></i>Nombre de usuario
 					</label><br>
@@ -78,12 +81,12 @@
 						<i class="fa fa-lock col-sm-1" aria-hidden="true"></i>Contraseña
 					</label><br>
 					<input type="password" name="password" placeholder="Contraseña" id="inputPasswordReg" required>
-					<input type="checkbox" onclick="showPassword()">&nbsp;Mostrar Contraseña
-					<br>
+					<input type="checkbox" onclick="showPassword()"><span>&nbsp;Mostrar Contraseña</span>
+					<br><br><hr><br>
 					<label for="nameandsurname">
 						<i class="fa fa-user col-sm-1" aria-hidden="true"></i>Nombre y Apellidos
 					</label><br>
-					<input type="text" placeholder="Nombre y apellidos" id="registerNameSurname" required>
+					<input type="text" placeholder="Nombre y apellidos" id="registerNameSurname"required>
 					<br>
 					<label for="email">
 						<i class="fa fa-envelope" aria-hidden="true"></i>Correo electrónico
@@ -104,12 +107,12 @@
 						<i class="fa fa-university" aria-hidden="true"></i> Universidad
 					</label>
 					<br>
-					<input type="text" name="uni" value="Universidad Carlos III de Madrid" id="registerUniversidad" disabled required>
+					<input type="text" name="uni" value="Universidad Carlos III de Madrid" id="registerUniversidad" disabled>
 					<br>
 					<label for="rol">
 					<i class="fa fa-user col-sm-1" aria-hidden="true"></i>Elige tu rol
 					</label><br>
-					<select name="rol" id="registerRol" onchange="onlyStudent(this.value)" required>
+					<select name="rol" id="registerRol" onchange="onlyStudent(this.value)">
 						<option value="Estudiante">Estudiante</option>
 						<option value="Profesor">Profesor</option>
 						<option value="Administrador">Administrador</option>
@@ -128,7 +131,7 @@
 					<br>
 					<label for="campus">Campus
 					</label><br>
-					<select name="campus" id="registerCampus" disabled required>
+					<select name="campus" id="registerCampus" disabled>
 						<option value="Campus de Leganés">Campus de Leganés</option>
 						<option value="Campus de Getafe">Campus de Getafe</option>
 					</select>
@@ -146,7 +149,7 @@
 					<br><br>
 
 					<div class="registration-buttons">
-						<input type="checkbox" required>&nbsp;He leído y acepto las Condiciones de Uso
+						<input type="checkbox" required><span>&nbsp;He leído y acepto las Condiciones de Uso</span>
 						<br><br>
 
 						<input type="submit" value="Guardar" class="button-aceptar" onclick="registrarUsuario()">
@@ -158,9 +161,9 @@
 						¿Ya tienes un usuario? <a href="#" id="CerrarRegistro">Inicia sesión</a>
 				</p>
 			</div>			
-
-
 	</section>
+
+	<!-- ====== FOOTER CONTAINER ====== --> 
 
 	<section class="login-footer">
 		<div class="footer-container">
@@ -177,7 +180,7 @@
 		</div>
 	</section>
 
-	<!-- ======== MAIN JS ======== -->
+	<!-- ======== MAIN JQUERY FUNCTIONS ======== -->
 	<script>
 		$(document).ready(function(){
 			$("#AbrirRegistro").click(function(){
