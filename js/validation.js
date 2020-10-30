@@ -183,6 +183,5 @@ function getCookie(cname) {
   function writeNameFromCookie(){
 	  var name = "";
 	  name = getCookie("nameSurname");
-	  alert("funciona");
 	  document.getElementById("user-session-name").innerHTML = name;
   }

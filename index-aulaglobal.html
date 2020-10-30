@@ -9,7 +9,7 @@
 	<!-- ====== SCRIPT JS ====== -->
 	<script type="text/javascript" src="js/validation.js"></script>
 </head>
-<body>
+<body onload="writeNameFromCookie()">
 
 	<!-- MENU OVERLAY MOBILE-->
 	<div id="SideMenuId" class="side-menu">
@@ -28,18 +28,15 @@
 		<section class="cabecera col-12">
 			<ul class="nav" id="top">
 				<li class="col-2 col-s-3">
-					<img src="images/logo.png" alt="Logo de la página principal">
+					<img src="images/logoxikito.png" alt="Logo de la página principal" class="col-9 logo-header">
 				</li>
-				<li class="col-4 titulo">
-					<i>INGENIERIA INFORMATICA</i><br>
-					<span class="title-space">&nbsp;&nbsp;&nbsp;</span><i>INTERFACES DE USUARIO</i>
+				<li class="col-6 titulo">
+					<b>INGENIERIA INFORMATICA - INTERFACES DE USUARIO</b>
 				</li>
-				<li class="col-6">
+				<li class="col-4">
 					<div class="user-session col-12">
-							<img src="images/user-image.png" alt="Imagen de usuario">
-							<div id="user-session-name"  onload="writeNameFromCookie()">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, recusandae!
-							</div>
+							<div id="user-session-name" class="col-8"></div>
+							<div id="user-session-quit" class="col-4"><a href="index.html">Cerrar Sesión</a></div>
 					</div>
 				</li>
 
@@ -50,25 +47,25 @@
 			</ul>
 			<div class="col-12">
 				<ul class="links-nav">
-					<li class="col-4">
+					<li class="col-2">
 						<a href="#top">AULA GLOBAL</a>
 					</li>
-					<li class="col-4">
+					<li class="col-2">
 						<a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/FormularioTextoDosColumnas/1371206610152/Contacta" target="_blank">AYUDA</a>
 					</li>
-					<li class="col-4">
+					<li class="col-2 border-right-none">
 						<a href="https://www.uc3m.es/grado/informatica" target="_blank">PROGRAMA DE GRADO</a>
 					</li>
 				</ul>
 			</div>
 		</section>
 
-	<!-- BODY -->
+	<!-- ====== BODY ====== -->
 
 	<section class="cuerpo">
 		<div class="main-row col-12">
 			<div class="col-left column col-3">
-				<h2>INTERFACES DE USUARIO</h2>
+				<h1>INTERFACES DE USUARIO</h1>
 					<ul class="menu-left">
 						<li class="default-content">
 							<a href="iframes/contenido.html" target="iframe">Contenido de la asignatura</a>
@@ -92,11 +89,11 @@
 
 
 		<div class="col-right column col-3 col-s-12">
-			<h2>INFORMACIÓN DE LA ASIGNATURA</h2>
+			<h1>INFORMACIÓN DE LA ASIGNATURA</h1>
 			<ul class="menu-right">
 				<li>
 					<div class="calendario">
-						<p><b>CALENDARIO</b></p>
+						<p><span>&nbsp;&nbsp;&nbsp;CALENDARIO&nbsp;&nbsp;&nbsp;</span></p>
 						<table class="table-calendario">
 							<tr>
 								<th colspan='7'>Octubre 2020</th>
@@ -160,20 +157,20 @@
 				</li>
 				<li>
 					<div class="tutoria">
-						<p><b>TUTORÍA</b></p>
+						<p><span>&nbsp;&nbsp;&nbsp;TUTORÍA&nbsp;&nbsp;&nbsp;</span></p>
 							<div class="tutoria-name">
 								<h5>IVÁN MARTÍN PRIETO</h5><br>
-								<p><i>Pendiente de introducir tutorías</i></p>
+								<p>Pendiente de introducir tutorías</p>
 							</div>
 							<div class="tutoria-name">
 								<h5>CESAR MARTÍNEZ LARA</h5><br>
-								<p><i>Pendiente de introducir tutorías</i></p>
+								<p>Pendiente de introducir tutorías</p>
 							</div>
 					</div>
 				</li>
 				<li>
 					<div class="actividad-reciente">
-						<p><b>ACTIVIDAD RECIENTE</b></p>
+						<p><span>&nbsp;&nbsp;&nbsp;ACTIVIDAD RECIENTE&nbsp;&nbsp;&nbsp;</span></p>
 						<div>
 							Sin actividad reciente en esta asignatura desde el día 07 de Octubre.
 						</div>
