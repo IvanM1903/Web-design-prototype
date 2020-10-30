@@ -41,7 +41,6 @@ function deleteContent(){
 function validEmail(email) {
     var regEx = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
     if (email.match(regEx)){
-    	alert("El email es valido");
    		return true;
     }
     else{
@@ -78,7 +77,21 @@ function validPassword(pass){
 		alert("La contraseña debe contener al menos una mayúscula/minúscula y un número");
 		return false;
 	}
+}
 
+function validDNI(dni){
+	if(dni.length != 9){
+		alert("El DNI debe tener 9 carácteres.");
+		return false;
+	}else{
+		for (i = 0; i < dni.length -1; i++){
+			if(isNaN(dni.charAt(i))){
+				alert("El DNI debe contener 8 números y una letra.");
+				return false;
+			}
+		}
+		return true;
+	}
 }
 
 // ====== FUNCTION COOKIE REGISTER ====== //
@@ -93,6 +106,7 @@ function registrarUsuario(){
 	var inputNameSurname = document.getElementById("registerNameSurname").value;
 	var inputEmail = document.getElementById("registerEmail").value;
 	var inputDate = document.getElementById("registerDate");
+	var inputDNI = document.getElementById("registerDNI").value;
 	var inputRol = document.getElementById("registerRol").value;
 	var inputCampus = document.getElementById("registerCampus").value;
 	var inputGrades = document.getElementById("registerGrades").value;
@@ -102,7 +116,7 @@ function registrarUsuario(){
 
 	//Comprobamos que los campos importantes sean correctos
 	if(validNIA(inputNia) && validPassword(inputPassword)
-		&& validEmail(inputEmail)){
+		&& validEmail(inputEmail) && validDNI(inputDNI)){
 
 		//Como los campos son válidos, creamos la cookie
 		
@@ -125,9 +139,10 @@ function registrarUsuario(){
 
 		return true;
 	}else{
+		//Evitamos el envío del formulario
+		$('#registration').on('submit',function(event){
+			event.preventDefault();
+		});
 
-		return false;		
 	}
-	
-
 }
