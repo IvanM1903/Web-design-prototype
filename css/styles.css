@@ -173,9 +173,6 @@ iframe{
 .alumnos img{
 	border-radius: 10rem;
 }
-.alumnos tr{
-
-}
 .title-iframe{
 	background-color: rgba(0,0,0,0.1);
 	color: white;
@@ -317,10 +314,18 @@ textarea{
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	margin-right: 2rem;
+	padding-top:7px;
+	padding-bottom:7px;
+	background-color: rgba(240,240,240);
 }
 .links-nav li{
+	border-top: 2px solid#000099;
+	color: #000099;
+	margin-left: 30px;
+	margin-right: 30px;
+	padding-top: 5px;
 	text-align: center;
+	font-weight: bold;
 }
 .menu-movil{
 	display: none;
@@ -328,6 +333,15 @@ textarea{
 .nav-icon{
 	display: none;
 }
+.user-session{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height:60px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 /***************
 **** CUERPO ****
 ***************/

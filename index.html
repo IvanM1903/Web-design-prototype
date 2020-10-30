@@ -11,8 +11,7 @@
 
 	<!-- ====== JS ====== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/login-validation.js"></script>
-	<script type="text/javascript" src="js/register-validation.js"></script>
+	<script type="text/javascript" src="js/validation.js"></script>
 	<script type="text/javascript" src="js/showPassword.js"></script>
 </head>
 
@@ -27,7 +26,7 @@
 				<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-9">
 				<h1>Identificación de usuario</h1>
 				<p id="error-log"></p>
-				<form action ="#" id="loginForm">
+				<form action ="index-aulaglobal.html" id="loginForm">
 					<label for="inputEmail">
 						<i class="fa fa-user" aria-hidden="true"></i>Correo
 					</label>
@@ -41,7 +40,7 @@
 					<br><br>
 					<input type="checkbox" onclick="showPassword()" class="col-12">&nbsp;Mostrar Contraseña
 					<br><br>
-					<button type="button" class="button-aceptar" onclick="checkLogin()">Aceptar</button>
+					<button type="submit" class="button-aceptar" onclick="loginUsuario()">Aceptar</button>
 				</form>
 
 				<br>

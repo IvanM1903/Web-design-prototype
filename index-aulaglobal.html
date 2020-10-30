@@ -5,6 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/styles.css">
 	<title>Práctica 1 - Interfaces de Usuario</title>
+
+	<!-- ====== SCRIPT JS ====== -->
+	<script type="text/javascript" src="js/validation.js"></script>
 </head>
 <body>
 
@@ -32,17 +35,12 @@
 					<span class="title-space">&nbsp;&nbsp;&nbsp;</span><i>INTERFACES DE USUARIO</i>
 				</li>
 				<li class="col-6">
-					<ul class="links-nav">
-						<li class="col-2">
-							<a href="#top">AULA GLOBAL</a>
-						</li>
-						<li class="col-2">
-							<a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/FormularioTextoDosColumnas/1371206610152/Contacta" target="_blank">AYUDA</a>
-						</li>
-						<li class="col-2">
-							<a href="https://www.uc3m.es/grado/informatica" target="_blank">PROGRAMA DE GRADO</a>
-						</li>
-					</ul>
+					<div class="user-session col-12">
+							<img src="images/user-image.png" alt="Imagen de usuario">
+							<div id="user-session-name"  onload="writeNameFromCookie()">
+								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, recusandae!
+							</div>
+					</div>
 				</li>
 
 				<!-- CONTENIDO SOLO DISPONIBLE EN VERSIÓN MÓVIL -->
@@ -50,7 +48,19 @@
 						<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 				</li>
 			</ul>
-
+			<div class="col-12">
+				<ul class="links-nav">
+					<li class="col-4">
+						<a href="#top">AULA GLOBAL</a>
+					</li>
+					<li class="col-4">
+						<a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/FormularioTextoDosColumnas/1371206610152/Contacta" target="_blank">AYUDA</a>
+					</li>
+					<li class="col-4">
+						<a href="https://www.uc3m.es/grado/informatica" target="_blank">PROGRAMA DE GRADO</a>
+					</li>
+				</ul>
+			</div>
 		</section>
 
 	<!-- BODY -->
@@ -77,9 +87,7 @@
 
 
 		<div class="col-center column col-6 col-s-9 col-xs-12">
-			
 			<iframe src="iframes/contenido.html" name="iframe" height="750"></iframe>
-
 		</div>
 
 
