@@ -81,13 +81,12 @@ a:hover{
 	padding-top: 1rem;
 	padding-bottom: 0.5rem;
 	border-bottom: 2px solid rgba(20,20,20,0.4);
+	font-size: 21px;
 	text-align: center;
 }
-.contenedor-iframe{
-	font-size:19px;
-}
+
 .background-iframe{
-	background-image: url('../images/background-pattern.png');
+	background-color: #f8f8f8;
 }
 iframe{
 	border: 0;
@@ -95,8 +94,18 @@ iframe{
 /***********************
 *** CONTENIDO IFRAME ***
 ***********************/
+.tema-presentacion{
+	margin-top: 20px;
+	padding-top: 10px;
+	background-color: #FFF;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	border: 1px solid #ccc;
+}
 .tema-asignatura{
-	padding-top: 1rem;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -104,10 +113,8 @@ iframe{
 .tema-titulo{
 	padding-left: 1rem;
 	margin-bottom: 1rem;
-	border-bottom: 1.5px solid rgba(20,20,20,0.4);
-	border-top: 1.5px solid rgba(20,20,20,0.4);
-	background-color: rgba(140,140,140,0.4);
-	color: white;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
 }
 .tema-intro{
 	display: flex;
@@ -120,6 +127,7 @@ iframe{
 	padding-right: 1rem;
 	text-align: justify;
 	text-justify: inter-word;
+	font-size: 17px;
 }
 .tema-capitulo{
 	display: flex;
@@ -136,8 +144,21 @@ iframe{
 	margin-left: 10%;
 	margin-right: 10%;
 	margin-bottom: 1.3rem;
-	background-color:rgba(200,200,200,0.4);
-	box-shadow: 5px 10px #0086b3;
+	background-color:#FFF;
+	box-shadow: 3px 3px #000099;
+}
+.html-5{
+	border-right: 7px solid #E85427;
+}
+.css-3{
+	border-right: 7px solid #2753E7;
+}
+.js{
+	border-right: 7px solid #F2CE27;
+}
+.tema-capitulo-txt{
+	padding-left: 40px;
+	padding-right: 40px;
 }
 .tema-capitulo-desc{
 	text-align: justify;
@@ -174,7 +195,6 @@ iframe{
 }
 .title-iframe{
 	background-color:rgba(240,240,240);
-	font-weight: bold;
 	color: black;
 }
 
@@ -338,6 +358,10 @@ textarea{
 }
 .nav-icon{
 	display: none;
+}
+.nav-icon span{
+	font-size:30px;
+	cursor:pointer;
 }
 .user-session{
 	display: flex;
@@ -577,7 +601,9 @@ footer{
 .privacy-pol > p{
 	font-size: 16px;
 }
-
+.creative-commons{
+	border-width:0;
+}
 
 /********************
 **** BREAKPOINTS ****
@@ -587,15 +613,18 @@ footer{
 @media screen and (max-width: 1025px){
 	/* CABECERA */
 	.titulo{
-		font-size: 19px;
+		font-size: 19.7px;
 	}
 	.title-space{
 		display: none;
 	}
-	.links-nav{
-		justify-content: space-between;
-		text-align: center;
+	.border-right-none{
+		margin-left: 15px;
 	}
+	.user-session{
+		font-size: 15px;
+	}
+
 	/*BODY*/
 	/*LEFT COLUMN*/
 	.col-left h2{
@@ -605,9 +634,6 @@ footer{
 		font-size: 14px;
 	}
 	/*CONTENIDO*/
-
-
-
 	/*RIGHT COLUMN*/
 	.col-right h2{
 		font-size: 19px;
