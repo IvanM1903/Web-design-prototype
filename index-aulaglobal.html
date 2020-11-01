@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Interfaces de Usuario</title>
 	<link rel="icon" href="images/uc3m-logo-svg.png" type="image/png">
 	<!-- ====== SCRIPT JS ====== -->
@@ -21,10 +22,12 @@
 	<!-- ====== MENU OVERLAY MOBILE ====== -->
 	<div id="SideMenuId" class="side-menu">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	  <a href="#">Contenido de la asignatura</a>
-	  <a href="#">Lista de Estudiantes</a>
-	  <a href="#">Calificaciones</a>
-	  <a href="#">Foro del curso</a>
+	  <a href="#" class="mostrarContenidoAsignatura">Contenido de la asignatura</a>
+	  <a href="#" class="mostrarEstudiantesAsignatura">Lista de Estudiantes</a>
+	  <a href="#" class="mostrarCalificacionesAsignatura">Calificaciones</a>
+	  <a href="#">Últimas Novedades</a>
+	  <a href="#" id="openModalPhone">Próximos eventos</a>
+	  <a href="#" class="mostrarForoAsignatura">Foro del curso</a>
 	  <hr>
 	  <a href="#">Programa de Grado</a>
 	  <a href="#">Ayuda</a>
@@ -43,7 +46,7 @@
 				<li class="col-4">
 					<div class="user-session col-12">
 							<div id="user-session-name" class="col-8"></div>
-							<div id="user-session-quit" class="col-4"><a href="index.html">Cerrar Sesión</a></div>
+							<div id="user-session-quit" class="col-4">Cerrar Sesión</div>
 					</div>
 				</li>
 				<!-- ====== CONTENIDO SOLO DISPONIBLE PARA VERSION MOVIL ====== -->
@@ -74,16 +77,16 @@
 			<div class="col-left column col-3">
 				<h1>INTERFACES DE USUARIO</h1>
 					<ul class="menu-left">
-						<li class="default-content" id="mostrarContenidoAsignatura">
+						<li class="default-content mostrarContenidoAsignatura">
 							CONTENIDO DE LA ASIGNATURA
 						</li>
-						<li class="student-list" id="mostrarEstudiantesAsignatura">
+						<li class="student-list mostrarEstudiantesAsignatura">
 							LISTA DE ESTUDIANTES
 						</li>
-						<li class="forum" id="mostrarForoAsignatura">
+						<li class="forum mostrarForoAsignatura">
 							FORO DE LA ASIGNATURA
 						</li>
-						<li class="grades" id="mostrarCalificacionesAsignatura">
+						<li class="grades mostrarCalificacionesAsignatura">
 							CALIFICACIONES
 						</li>
 					</ul>
@@ -96,7 +99,7 @@
 			-->
 			<div class="col-center column col-6 col-s-9 col-xs-12">
 				<!-- ====== CONTENIDO DE LA ASIGNATURA VIEW ====== -->
-				<section id="contenidoAsignatura">
+				<section class="contenidoAsignatura">
 					<h1 class="title-iframe col-12">CONTENIDO DE LA ASIGNATURA</h1>
 
 					<div class="contenedor-iframe background-iframe">
@@ -201,7 +204,7 @@
 					</div>
 				</section>
 				<!-- ====== LISTA DE ESTUDIANTES VIEW ====== -->
-				<section id="estudiantesAsignatura">
+				<section class="estudiantesAsignatura">
 					<h1 class="title-iframe col-12">LISTA DE ESTUDIANTES</h1>
 
 					<div class="contenedor-iframe background-iframe">
@@ -470,7 +473,7 @@
 				</section>
 
 				<!-- ====== CALIFICACIONES VIEW ====== -->
-				<section id="calificacionesAsignatura">
+				<section class="calificacionesAsignatura">
 					<div class="title-iframe">
 						<h1 class=" col-12">LISTA DE CALIFICACIONES</h1>
 						<div id="exportarExcel" class="col-2">
@@ -681,9 +684,11 @@
 				<h1>INFORMACIÓN DE LA ASIGNATURA</h1>
 				<ul class="menu-right">
 					<li class="col-12">
-						<div class="calendario">
-							<p><span>&nbsp;&nbsp;&nbsp;CALENDARIO&nbsp;&nbsp;&nbsp;</span></p>
-							<div id="calendarModal">
+						<div class="proximos-eventos">
+							<p><span>&nbsp;&nbsp;&nbsp;PROXIMOS EVENTOS&nbsp;&nbsp;&nbsp;</span></p>
+							<div class="eventos-contenido col-10" id="openModal">
+								<i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;&nbsp;Ver próximos eventos
+							</div>
 						</div>
 					</li>
 					<li class="col-12">
@@ -707,25 +712,29 @@
 							</div>
 						</div>
 					</li>
-					<li class="col-12">
-						<div class="proximos-eventos">
-							<p><span>&nbsp;&nbsp;&nbsp;PROXIMOS EVENTOS&nbsp;&nbsp;&nbsp;</span></p>
-							<div>
-								Haz click <a href="#"><i>aquí</i></a> para ver los próximos eventos del calendario
-							</div>
-						</div>
-					</li>
 				</ul>
 			</div>
 		</div>
 	</section>
 
 	<!-- ====== MODAL CALENDAR ====== -->
-	<section id="modalCalendar">
-
+	<section id="calendar-modal-container">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<div id="calendarModal"></div>
+		</div>
 	</section>
 
-
+	<!-- ======= MODAL LOGOUT ====== -->
+	<section id="logout-modal">
+		<div class="modal-logout-content col-5">
+			<div class="col-12"><b>¿Estás segur@ de que deseas cerrar sesión?</b></div>
+			<div class="col-12 modal-logout-buttons">
+				<button id="aceptar-logout">Sí</button>
+				<button id="rechazar-logout">No</button>
+			</div>
+		</div>
+	</section>
 
 	<!-- ====== FOOTER ====== -->
 	<footer id="bottom" class="col-12">
@@ -751,36 +760,19 @@
 
 	<!-- ====== SCRIPTS JQUERY ====== -->
 	<script src="js/exportExcel.js"></script>
+	<script src="js/simple-calendar.js"></script>
 	<script>
-		$(document).ready(function(){
-			$("#calendarModal").simpleCalendar();
+		$("#user-session-quit").click(function(){
+			document.getElementById("logout-modal").style.display = "block";
 		});
-
-		$("#container").simpleCalendar({
-			//Defaults options below
-			//string of months starting from january
-			months: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
-			days: ['Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo'],
-			displayYear: true,              // Display year in header
-			fixedStartDay: true,            // Week begin always by monday or by day set by number 0 = sunday, 7 = saturday, false = month always begin by first day of the month
-			displayEvent: true,             // Display existing event
-			disableEventDetails: false, // disable showing event details
-			disableEmptyDetails: false, // disable showing empty date details
-			events: [
-				{
-					startDate: new Date(2020,10,05),
-					endDate: new Date(2020,10,05),
-					summary: "Entrega de la practica 2"
-				}
-			],                     // List of events
-			onInit: function (calendar) {}, // Callback after first initialization
-			onMonthChange: function (month, year) {}, // Callback on month change
-			onDateSelect: function (date, events) {}, // Callback on date selection
-			onEventSelect: function() { $(this).data('event')}, // Callback on event selection - use $(this).data('event') to access the event
-			onEventCreate: function( $el ) {},          // Callback fired when an HTML event is created - see $(this).data('event')
-			onDayCreate:   function( $el, d, m, y ) {}  // Callback fired when an HTML day is created   - see $(this).data('today'), .data('todayEvents')
-    	});
+		$("#aceptar-logout").click(function(){
+			setTimeout(function(){
+				window.location.replace("index.html");
+			},2000);
+		});
+		$("#rechazar-logout").click(function(){
+			document.getElementById("logout-modal").style.display = "none";
+		});
 	</script>
-
 </body>
 </html>

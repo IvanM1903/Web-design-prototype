@@ -85,14 +85,9 @@ a:hover{
 	text-align: center;
 }
 
-.background-iframe{
-	background-color: #f8f8f8;
-}
-iframe{
-	border: 0;
-}
+
 /***********************
-*** CONTENIDO IFRAME ***
+*** CONTENIDO PAGE ***
 ***********************/
 .tema-presentacion{
 	margin-top: 20px;
@@ -173,14 +168,14 @@ iframe{
 }
 
 /**************************
-** CALIFICACIONES IFRAME **
+** CALIFICACIONES PAGE **
 **************************/
 .nota{
 	text-align: center;
 }
 
 /***********************
-**** ALUMNOS IFRAME ****
+**** ALUMNOS PAGE ****
 ***********************/
 
 .alumnos{
@@ -210,7 +205,6 @@ iframe{
 	margin-right: 20px;
 	border-bottom: 1px solid #ccc;
 }
-
 #exportarExcel{
 	text-align: center;
 	height: 20px;
@@ -230,7 +224,7 @@ iframe{
 	color: #000;
 }
 /****************
-** FORO IFRAME **
+** FORO PAGE **
 ****************/
 
 .section-preguntas{
@@ -325,8 +319,75 @@ textarea{
 	padding: 0.3rem;
 	background-color:#d9d9d9;
 }
+/***********************
+**** MODAL CALENDAR ****
+***********************/
 
+#calendar-modal-container{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 200px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+.modal-content{
+	margin: auto;
+	background-color: rgb(255,255,255);
+	padding: 20px;
+	width: 30%;
+	border-radius: 4px;
+}
+.close{
+  	color: #aaaaaa;
+  	float: right;
+  	font-size: 28px;
+  	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  	color: #000;
+  	text-decoration: none;
+  	cursor: pointer;
+}
 
+/***********************
+**** MODAL LOGOUT ******
+***********************/
+#logout-modal{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 200px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+.modal-logout-content{
+	margin: auto;
+	background-color: rgb(255,255,255);
+	border: 3 px solid #000;
+	padding: 20px;
+	width: 30%;
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.modal-logout-buttons{
+	padding-top: 20px;
+}
+#user-session-quit:hover{
+	cursor: pointer;
+}
 
 /*****************
 **** CABECERA ****
@@ -509,49 +570,12 @@ textarea{
 .menu-right{
 	text-align: center;
 	list-style-type: none;
-	padding-top: 2rem;
+	padding-top: 1rem;
 }
 .menu-right li{
 	border-bottom: 1px solid #ccc;
 }
-.calendario{
-	box-sizing: border-box;
-}
-.table-calendario{
-	display: flex; /* Necesario para alinear la tabla*/
-	text-align: center;
-	justify-content: center;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-	border-spacing: 0.5rem;
-}
-.calendario span{
-	border-left: 2px solid #000099;
-	border-right: 2px solid #000099;
-	padding-top: 3px;
-	padding-bottom: 3px;
-	font-weight: bold;
-}
-.days-number td:hover{
-	background-color: rgba(100,100,100,0.3);
-	border-radius: 0.3rem;
-	cursor: pointer;
-}
-.weekend{
-	color: red;
-}
-.weekend-other-month{
-	color: rgba(255,000,000,0.5);
-}
-.weekday-other-month{
-	color: rgba(0,0,0,0.5);
-}
-.fecha-entrega{
-	background-color: #228b22;
-	color: white;
-	padding: 0.2rem;
-	border-radius: 0.3rem;
-}
+
 .tutoria{
 	padding-top: 20px;
 	padding-left: 1rem;
@@ -599,7 +623,27 @@ textarea{
 	font-weight: bold;
 }
 .proximos-eventos div{
-	padding-top: 1rem;
+	margin-top: 1rem;
+}
+.eventos-contenido{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: 20%;
+	margin-right: 20%;
+
+}
+.eventos-contenido:hover{
+	background-color: #e0e0e0;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.eventos-contenido:active{
+	background-color: #c7c7c7;
+}
+.eventos-contenido i{
+	background-color: rgba(113, 97, 255, 0.274);
+	padding:5px;
+	border-radius: 5px;
 }
 
 /************************
@@ -620,8 +664,7 @@ textarea{
 	font: 15px/1em inherit;
 	color: #545A5C;
 	padding-top: 20px;
-	padding-left: 10px;
-	padding-left: 10px;
+	width: 100%;
 }
 .calendar a {
 	text-decoration: none;
@@ -668,12 +711,12 @@ textarea{
 }
 .calendar header .month {
 	padding: 0;
+	border-bottom: 1px solid #ccc;
 	margin: 0;
-	padding-top: 15px;
-	font-size: 1em;
+	font-size: 1.5em;
 }
 .calendar header .month .year {	
-	font-size: 1em;
+	font-size: 1.2em;
 	font-weight: 100;
 }
 .calendar table {
@@ -741,8 +784,8 @@ textarea{
 	background: #545A5C;
 	box-sizing: border-box;
 }
-	.calendar .event-container .event-wrapper {
-	overflow-y: auto;
+.calendar .event-container .event-wrapper {
+	overflow-y: hidden;
 	max-height: 100%;
 }
 	.calendar .event-container .close {
@@ -777,7 +820,7 @@ textarea{
 	border-radius: 4px;
 	box-sizing: border-box;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
-	text-align: left;
+	text-align: center;
 	color: white;
 }
 .calendar .event-container .event-date {
@@ -876,12 +919,6 @@ footer{
 	/*RIGHT COLUMN*/
 	.col-right h2{
 		font-size: 19px;
-	}
-	.table-calendario{
-		margin-left: 1rem;
-	}
-	.calendario b{
-		font-size: 14px;
 	}
 	.days{
 		font-size: 14px;
@@ -1057,7 +1094,7 @@ footer{
 	  height: 100%;
 	  width: 0;
 	  position: fixed;
-	  z-index: 1;
+	  z-index: 6;
 	  top: 0;
 	  left: 0;
 	  background-color: rgba(2,2,87, 0.9);
@@ -1070,13 +1107,12 @@ footer{
 	  padding: 8px 8px 8px 32px;
 	  text-decoration: none;
 	  font-size: 25px;
-	  color: #FFF;
+	  color: #FFF !important;
 	  display: block;
 	  transition: 0.3s;
 	}
-
-	.side-menu a:hover {
-	  color: #f1f1f1;
+	.side-menu a:active {
+	  color: #000099 !important;
 	}
 
 	.side-menu .closebtn {

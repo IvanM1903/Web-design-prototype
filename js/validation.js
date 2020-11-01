@@ -148,6 +148,7 @@ function registrarUsuario(){
 	}
 }
 
+// ====== LOGIN USER METHODS ====== //
 
 function loginUsuario(){
 	var cookieEMail = getCookie("email");
@@ -178,10 +179,10 @@ function getCookie(cname) {
 	}
 	return "";
   }
-
-
-  function writeNameFromCookie(){
+function writeNameFromCookie(){
 	  var name = "";
 	  name = getCookie("nameSurname");
 	  document.getElementById("user-session-name").innerHTML = "<img src='images/user.png' alt='User Image'></img>"+name;
-  }
+}
+
+
