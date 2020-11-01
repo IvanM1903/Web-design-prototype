@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="js/sidebarmenu.js"></script>
 	<script type="text/javascript" src="js/showContentCenterColumn.js"></script>
 	<!-- calendar scripts-->
-
+	<script type="text/javascript" src="js/jquery.simple-calendar.js"></script>
 	<!-- export excel scripts -->
 	<script type="text/javascript" src="js/jquery.table2excel.js"></script>
 </head>
@@ -684,65 +684,6 @@
 						<div class="calendario">
 							<p><span>&nbsp;&nbsp;&nbsp;CALENDARIO&nbsp;&nbsp;&nbsp;</span></p>
 							<div id="calendarModal">
-								<table class="table-calendario">
-									<tr>
-										<th colspan='7'>Octubre 2020</th>
-									</tr>
-									<tr class="days">
-										<td>L</td>
-										<td>M</td>
-										<td>X</td>
-										<td>J</td>
-										<td>V</td>
-										<td class="weekend">S</td>
-										<td class="weekend">D</td>
-									</tr>
-									<tr class="days-number">
-										<td class="weekday-other-month">28</td>
-										<td class="weekday-other-month">29</td>
-										<td class="weekday-other-month">30</td>
-										<td>01</td>
-										<td>02</td>
-										<td class="weekend">03</td>
-										<td class="weekend">04</td>
-									</tr>
-									<tr class="days-number">
-										<td>05</td>
-										<td>06</td>
-										<td class="fecha-entrega">07</td>
-										<td>08</td>
-										<td>09</td>
-										<td class="weekend">10</td>
-										<td class="weekend">11</td>
-									</tr>
-									<tr class="days-number">
-										<td>12</td>
-										<td>13</td>
-										<td>14</td>
-										<td>15</td>
-										<td>16</td>
-										<td class="weekend">17</td>
-										<td class="weekend">18</td>
-									</tr>
-									<tr class="days-number">
-										<td>19</td>
-										<td>20</td>
-										<td>21</td>
-										<td>22</td>
-										<td>23</td>
-										<td class="weekend">24</td>
-										<td class="weekend">25</td>
-									</tr>
-									<tr class="days-number">
-										<td>26</td>
-										<td>27</td>
-										<td>28</td>
-										<td>29</td>
-										<td>30</td>
-										<td class="weekend">31</td>
-										<td class="weekend-other-month">01</td>
-									</tr>
-								</table>
 						</div>
 					</li>
 					<li class="col-12">
@@ -781,7 +722,7 @@
 
 	<!-- ====== MODAL CALENDAR ====== -->
 	<section id="modalCalendar">
-		
+
 	</section>
 
 
@@ -808,19 +749,38 @@
 		</div>
 	</footer>
 
+	<!-- ====== SCRIPTS JQUERY ====== -->
+	<script src="js/exportExcel.js"></script>
 	<script>
-		$("#exportarExcel").click(function(){
-			$("#table2excel").table2excel({
-				// exclude CSS class
-				exclude: ".noExl",
-				name: "Worksheet Name",
-				filename: "SomeFile", //do not include extension
-				fileext: ".xls" // file extension
-			});
+		$(document).ready(function(){
+			$("#calendarModal").simpleCalendar();
 		});
+
+		$("#container").simpleCalendar({
+			//Defaults options below
+			//string of months starting from january
+			months: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+			days: ['Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo'],
+			displayYear: true,              // Display year in header
+			fixedStartDay: true,            // Week begin always by monday or by day set by number 0 = sunday, 7 = saturday, false = month always begin by first day of the month
+			displayEvent: true,             // Display existing event
+			disableEventDetails: false, // disable showing event details
+			disableEmptyDetails: false, // disable showing empty date details
+			events: [
+				{
+					startDate: new Date(2020,10,05),
+					endDate: new Date(2020,10,05),
+					summary: "Entrega de la practica 2"
+				}
+			],                     // List of events
+			onInit: function (calendar) {}, // Callback after first initialization
+			onMonthChange: function (month, year) {}, // Callback on month change
+			onDateSelect: function (date, events) {}, // Callback on date selection
+			onEventSelect: function() { $(this).data('event')}, // Callback on event selection - use $(this).data('event') to access the event
+			onEventCreate: function( $el ) {},          // Callback fired when an HTML event is created - see $(this).data('event')
+			onDayCreate:   function( $el, d, m, y ) {}  // Callback fired when an HTML day is created   - see $(this).data('today'), .data('todayEvents')
+    	});
 	</script>
-
-
 
 </body>
 </html>
