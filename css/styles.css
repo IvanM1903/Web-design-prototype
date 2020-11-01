@@ -196,6 +196,13 @@ iframe{
 .title-iframe{
 	background-color:rgba(240,240,240);
 	color: black;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.title-iframe h1{
+	border-bottom: 1px solid #ccc;
 }
 .studentsTitle{
 	text-align: center;
@@ -203,15 +210,24 @@ iframe{
 	margin-right: 20px;
 	border-bottom: 1px solid #ccc;
 }
-.downloadGrades{
-	padding-top: 5px;
-	width: 6%;
-}
+
 #exportarExcel{
+	text-align: center;
+	height: 20px;
 	font-size: 12px;
 	background-color: #555555;
 	border-radius: 4px;
 	transition-duration: 0.4s;
+	color: #ccc;
+	margin-top: 10px;
+	padding: 5px;
+}
+#exportarExcel:hover{
+	cursor: pointer;
+}
+#exportarExcel:active{
+	background-color:rgb(240,240,240);
+	color: #000;
 }
 /****************
 ** FORO IFRAME **
