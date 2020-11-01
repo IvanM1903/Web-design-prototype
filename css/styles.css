@@ -188,6 +188,21 @@ a:hover{
 .alumnos img{
 	border-radius: 10rem;
 }
+.mail-icon{
+	text-align: center;
+}
+.mail-icon a{
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 0px 4px 0px 4px;
+}
+.mail-icon a:hover {
+	color: #000000;
+}
+.mail-icon :hover{
+	background-color: #e0e0e0;
+	cursor:pointer;
+}
 .title-iframe{
 	background-color:rgba(240,240,240);
 	color: black;
