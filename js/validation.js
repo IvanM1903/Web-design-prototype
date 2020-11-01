@@ -183,5 +183,5 @@ function getCookie(cname) {
   function writeNameFromCookie(){
 	  var name = "";
 	  name = getCookie("nameSurname");
-	  document.getElementById("user-session-name").innerHTML = name;
+	  document.getElementById("user-session-name").innerHTML = "<img src='images/user.png' alt='User Image'></img>"+name;
   }

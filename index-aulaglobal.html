@@ -4,14 +4,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/styles.css">
-	<title>Práctica 1 - Interfaces de Usuario</title>
-
+	<title>Interfaces de Usuario</title>
+	<link rel="icon" href="images/uc3m-logo-svg.png" type="image/png">
 	<!-- ====== SCRIPT JS ====== -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/validation.js"></script>
+	<script type="text/javascript" src="js/sidebarmenu.js"></script>
+	<script type="text/javascript" src="js/showContentCenterColumn.js"></script>
+	<!-- calendar scripts-->
+
+	<!-- export excel scripts -->
+	<script type="text/javascript" src="js/jquery.table2excel.js"></script>
 </head>
 <body onload="writeNameFromCookie()">
 
-	<!-- MENU OVERLAY MOBILE-->
+	<!-- ====== MENU OVERLAY MOBILE ====== -->
 	<div id="SideMenuId" class="side-menu">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	  <a href="#">Contenido de la asignatura</a>
@@ -23,9 +30,9 @@
 	  <a href="#">Ayuda</a>
 	</div>
 
-	<!-- CABECERA -->
-
+	<!-- ====== CABECERA ====== -->
 		<section class="cabecera col-12">
+			<!-- ====== NAV SUPERIOR ====== -->
 			<ul class="nav" id="top">
 				<li class="col-2 col-s-3">
 					<img src="images/logoxikito.png" alt="Logo de la página principal" class="col-9 logo-header">
@@ -39,12 +46,12 @@
 							<div id="user-session-quit" class="col-4"><a href="index.html">Cerrar Sesión</a></div>
 					</div>
 				</li>
-
-				<!-- CONTENIDO SOLO DISPONIBLE EN VERSIÓN MÓVIL -->
+				<!-- ====== CONTENIDO SOLO DISPONIBLE PARA VERSION MOVIL ====== -->
 				<li class="nav-item nav-icon col-s-1">
 						<span onclick="openNav()">&#9776;</span>
 				</li>
 			</ul>
+			<!--====== NAV INFERIOR ====== -->
 			<div class="col-12">
 				<ul class="links-nav">
 					<li class="col-2">
@@ -60,136 +67,732 @@
 			</div>
 		</section>
 
-	<!-- ====== BODY ====== -->
-
+	<!-- ====== CUERPO O FILA CENTRAL ====== -->
 	<section class="cuerpo">
 		<div class="main-row col-12">
+			<!--====== COLUMNA DE LA IZQUIERDA ====== -->
 			<div class="col-left column col-3">
 				<h1>INTERFACES DE USUARIO</h1>
 					<ul class="menu-left">
-						<li class="default-content">
-							<a href="iframes/contenido.html" target="iframe">Contenido de la asignatura</a>
+						<li class="default-content" id="mostrarContenidoAsignatura">
+							CONTENIDO DE LA ASIGNATURA
 						</li>
-						<li class="student-list">
-							<a href="iframes/estudiantes.html" target="iframe">Lista de Estudiantes</a>
+						<li class="student-list" id="mostrarEstudiantesAsignatura">
+							LISTA DE ESTUDIANTES
 						</li>
-						<li class="forum">
-							<a href="iframes/foro.html" target="iframe">Foro de la Asignatura</a>
+						<li class="forum" id="mostrarForoAsignatura">
+							FORO DE LA ASIGNATURA
 						</li>
-						<li class="grades">
-							<a href="iframes/calificaciones.html" target="iframe">Calificaciones</a>
+						<li class="grades" id="mostrarCalificacionesAsignatura">
+							CALIFICACIONES
 						</li>
 					</ul>
 			</div>
+			<!-- ====== COLUMNA CENTRAL ====== -->
+			<!--
+				<div class="col-center column col-6 col-s-9 col-xs-12">
+				<iframe src="iframes/contenido.html" name="iframe" height="750"></iframe>
+			</div>
+			-->
+			<div class="col-center column col-6 col-s-9 col-xs-12">
+				<!-- ====== CONTENIDO DE LA ASIGNATURA VIEW ====== -->
+				<section id="contenidoAsignatura">
+					<h1 class="title-iframe col-12">CONTENIDO DE LA ASIGNATURA</h1>
 
+					<div class="contenedor-iframe background-iframe">
+						<div class="tema-asignatura">
+							<div class="tema-presentacion html-5">
+								<h2 class="tema-titulo">TEMA 1: HTML</h2>
+								<div class="tema-intro">
+									<div class="tema-img col-2">
+										<img src="../images/HTML5_logo.png" class="col-8" alt="Logo de HTML5.">
+									</div>
+									<p class="tema-intro-txt col-10">HTML es un lenguaje de marcado que nos permite indicar la estructura de nuestro documento mediante etiquetas. Los elementos son la estructura básica de HTML. Los elementos tienen dos propiedades básicas: atributos y contenido. Los atributos del elemento están contenidos en la etiqueta de inicio y el contenido está ubicado entre las dos etiquetas.</p>
+								</div>
+							</div>
+							<div class="tema-capitulo">
+								<div class="tema-capitulo-txt col-5 col-s-12">
+									<h3 class="tema-capitulo-titulo">Introducción a HTML:</h3>
+									<p class="tema-capitulo-desc">En este vídeo de presentación vemos los contenidos que se impartirán durante el curso.</p>
+								</div>
+								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/QC9_8nRNNHA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+							<div class="tema-capitulo">
+								<div class="tema-capitulo-txt col-5 col-s-12">
+									<h3 class="tema-capitulo-titulo">Conceptos Básicos:</h3>
+									<p class="tema-capitulo-desc">Comenzamos a ver algunos de los conceptos básicos de HTML 5. En qué consiste exactamente esta tecnología o estándar.</p>
+								</div>
+								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/CdfMG_Qy00E" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+							<div class="tema-capitulo">
+								<div class="tema-capitulo-txt col-5 col-s-12">
+									<h3 class="tema-capitulo-titulo">Estructuras:</h3>
+									<p class="tema-capitulo-desc">En este vídeo vemos los principios estructurales a tener en cuenta a la hora de diseñar nuestra página web.</p>
+								</div>
+								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/Wjgv2GJUe2I" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+						</div>
+						<br>
+						<div class="tema-asignatura">
+							<div class="tema-presentacion css-3">
+								<h2 class="tema-titulo">TEMA 2: CSS</h2>
+								<div class="tema-intro">
+									<div class="tema-img col-2">
+										<img src="../images/CSS3_logo.png" width=120 alt="logo de CSS" class="col-8">
+									</div>
+									<div class="tema-intro-txt col-10"><p>CSS es un lenguaje de diseño gráfico para definir y crear la presentación de un documento estructurado escrito en un lenguaje de marcado.Es muy usado para establecer el diseño visual de los documentos web, e interfaces de usuario escritas en HTML.</p></div>
+								</div>
+							</div>
+							<div class="tema-capitulo">
+								<div class="tema-capitulo-txt col-5 col-s-12">
+									<h3 class="tema-capitulo-titulo">CSS - Introducción</h3>
+									<p class="tema-capitulo-desc">Nos introducimos en este vídeo en CSS. Vemos dónde puede ir el código CSS, tipos de selectores y el modelo de caja-contenedor.</p>
+								</div>
+								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/1LTzUf327cQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+							<div class="tema-capitulo">
+								<div class="tema-capitulo-txt col-5 col-s-12">
+									<h3 class="tema-capitulo-titulo">CSS - Modelo caja contenedor</h3>
+									<p class="tema-capitulo-desc">En este vídeo tratamos el modelo caja contenedor de CSS, así como las propiedades CSS float, margin y padding.</p>
+								</div>
+								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/4JoRVs-I8Uk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+							<div class="tema-capitulo">
+								<div class="tema-capitulo-txt col-5 col-s-12">
+									<h3 class="tema-capitulo-titulo">CSS - Clases y subclases</h3>
+									<p class="tema-capitulo-desc">En este vídeo vemos los selectores de clase y subclase, así como reglas que permiten redondear esquinas y agregar sombras a contenedores y texto.</p>
+								</div>
+								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/qFRmgfS1qpA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+						</div>
+						<br>
+						<div class="tema-asignatura">
+							<div class="tema-presentacion js">
+								<h2 class="tema-titulo">TEMA 3: JavaScript</h2>
+								<div class="tema-intro">
+									<div  class="tema-img col-2">
+										<img src="../images/JS_logo.png" alt="logo (no real) de javascript" class="col-7">
+									</div>
+									<div class="tema-intro-txt col-10"><p>JavaScript (abreviado comúnmente JS) es un lenguaje de programación interpretado. Se utiliza principalmente del lado del cliente, implementado como parte de un navegador web permitiendo mejoras en la interfaz de usuario y páginas web dinámicas.</p></div>
+								</div>
+							</div>
+							<div class="tema-capitulo">
+								<div class="tema-capitulo-txt col-5 col-s-12">
+									<h3 class="tema-capitulo-titulo">JS - Introducción</h3>
+									<p class="tema-capitulo-desc">En este vídeo nos introducimos en JavaScript. Vemos dónde puede ir situado el código JavaScript dentro de un documento HTML y cómo crear un documento JavaScript externo.</p>
+								</div>
+								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/XxiFkKr685g" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+							<div class="tema-capitulo">
+								<div class="tema-capitulo-txt col-5 col-s-12">
+									<h3 class="tema-capitulo-titulo">JS - Identificación de elementos:</h3>
+									<p class="tema-capitulo-desc">Vemos en este vídeo cómo identificar elementos de HTML desde código JavaScript.</p>
+								</div>
+								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/oOajUMZ-yjg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+							<div class="tema-capitulo">
+								<div class="tema-capitulo-txt col-5 col-s-12">
+									<h3 class="tema-capitulo-titulo">JS - Eventos</h3>
+									<p class="tema-capitulo-desc">En este vídeo vemos los eventos de JavaScript, los cuales permiten la interacción entre las aplicaciones JavaScript y los usuarios.</p>
+								</div>
+								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/SxN4NwDCUcc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- ====== LISTA DE ESTUDIANTES VIEW ====== -->
+				<section id="estudiantesAsignatura">
+					<h1 class="title-iframe col-12">LISTA DE ESTUDIANTES</h1>
 
-		<div class="col-center column col-6 col-s-9 col-xs-12">
-			<iframe src="iframes/contenido.html" name="iframe" height="750"></iframe>
-		</div>
-
-
-		<div class="col-right column col-3 col-s-12">
-			<h1>INFORMACIÓN DE LA ASIGNATURA</h1>
-			<ul class="menu-right">
-				<li>
-					<div class="calendario">
-						<p><span>&nbsp;&nbsp;&nbsp;CALENDARIO&nbsp;&nbsp;&nbsp;</span></p>
-						<table class="table-calendario">
+					<div class="contenedor-iframe background-iframe">
+						<table class="alumnos">
 							<tr>
-								<th colspan='7'>Octubre 2020</th>
+								<th></th>
+								<th>Nombre / Apellidos</th>
+								<th>Roles</th>
 							</tr>
-							<tr class="days">
-								<td>L</td>
-								<td>M</td>
-								<td>X</td>
-								<td>J</td>
-								<td>V</td>
-								<td class="weekend">S</td>
-								<td class="weekend">D</td>
+							<tr>
+								<td><img src="../images/random-faces/face1.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Irati Robles</td>
+								<td>Profesor</td>
 							</tr>
-							<tr class="days-number">
-								<td class="weekday-other-month">28</td>
-								<td class="weekday-other-month">29</td>
-								<td class="weekday-other-month">30</td>
-								<td>01</td>
-								<td>02</td>
-								<td class="weekend">03</td>
-								<td class="weekend">04</td>
+							<tr>
+								<td><img src="../images/random-faces/face0.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Iker Piqueras</td>
+								<td>Profesor</td>
 							</tr>
-							<tr class="days-number">
-								<td>05</td>
-								<td>06</td>
-								<td class="fecha-entrega">07</td>
-								<td>08</td>
-								<td>09</td>
-								<td class="weekend">10</td>
-								<td class="weekend">11</td>
+							<tr>
+								<td><img src="../images/random-faces/face2.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Nadia Lara</td>
+								<td>Estudiante</td>
 							</tr>
-							<tr class="days-number">
-								<td>12</td>
-								<td>13</td>
-								<td>14</td>
-								<td>15</td>
-								<td>16</td>
-								<td class="weekend">17</td>
-								<td class="weekend">18</td>
+							<tr>
+								<td><img src="../images/random-faces/face3.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Marcelo Bosch</td>
+								<td>Estudiante</td>
 							</tr>
-							<tr class="days-number">
-								<td>19</td>
-								<td>20</td>
-								<td>21</td>
-								<td>22</td>
-								<td>23</td>
-								<td class="weekend">24</td>
-								<td class="weekend">25</td>
+							<tr>
+								<td><img src="../images/random-faces/face4.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Khalid Vicente</td>
+								<td>Estudiante</td>
 							</tr>
-							<tr class="days-number">
-								<td>26</td>
-								<td>27</td>
-								<td>28</td>
-								<td>29</td>
-								<td>30</td>
-								<td class="weekend">31</td>
-								<td class="weekend-other-month">01</td>
+							<tr>
+								<td><img src="../images/random-faces/face5.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Flora Viera</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face6.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Daniel de Castro</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face7.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Urbano Moreno</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face8.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Rafa Melgar</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face9.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Mia Cerdan</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face10.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Igor Montiel</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face11.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Chloe Noguera</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face12.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Augusto Hernandez</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face13.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Saioa Jordan</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face14.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Baldomero Marti</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face15.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Maria-Luisa Losada</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face16.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Anas Pachecho</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face17.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Ursula Olmos</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face18.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Nayara Gamero</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face19.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Ioana Herranz</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face20.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Erika Revilla</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face21.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Mireia Carretero</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face22.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Idoia Ahmed</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face23.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Maria-Jose Jurado</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face24.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Mercedes Mari</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face25.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Gladys Mendez</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face26.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Emiliano Piñero</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face27.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Sonia Molero</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face28.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Diego Arevalo</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face29.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Samir Plasencia</td>
+								<td>Estudiante</td>
+							</tr>
+							<tr>
+								<td><img src="../images/random-faces/face30.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Felisa Salmeron</td>
+								<td>Estudiante</td>
 							</tr>
 						</table>
 					</div>
-				</li>
-				<li>
-					<div class="tutoria">
-						<p><span>&nbsp;&nbsp;&nbsp;TUTORÍA&nbsp;&nbsp;&nbsp;</span></p>
-							<div class="tutoria-name">
-								<h5>IVÁN MARTÍN PRIETO</h5><br>
-								<p>Pendiente de introducir tutorías</p>
+				</section>
+
+				<!-- ====== FORO DE LA ASIGNATURA ====== -->
+				<section class="foroAsignatura">
+					<h1 class="title-iframe col-12">FORO DE LA ASIGNATURA</h1>
+					<div class="section-preguntas">
+						<div class="foro-tema">
+							<div class="tema-color col-1">
+								<p>02&nbsp;-&nbsp;10&nbsp;-&nbsp;20</p>
 							</div>
-							<div class="tutoria-name">
-								<h5>CESAR MARTÍNEZ LARA</h5><br>
-								<p>Pendiente de introducir tutorías</p>
+							<div class="tema-contenido col-9">
+									<h3 class="contenido-titulo col-12">"Duda en la creación de un documento HTML"</h3>
+								<p class="contenido-desc col-12">
+									Buenos días, me surgió una duda sobre las etiquetas necesarias que hacen falta en el "<i>head</i>" del documento.
+								</p>
 							</div>
-					</div>
-				</li>
-				<li>
-					<div class="actividad-reciente">
-						<p><span>&nbsp;&nbsp;&nbsp;ACTIVIDAD RECIENTE&nbsp;&nbsp;&nbsp;</span></p>
-						<div>
-							Sin actividad reciente en esta asignatura desde el día 07 de Octubre.
+							<div class="tema-respuestas col-2">
+								<div class="respuestas-img col-12">
+									<img src="../images/respuestas.png" alt="Respuesta del foro">
+								</div>
+								<div class="respuestas-cantidad col-12">
+									<span>10</span>
+								</div>
+							</div>
+						</div>
+						<div class="foro-tema">
+							<div class="tema-color col-1">
+								<p>06&nbsp;-&nbsp;10&nbsp;-&nbsp;20</p>
+							</div>
+							<div class="tema-contenido col-9">
+									<h3 class="contenido-titulo col-12">"Duda sobre el examen parcial"</h3>
+								<p class="contenido-desc col-12">
+									Me preguntaba si alguno de vosotros sería capaz de resolverme un ejercicio de un exámen parcial del año 2016. Gracias.
+								</p>
+							</div>
+							<div class="tema-respuestas col-2">
+								<div class="respuestas-img col-12">
+									<img src="../images/respuestas.png" alt="Respuesta del foro">
+								</div>
+								<div class="respuestas-cantidad col-12">
+									<span>11</span>
+								</div>
+							</div>
+						</div>
+						<div class="foro-tema">
+							<div class="tema-color col-1">
+								<p>28&nbsp;-&nbsp;09&nbsp;-&nbsp;20</p>
+							</div>
+							<div class="tema-contenido col-9">
+									<h3 class="contenido-titulo col-12">"Problema con selectores en CSS"</h3>
+								<p class="contenido-desc col-12">
+									Buenas tardes, no consigo hacer funcionar los selectores en CSS. ¿Alguien podría explicármelo?
+								</p>
+							</div>
+							<div class="tema-respuestas col-2">
+								<div class="respuestas-img col-12">
+									<img src="../images/respuestas.png" alt="Respuesta del foro">
+								</div>
+								<div class="respuestas-cantidad col-12">
+									<span><i>02</i></span>
+								</div>
+							</div>
+						</div>
+						<div class="foro-tema">
+							<div class="tema-color col-1">
+								<p>20&nbsp;-&nbsp;09&nbsp;-&nbsp;20</p>
+							</div>
+							<div class="tema-contenido col-9">
+									<h3 class="contenido-titulo col-12">"Error al generar hacer funcionar el script"</h3>
+								<p class="contenido-desc col-12">
+									"No comprendo cómo incluir scripts de terceros dentro de mi código HTML. En la cabecera no me funcionan. ¿Alguna sugerencia?"
+								</p>
+							</div>
+							<div class="tema-respuestas col-2">
+								<div class="respuestas-img col-12">
+									<img src="../images/respuestas.png" alt="Respuesta del foro">
+								</div>
+								<div class="respuestas-cantidad col-12">
+									<span>23</span>
+								</div>
+							</div>
 						</div>
 					</div>
-				</li>
-			</ul>
-		</div>
+					<form>
+						<fieldset class="fieldset">
+							<legend>&nbsp;&nbsp;Cuestionario - Nueva pregunta&nbsp;&nbsp;</legend>
+
+							<input type="text" name="fname" placeholder="Nombre *">
+							<br><br>
+
+							<input type="text" name="sname" placeholder="Apellidos *">
+							<br><br>
+							<label for="text-area">Redacta la pregunta</label><br><br>
+							<input type="text" name="sname" placeholder="Tema Principal *"><br><br>
+							<textarea id="text-area" rows="20" cols="50"></textarea>
+							<br><br>
+							<button type="button">Enviar</button>
+						</fieldset>
+					</form>
+				</section>
+
+				<!-- ====== CALIFICACIONES VIEW ====== -->
+				<section id="calificacionesAsignatura">
+					<div class="title-iframe">
+						<h1 class=" col-12">LISTA DE CALIFICACIONES</h1>
+					<button id="exportarExcel">
+						Descargar
+					</button>
+					</div>
+					<div class="contenedor-iframe background-iframe">
+						<table class="alumnos" id="table2excel">
+							<tr>
+								<th class="noExl"></th>
+								<th>Nombre / Apellidos</th>
+								<th>Roles</th>
+								<th>Ejercicio 1</th>
+								<th>Ejercicio 2</th>
+								<th>Ejercicio 3</th>
+								<th>Nota Final</th>
+							</tr>
+							<tr class="noExl">
+								<td><img src="../images/random-faces/face1.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Irati Robles</td>
+								<td colspan="2">Profesor</td>
+							</tr>
+							<tr class="noExl">
+								<td><img src="../images/random-faces/face0.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Iker Piqueras</td>
+								<td colspan="2">Profesor</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face2.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Nadia Lara</td>
+								<td>Estudiante</td>
+								<td class="nota">7.65</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face3.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Marcelo Bosch</td>
+								<td>Estudiante</td>
+								<td class="nota">3.58</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face4.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Khalid Vicente</td>
+								<td>Estudiante</td>
+								<td class="nota">9.24</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face5.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Flora Viera</td>
+								<td>Estudiante</td>
+								<td class="nota">7.87</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face6.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Daniel de Castro</td>
+								<td>Estudiante</td>
+								<td class="nota">9.82</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face7.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Urbano Moreno</td>
+								<td>Estudiante</td>
+								<td class="nota">4.53</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face8.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Rafa Melgar</td>
+								<td>Estudiante</td>
+								<td class="nota">7.84</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face9.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Mia Cerdan</td>
+								<td>Estudiante</td>
+								<td class="nota">9.58</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face10.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Igor Montiel</td>
+								<td>Estudiante</td>
+								<td class="nota">9.17</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face11.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Chloe Noguera</td>
+								<td>Estudiante</td>
+								<td class="nota">7.33</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face12.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Augusto Hernandez</td>
+								<td>Estudiante</td>
+								<td class="nota">8.26</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face13.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Saioa Jordan</td>
+								<td>Estudiante</td>
+								<td class="nota">7.66</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face14.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Baldomero Marti</td>
+								<td>Estudiante</td>
+								<td class="nota">3.91</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face15.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Maria-Luisa Losada</td>
+								<td>Estudiante</td>
+								<td class="nota">4.11</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face16.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Anas Pachecho</td>
+								<td>Estudiante</td>
+								<td class="nota">4.33</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face17.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Ursula Olmos</td>
+								<td>Estudiante</td>
+								<td class="nota">5.06</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face18.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Nayara Gamero</td>
+								<td>Estudiante</td>
+								<td class="nota">6.44</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face19.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Ioana Herranz</td>
+								<td>Estudiante</td>
+								<td class="nota">7.51</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face20.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Erika Revilla</td>
+								<td>Estudiante</td>
+								<td class="nota">7.63</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face21.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Mireia Carretero</td>
+								<td>Estudiante</td>
+								<td class="nota">9.51</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face22.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Idoia Ahmed</td>
+								<td>Estudiante</td>
+								<td class="nota">6.90</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face23.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Maria-Jose Jurado</td>
+								<td>Estudiante</td>
+								<td class="nota">5.66</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face24.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Mercedes Mari</td>
+								<td>Estudiante</td>
+								<td class="nota">9.69</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face25.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Gladys Mendez</td>
+								<td>Estudiante</td>
+								<td class="nota">5.74</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face26.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Emiliano Piñero</td>
+								<td>Estudiante</td>
+								<td class="nota">4.90</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face27.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Sonia Molero</td>
+								<td>Estudiante</td>
+								<td class="nota">7.26</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face28.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Diego Arevalo</td>
+								<td>Estudiante</td>
+								<td class="nota">8.87</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face29.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Samir Plasencia</td>
+								<td>Estudiante</td>
+								<td class="nota">3.70</td>
+							</tr>
+							<tr>
+								<td class="noExl"><img src="../images/random-faces/face30.jpg" width="30" alt="cara aleatoria"></td>
+								<td>Felisa Salmeron</td>
+								<td>Estudiante</td>
+								<td class="nota">1.78</td>
+							</tr>
+						</table>
+					</div>
+				</section>
+			</div>
+			<!-- ====== COLUMNA DE LA DERECHA ====== -->
+			<div class="col-right column col-3 col-s-12">
+				<h1>INFORMACIÓN DE LA ASIGNATURA</h1>
+				<ul class="menu-right">
+					<li class="col-12">
+						<div class="calendario">
+							<p><span>&nbsp;&nbsp;&nbsp;CALENDARIO&nbsp;&nbsp;&nbsp;</span></p>
+							<div id="calendarModal">
+								<table class="table-calendario">
+									<tr>
+										<th colspan='7'>Octubre 2020</th>
+									</tr>
+									<tr class="days">
+										<td>L</td>
+										<td>M</td>
+										<td>X</td>
+										<td>J</td>
+										<td>V</td>
+										<td class="weekend">S</td>
+										<td class="weekend">D</td>
+									</tr>
+									<tr class="days-number">
+										<td class="weekday-other-month">28</td>
+										<td class="weekday-other-month">29</td>
+										<td class="weekday-other-month">30</td>
+										<td>01</td>
+										<td>02</td>
+										<td class="weekend">03</td>
+										<td class="weekend">04</td>
+									</tr>
+									<tr class="days-number">
+										<td>05</td>
+										<td>06</td>
+										<td class="fecha-entrega">07</td>
+										<td>08</td>
+										<td>09</td>
+										<td class="weekend">10</td>
+										<td class="weekend">11</td>
+									</tr>
+									<tr class="days-number">
+										<td>12</td>
+										<td>13</td>
+										<td>14</td>
+										<td>15</td>
+										<td>16</td>
+										<td class="weekend">17</td>
+										<td class="weekend">18</td>
+									</tr>
+									<tr class="days-number">
+										<td>19</td>
+										<td>20</td>
+										<td>21</td>
+										<td>22</td>
+										<td>23</td>
+										<td class="weekend">24</td>
+										<td class="weekend">25</td>
+									</tr>
+									<tr class="days-number">
+										<td>26</td>
+										<td>27</td>
+										<td>28</td>
+										<td>29</td>
+										<td>30</td>
+										<td class="weekend">31</td>
+										<td class="weekend-other-month">01</td>
+									</tr>
+								</table>
+						</div>
+					</li>
+					<li class="col-12">
+						<div class="tutoria">
+							<p><span>&nbsp;&nbsp;&nbsp;TUTORÍA&nbsp;&nbsp;&nbsp;</span></p>
+								<div class="tutoria-name">
+									<h5>IVÁN MARTÍN PRIETO</h5><br>
+									<p>Pendiente de introducir tutorías</p>
+								</div>
+								<div class="tutoria-name">
+									<h5>CESAR MARTÍNEZ LARA</h5><br>
+									<p>Pendiente de introducir tutorías</p>
+								</div>
+						</div>
+					</li>
+					<li class="col-12">
+						<div class="actividad-reciente">
+							<p><span>&nbsp;&nbsp;&nbsp;ACTIVIDAD RECIENTE&nbsp;&nbsp;&nbsp;</span></p>
+							<div>
+								Sin actividad reciente en esta asignatura desde el día 07 de Octubre.
+							</div>
+						</div>
+					</li>
+					<li class="col-12">
+						<div class="proximos-eventos">
+							<p><span>&nbsp;&nbsp;&nbsp;PROXIMOS EVENTOS&nbsp;&nbsp;&nbsp;</span></p>
+							<div>
+								Haz click <a href="#"><i>aquí</i></a> para ver los próximos eventos del calendario
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</section>
 
-	<!-- FOOTER --> 
+	<!-- ====== MODAL CALENDAR ====== -->
+	<section id="modalCalendar">
+		
+	</section>
 
+
+
+	<!-- ====== FOOTER ====== -->
 	<footer id="bottom" class="col-12">
 		<div class="footer-row">
 			<div class="uc3m-resources footer-column col-3 col-s-12">
 				<b>ACCEDE A LOS CURSOS OCW DEL GRADO</b><br>
 				<a href="http://ocw.uc3m.es/grado-en-ingenieria-informatica?b_start:int=0" target="_blank">Cursos OCW</a>
 			</div>
-
 			<div class="copyright footer-column col-3 col-s-12">
 				<p>
 					<a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Licencia de Creative Commons" src="https://i.creativecommons.org/l/by-nd/4.0/88x31.png" class="creative-commons"/></a>
@@ -197,7 +800,6 @@
 				<br>
 				<span>&#169;IVÁN MARTÍN PRIETO, CÉSAR MARTÍNEZ LARA. 2020</span>
 			</div>
-
 			<div class="privacy-pol footer-column col-3 col-s-12"> 
 				<a href="https://www.uc3m.es/inicio/informacion-legal/politica-privacidad" target="_blank"><b>POLÍTICA DE PRIVACIDAD</b></a>
 				<br>
@@ -206,8 +808,19 @@
 		</div>
 	</footer>
 
+	<script>
+		$("#exportarExcel").click(function(){
+			$("#table2excel").table2excel({
+				// exclude CSS class
+				exclude: ".noExl",
+				name: "Worksheet Name",
+				filename: "SomeFile", //do not include extension
+				fileext: ".xls" // file extension
+			});
+		});
+	</script>
 
-<script type="text/javascript" src="js/sidebarmenu.js"></script>
+
 
 </body>
 </html>

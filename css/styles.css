@@ -197,7 +197,22 @@ iframe{
 	background-color:rgba(240,240,240);
 	color: black;
 }
-
+.studentsTitle{
+	text-align: center;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-bottom: 1px solid #ccc;
+}
+.downloadGrades{
+	padding-top: 5px;
+	width: 6%;
+}
+#exportarExcel{
+	font-size: 12px;
+	background-color: #555555;
+	border-radius: 4px;
+	transition-duration: 0.4s;
+}
 /****************
 ** FORO IFRAME **
 ****************/
@@ -308,6 +323,7 @@ textarea{
 	position: sticky;
 	top: 0;
 	border-bottom: 5px solid #000099;
+	z-index: 5;
 	background-color: rgba(240,240,240);
 }
 .nav{
@@ -426,23 +442,28 @@ textarea{
 	text-align: left;
 	border-bottom: 1px solid #ccc;
 	padding-left: 1rem;
-	padding-bottom: 0;
+	padding-bottom: 10px;
 	padding-top: 1rem;
 }
 .menu-left{
 	list-style-type: none;
 	padding-top: 5rem;
 	padding-bottom: 1rem;
-	padding-left: 1rem;
 }
-.menu-left > li {
-	padding-bottom: 2rem;
-
+.menu-left li {
+	padding-top: 15px;
+	margin-left: 10px;
+	margin-right: 40px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #ccc;
 }
 .menu-left a:focus {
 	color: #000099;
 }
-
+.menu-left li:hover{
+	background-color: #e0e0e0;
+	cursor:pointer;
+}
 
 /**********************
 **** CENTER COLUMN ****
@@ -472,7 +493,13 @@ textarea{
 .menu-right{
 	text-align: center;
 	list-style-type: none;
-	padding-top: 1rem;
+	padding-top: 2rem;
+}
+.menu-right li{
+	border-bottom: 1px solid #ccc;
+}
+.calendario{
+	box-sizing: border-box;
 }
 .table-calendario{
 	display: flex; /* Necesario para alinear la tabla*/
@@ -482,19 +509,7 @@ textarea{
 	margin-bottom: 1rem;
 	border-spacing: 0.5rem;
 }
-.calendario{
-	border-bottom: 1px solid #ccc;
-}
 .calendario span{
-	/*
-	color: white;
-	text-shadow: 1px 1px black;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	border:1px solid #000;
-	border-radius: 4rem;
-	background-color: rgba(195,176,145,0.5);
-	*/
 	border-left: 2px solid #000099;
 	border-right: 2px solid #000099;
 	padding-top: 3px;
@@ -525,8 +540,6 @@ textarea{
 	padding-top: 20px;
 	padding-left: 1rem;
 	padding-right: 1rem;
-	border-bottom: 1px solid #ccc;
-
 }
 .tutoria span{
 	border-left: 2px solid #000099;
@@ -556,7 +569,22 @@ textarea{
 .actividad-reciente > div{
 	padding-top: 1rem;
 }
-
+.proximos-eventos{
+	padding-top: 20px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-bottom: 1rem;
+}
+.proximos-eventos span{
+	border-left: 2px solid #000099;
+	border-right: 2px solid #000099;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-weight: bold;
+}
+.proximos-eventos div{
+	padding-top: 1rem;
+}
 
 
 /***************
