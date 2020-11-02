@@ -391,6 +391,24 @@ a:hover{
 	background-color: rgb(180, 66, 66);
 	color: #fff;
 }
+.respuesta{
+	width: 90%;
+	padding: 10px;
+	box-shadow: 8px 8px #e0e0e0;
+	border-radius: 5px;
+}
+.formularioRespuestaForo label{
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+	font-size: 20px;
+}
+.btn-foro-respuesta{
+	padding: 10px;
+	background-color:#002699;
+	color: white;
+	border-radius: 5px;
+	margin-top: 10px;
+}
 /***********************
 **** MODAL CALENDAR ****
 ***********************/
@@ -960,7 +978,6 @@ a:hover{
 **** FOOTER ****
 ***************/
 
-
 footer{
 	bottom: 0;
 	padding-top: 1rem;
@@ -1000,6 +1017,24 @@ footer{
 }
 .creative-commons{
 	border-width:0;
+}
+#aceptar-logout{
+	padding: 10px;
+	background-color:#002699;
+	color: white;
+	border-radius: 5px;
+}
+#aceptar-logout:active{
+	background-color:#647fcf;
+}
+#rechazar-logout:active{
+	background-color:#647fcf;
+}
+#rechazar-logout{
+	padding: 10px;
+	background-color:#002699;
+	color: white;
+	border-radius: 5px;
 }
 
 /********************
