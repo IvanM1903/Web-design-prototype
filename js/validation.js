@@ -185,4 +185,43 @@ function writeNameFromCookie(){
 	  document.getElementById("user-session-name").innerHTML = "<img src='images/user.png' alt='User Image'></img>"+name;
 }
 
+// ====== FORO METHODS ====== //
+
+
+function insertarRespuesta(i){
+    var contenedor;
+    var bloque_a_insertar;
+    var bloque_texto;
+    var bloque_usuario;
+	var name = getCookie("nameSurname");
+
+    var date = new Date();
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    var day = date.getDay();
+    var month = date.getMonth();
+	var year = date.getFullYear();
+	
+    bloque_a_insertar = document.createElement("div");
+    bloque_texto = document.createElement("div");
+    bloque_usuario = document.createElement("div");
+
+
+    contenedor = document.getElementsByClassName("tema-preguntas-respuestas")[i];
+    contenedor.appendChild(bloque_a_insertar);
+
+    bloque_texto.className = "tema-texto";
+    bloque_usuario.className = "contenido-foro-usuario";
+
+    bloque_texto.innerHTML = document.getElementsByClassName("respuesta")[i].value;
+    bloque_a_insertar.appendChild(bloque_texto);
+
+    bloque_usuario.innerHTML = "<img src='images/user.png' alt='imagen de usuario'>"+ name +" "+hour+":"+minute+" --- "+day+" / "+month+" / "+year;
+    bloque_a_insertar.appendChild(bloque_usuario);
+    bloque_a_insertar.className = "tema-respuesta col-12";
+
+    $('.formularioRespuestaForo').on('submit',function(event){
+        event.preventDefault();
+    });
+}
 
