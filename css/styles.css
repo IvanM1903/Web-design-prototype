@@ -185,8 +185,25 @@ a:hover{
 	margin-bottom: 1rem;
 	border-spacing: 1rem;
 }
-.alumnos img{
+.alumnos td > img{
 	border-radius: 10rem;
+	text-align: center;
+	width: 20%;
+}
+.tabla-user-estudiante{
+	display: flex; /* Necesario para alinear la tabla*/
+	text-align: left;
+	justify-content: left;
+	margin-bottom: 1rem;
+	border-spacing: 1rem;
+}
+.tabla-user-estudiante img{
+	border-radius: 10rem;
+	width: 50%;
+}
+.tabla-user-estudiante td{
+	text-align: center;
+	border-right: 1px solid #ccc;
 }
 .mail-icon{
 	text-align: center;

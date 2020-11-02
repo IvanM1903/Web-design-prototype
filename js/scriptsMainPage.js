@@ -53,6 +53,7 @@ $(document).ready(function(){
     $(".estudiantesAsignatura").hide();
     $(".foroAsignatura").hide();
     $(".restoAsignaturas").hide();
+    $(".tabla-user-estudiante").hide();
 
     if(getCookie("rol") === "Estudiante"){
         $(".mostrarContenidoAsignatura").click(function(){
@@ -138,6 +139,11 @@ $(document).ready(function(){
                 "color":"#000",
                 "font-weight":"normal"
             });
+            //Ocultamos la tabla del resto de alumnos
+            $(".alumnos").hide();
+            //MOstramos la tabla del usuario
+            $(".tabla-user-estudiante").show();
+            document.getElementById("nombre-usuario-calificaciones").innerHTML = getCookie("nameSurname");
             $(".contenidoAsignatura").slideUp(800);
             $(".restoAsignaturas").slideUp(800);
             $(".foroAsignatura").slideUp(800);
