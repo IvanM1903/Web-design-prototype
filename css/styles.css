@@ -605,7 +605,49 @@ a:hover{
 .col-center{
 	text-align: left;
 }
-
+.contenedor-colCentro{
+	margin-left: 30px;
+	margin-top: 60px;
+}
+.contenedor-colCentro ul{
+	list-style: none;
+}
+.lista-principal li{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.mis-cursos:hover{
+	cursor: pointer;
+}
+.estudios-oficiales-toggle:hover{
+	cursor: pointer;
+}
+.veinte-toggle:hover{
+	cursor: pointer;
+}
+.nombre-grado:hover{
+	cursor: pointer;
+}
+.contenedor-colCentro .asignaturas-estudios-oficiales{
+	margin-left: 30px;
+}
+.contenedor-colCentro .asignaturas-veinte{
+	margin-left: 30px;
+}
+.contenedor-colCentro #asignaturas-grado{
+	margin-left: 30px;
+}
+.contenedor-colCentro .lista_asignaturas{
+	margin-left: 30px;
+}
+.lista_asignaturas li{
+	border-bottom: 1px solid #ccc;
+	margin-right: 20px;
+}
+.lista_asignaturas li:hover{
+	cursor: pointer;
+	background-color: #e0e0e0;
+}
 /*********************
 **** RIGHT COLUMN ****
 *********************/

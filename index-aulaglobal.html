@@ -3,15 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- ====== CSS STYLESHEETS ====== -->
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Interfaces de Usuario</title>
 	<link rel="icon" href="images/uc3m-logo-svg.png" type="image/png">
 	<!-- ====== SCRIPT JS ====== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/validation.js"></script>
-	<script type="text/javascript" src="js/sidebarmenu.js"></script>
-	<script type="text/javascript" src="js/showContentCenterColumn.js"></script>
 	<!-- calendar scripts-->
 	<script type="text/javascript" src="js/jquery.simple-calendar.js"></script>
 	<!-- export excel scripts -->
@@ -22,12 +20,12 @@
 	<!-- ====== MENU OVERLAY MOBILE ====== -->
 	<div id="SideMenuId" class="side-menu">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	  <a href="#" class="mostrarContenidoAsignatura">Contenido de la asignatura</a>
-	  <a href="#" class="mostrarEstudiantesAsignatura">Lista de Estudiantes</a>
-	  <a href="#" class="mostrarCalificacionesAsignatura">Calificaciones</a>
-	  <a href="#">Últimas Novedades</a>
-	  <a href="#" id="openModalPhone">Próximos eventos</a>
-	  <a href="#" class="mostrarForoAsignatura">Foro del curso</a>
+	  <a href="#" class="mostrarContenidoAsignatura" onclick="closeNav()">Contenido de la asignatura</a>
+	  <a href="#" class="mostrarEstudiantesAsignatura student-list-mobile" onclick="closeNav()">Lista de Estudiantes</a>
+	  <a href="#" class="mostrarCalificacionesAsignatura" onclick="closeNav()">Calificaciones</a>
+	  <a href="#" onclick="closeNav()">Últimas Novedades</a>
+	  <a href="#" id="openModalPhone" onclick="closeNav()">Próximos eventos</a>
+	  <a href="#" class="mostrarForoAsignatura" onclick="closeNav()">Foro del curso</a>
 	  <hr>
 	  <a href="#">Programa de Grado</a>
 	  <a href="#">Ayuda</a>
@@ -79,6 +77,9 @@
 					<ul class="menu-left">
 						<li class="default-content mostrarContenidoAsignatura">
 							CONTENIDO DE LA ASIGNATURA
+						</li>
+						<li class="subjects mostrarRestoAsignaturas">
+							MIS ASIGNATURAS
 						</li>
 						<li class="student-list mostrarEstudiantesAsignatura">
 							LISTA DE ESTUDIANTES
@@ -201,6 +202,28 @@
 								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/SxN4NwDCUcc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
 						</div>
+					</div>
+				</section>
+
+				<section class="restoAsignaturas">
+					<h1 class="title-iframe col-12">LISTADO DE ASIGNATURAS MATRICULADAS</h1>
+					<div class="contenedor-colCentro col-12">
+						<ul class="lista-principal">
+							<li><i class="fa fa-caret-down mis-cursos-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="mis-cursos">Mis cursos</span>
+								<ul class="ul-bajo-cursos">
+									<li class="asignaturas-estudios-oficiales"><i class="fa fa-caret-down estudios-oficiales-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="estudios-oficiales-toggle">Estudios Oficiales</span>
+										<ul class="ul-bajo-estudios-oficiales">
+											<li class="asignaturas-veinte"><i class="fa fa-caret-down veinte-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="veinte-toggle">20/21</span>
+												<ul class="ul-bajo-veinte">
+													<li id="asignaturas-grado">
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
 					</div>
 				</section>
 				<!-- ====== LISTA DE ESTUDIANTES VIEW ====== -->
@@ -445,7 +468,7 @@
 									<img src="../images/respuestas.png" alt="Respuesta del foro">
 								</div>
 								<div class="respuestas-cantidad col-12">
-									<span><i>02</i></span>
+									<span><i>01</i></span>
 								</div>
 							</div>
 						</div>
@@ -465,7 +488,7 @@
 									<img src="../images/respuestas.png" alt="Respuesta del foro">
 								</div>
 								<div class="respuestas-cantidad col-12">
-									<span>23</span>
+									<span>01</span>
 								</div>
 							</div>
 						</div>
@@ -533,7 +556,7 @@
 									<p class="tema-texto">No comprendo cómo incluir scripts de terceros dentro de mi código HTML. En la cabecera no me funcionan. ¿Alguna sugerencia?</p>
 									<p class="contenido-foro-usuario">
 										<img src="images/user.png" alt="imagen de usuario"> 
-										Mercedes Mari 19:01 --- 28/09/20
+										Mercedes Mari 04:20 --- 06/09/20
 									</p>
 								</div>
 							</div>
@@ -827,7 +850,7 @@
 				<br>
 				<span>&#169;IVÁN MARTÍN PRIETO, CÉSAR MARTÍNEZ LARA. 2020</span>
 			</div>
-			<div class="privacy-pol footer-column col-3 col-s-12"> 
+			<div class="privacy-pol footer-column col-3 col-s-12">
 				<a href="https://www.uc3m.es/inicio/informacion-legal/politica-privacidad" target="_blank"><b>POLÍTICA DE PRIVACIDAD</b></a>
 				<br>
 				<p>Departamento de Informática, Universidad Carlos III de Madrid, Leganés</p>
@@ -835,54 +858,8 @@
 		</div>
 	</footer>
 
-	<!-- ====== SCRIPTS JQUERY ====== -->
-	<script src="js/exportExcel.js"></script>
-	<script src="js/simple-calendar.js"></script>
-	<script>
-		$("#user-session-quit").click(function(){
-			document.getElementById("logout-modal").style.display = "block";
-		});
-		$("#aceptar-logout").click(function(){
-			setTimeout(function(){
-				window.location.replace("index.html");
-			},2000);
-		});
-		$("#rechazar-logout").click(function(){
-			document.getElementById("logout-modal").style.display = "none";
-		});
-		$(document).ready(function(){
-			$("#contenido-tema-1").hide();
-			$("#contenido-tema-2").hide();
-			$("#contenido-tema-3").hide();
-			$("#formularioRespuestaForo").hide();
-			$(".volver-a-foro").hide();
-		});
-		$(".volver-a-foro").click(function(){
-			$("#formularioRespuestaForo").fadeOut("slow");
-			$("#contenido-tema-1").fadeOut("slow");
-			$("#contenido-tema-2").fadeOut("slow");
-			$("#contenido-tema-3").fadeOut("slow");
-			$("#section-preguntas").delay(600).fadeIn("slow");
-			$(".volver-a-foro").hide();
-		});
-		$("#foro-tema-1").click(function(){
-			$("#section-preguntas").fadeOut("slow");
-			$(".volver-a-foro").delay(600).fadeIn("slow");
-			$("#contenido-tema-1").delay(600).fadeIn("slow");
-			$("#formularioRespuestaForo").delay(600).fadeIn("slow");
-		});
-		$("#foro-tema-2").click(function(){
-			$("#section-preguntas").fadeOut("slow");
-			$(".volver-a-foro").delay(600).fadeIn("slow");
-			$("#contenido-tema-2").delay(600).fadeIn("slow");
-			$("#formularioRespuestaForo").delay(600).fadeIn("slow");
-		});
-		$("#foro-tema-3").click(function(){
-			$("#section-preguntas").fadeOut("slow");
-			$(".volver-a-foro").delay(600).fadeIn("slow");
-			$("#contenido-tema-3").delay(600).fadeIn("slow");
-			$("#formularioRespuestaForo").delay(600).fadeIn("slow");
-		});
-	</script>
+	<!-- ====== SCRIPTS SECTION ====== -->
+	<script src="js/scriptsMainPage.js"></script>
+	<script src="js/validation.js"></script>
 </body>
 </html>
