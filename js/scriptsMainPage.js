@@ -74,7 +74,7 @@ $(document).ready(function(){
                 "font-weight":"normal"
             });
             $(".calificacionesAsignatura").slideUp(800);
-            $(".estudiantesAsignatura").slideUp(800);
+            $(".restoAsignaturas").slideUp(800);
             $(".foroAsignatura").slideUp(800);
             $(".contenidoAsignatura").slideDown(800);
         });
@@ -168,7 +168,7 @@ $(document).ready(function(){
                 "font-weight":"normal"
             });
             $(".calificacionesAsignatura").slideUp(800);
-            $(".restoAsignaturas").slideUp(800);
+            $(".estudiantesAsignatura").slideUp(800);
             $(".foroAsignatura").slideUp(800);
             $(".contenidoAsignatura").slideDown(800);
         });

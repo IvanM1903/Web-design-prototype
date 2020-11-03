@@ -117,6 +117,7 @@ a:hover{
 }
 .tema-img{
 	text-align: center;
+	display: block;
 }
 .tema-intro-txt{
 	padding-right: 1rem;
@@ -129,6 +130,7 @@ a:hover{
 	flex-direction: row-reverse;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
+	padding-left: 1rem;
 }
 .tema-capitulo-titulo{
 	margin-top: 1rem;
@@ -152,8 +154,8 @@ a:hover{
 	border-right: 7px solid #F2CE27;
 }
 .tema-capitulo-txt{
-	padding-left: 40px;
-	padding-right: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 .tema-capitulo-desc{
 	text-align: justify;
@@ -162,8 +164,6 @@ a:hover{
 	margin-right: 1rem;
 }
 .tema-video{
-	margin-left: 1rem;
-	margin-right: 1rem;
 	height: 210px;
 }
 
@@ -188,7 +188,7 @@ a:hover{
 .alumnos td > img{
 	border-radius: 10rem;
 	text-align: center;
-	width: 20%;
+	width: 35px;
 }
 .tabla-user-estudiante{
 	display: flex; /* Necesario para alinear la tabla*/
@@ -199,7 +199,7 @@ a:hover{
 }
 .tabla-user-estudiante img{
 	border-radius: 10rem;
-	width: 50%;
+	width: 35%;
 }
 .tabla-user-estudiante td{
 	text-align: center;
@@ -561,11 +561,13 @@ a:hover{
 .user-session img{
 	width: 10%;
 	padding-right: 10px;
+	border-right: 2px solid #808080;
+	margin-right: 10px;
 }
 #user-session-name{
-	margin-right: 15px;
+	
 	padding-right: 15px;
-	border-right: 2px solid #808080;
+	
 	font-size: 20px;
 	text-align: right;
 }
@@ -615,7 +617,7 @@ a:hover{
 }
 .menu-left{
 	list-style-type: none;
-	padding-top: 5rem;
+	padding-top: 1rem;
 	padding-bottom: 1rem;
 }
 .menu-left li {
@@ -1064,8 +1066,44 @@ footer{
 	}
 	.menu-left{
 		font-size: 14px;
+		padding-top: 0px;
 	}
 	/*CONTENIDO*/
+	.tema-capitulo{
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+	.tema-capitulo-titulo{
+		margin-top: 10px;
+		padding-bottom: 4px;
+		padding-top: 4px;
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-bottom: 10px;
+	}
+	.tema-presentacion{
+		margin-top: 15px;
+		padding-top: 10px;
+		margin-left: 15px;
+		margin-right: 15px;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 10px;
+	}
+	.tema-capitulo-txt{
+		padding-left: 0px;
+		margin-left: 10px;
+		padding-right: 0px;
+	}
+	.tema-capitulo-desc {
+		text-align: center;
+	    margin-bottom: 0;
+	    margin-right: 0;
+	}
+	.tema-video{
+		height: 150px;
+		margin-top: 10px;
+	}
 	/*RIGHT COLUMN*/
 	.col-right h2{
 		font-size: 19px;
@@ -1174,12 +1212,24 @@ footer{
 	.col-right > h2{
 		font-size: 16px;
 	}
-	.col-left > h2{
-		font-size: 21px;
-		text-align: center;
-		padding-right: 1rem;
-	}
+	.col-left {
+    	margin-right: 8px;
+	}	
+	.col-left > h1{
+		font-size: 18px;
+		text-align: left;
+		padding-right: 10px;
+		padding-left: 14px;
+	}	
+	.menu-left li {
+	    padding-top: 15px;
+	    margin-left: 10px;
+	    margin-right: 10px;
+	    padding-bottom: 15px;
+	    border-bottom: 1px solid #ccc;
+	}	
 	.menu-left{
+		padding-top: 0px;
 		font-size: 16px;
 	}
 
@@ -1187,7 +1237,13 @@ footer{
 		flex-direction: column;
 	}
 	.tema-capitulo-desc{
-		margin-left: 16px; 
+		margin-left: 0px; 
+	}
+	.tema-capitulo-txt{
+		margin-left: 0px;
+	}
+	.tema-video{
+		height: 260px;
 	}
 	/* FOOTER */
 
@@ -1281,9 +1337,19 @@ footer{
 	}
 	.main-row{
 		flex-direction: column;
+		padding-top: 0px;
+		padding-bottom: 0px;
 	}
 	.col-right{
 		border-top: 1px solid #ccc;
+		margin-left: 0px;
+	}
+	.tema-img{
+		display: none;
+	}
+	.tema-capitulo-txt{
+	padding-left: 10px;
+	padding-right: 10px;
 	}
 }
 
