@@ -456,10 +456,7 @@ $("#calendarModal").simpleCalendar({
 //====================================//
 
 $("#exportarExcel").click(function(){
-    alert("1");
-    alert(getCookie("rol"));
     if(getCookie("rol")==="Estudiante"){
-        alert("3");
         $("#table2excel-alumno").table2excel({
             // exclude CSS class
             exclude: ".noExl",
@@ -468,7 +465,6 @@ $("#exportarExcel").click(function(){
             fileext: ".xls" // file extension
         });
     }else{
-        alert("no es alumno");
         $("#table2excel").table2excel({
             // exclude CSS class
             exclude: ".noExl",

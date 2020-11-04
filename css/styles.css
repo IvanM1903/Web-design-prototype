@@ -231,6 +231,7 @@ a:hover{
 }
 .title-iframe h1{
 	border-bottom: 1px solid #ccc;
+	font-size: 18.72px;
 }
 .studentsTitle{
 	text-align: center;
@@ -1270,7 +1271,6 @@ footer{
 	}
 	.tutoria span{
 		font-size: 16px;
-<<<<<<< HEAD
 	}
 	.proximos-eventos span {
 		font-size: 16px;
@@ -1278,15 +1278,6 @@ footer{
 	.actividad-reciente span {
 		font-size: 16px;
 	}
-=======
-	}
-	.proximos-eventos span {
-		font-size: 16px;
-	}
-	.actividad-reciente span {
-		font-size: 16px;
-	}
->>>>>>> 02c22097567c3fc5a8994982969267d2f9fdef35
 	.col-center {
     	margin-left: 8px;
     	margin-right: 4px;
@@ -1317,17 +1308,10 @@ footer{
 	}
 	.tema-capitulo-txt{
 		margin-left: 0px;
-<<<<<<< HEAD
 	}
 	.tema-video{
 		height: 260px;
 	}
-=======
-	}
-	.tema-video{
-		height: 260px;
-	}
->>>>>>> 02c22097567c3fc5a8994982969267d2f9fdef35
 
 	/* MODAL CONTENT */
 	.modal-content {
@@ -1442,19 +1426,11 @@ footer{
 	}
 	.tema-img{
 		display: none;
-<<<<<<< HEAD
 	}
 	.tema-capitulo-txt{
 	padding-left: 10px;
 	padding-right: 10px;
 	}
-=======
-	}
-	.tema-capitulo-txt{
-	padding-left: 10px;
-	padding-right: 10px;
-	}
->>>>>>> 02c22097567c3fc5a8994982969267d2f9fdef35
 	/* MODAL CONTENT */
 	.modal-content{
 		width: 60%;
