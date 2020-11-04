@@ -11,8 +11,7 @@
 
 	<!-- ====== JS ====== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/validation.js"></script>
-	<script type="text/javascript" src="js/showPassword.js"></script>
+	<script src="js/validation.js"></script>
 </head>
 
 <body>
@@ -27,15 +26,12 @@
 				<h1>Identificación de usuario</h1>
 				<p id="error-log"></p>
 				<form action ="index-aulaglobal.html" id="loginForm">
-					<label for="inputEmail">
-						<i class="fa fa-user" aria-hidden="true"></i>Correo
-					</label>
+					<i class="fa fa-user" aria-hidden="true"></i><span>Correo</span>
 					<br>
 					<input type="text" placeholder="Correo" id="inputEmailLogin" name="inputEmail" required>
 					<br><br>
-					<label for="inputPassword">
-						<i class="fa fa-lock" aria-hidden="true"></i>Contraseña	
-					</label><br>
+					<i class="fa fa-lock" aria-hidden="true"></i><span>Contraseña</span>
+					<br>
 					<input type="password" placeholder="Contraseña" id="inputPasswordLog" name="inputPassword" required>
 					<br><br>
 					<input type="checkbox" onclick="showPassword()" class="col-12">&nbsp;Mostrar Contraseña
@@ -66,76 +62,64 @@
 				</div>
 				<h1>Registro de usuario</h1>
 				<form id="registration" class="col-12" action="index-aulaglobal.html">
-					<label for="username">
-						<i class="fa fa-user" aria-hidden="true"></i>Nombre de usuario
-					</label><br>
+					<i class="fa fa-user" aria-hidden="true"></i><span>Nombre de usuario</span>
+					<br>
 					<input type="text" name="username" placeholder="Nombre de Usuario" id="registerName" required>
 					<br>
-					<label for="nia">
-						<i class="fa fa-user col-sm-1" aria-hidden="true"></i>NIA
-					</label><br>
-					<input type="text" name="nia"placeholder="NIA" id="registerNia" required>
+					<i class="fa fa-user col-sm-1" aria-hidden="true"></i><span>NIA</span>
 					<br>
-					<label for="password">
-						<i class="fa fa-lock col-sm-1" aria-hidden="true"></i>Contraseña
-					</label><br>
+					<input type="text" name="nia" placeholder="NIA" id="registerNia" required>
+					<br>
+					<i class="fa fa-lock col-sm-1" aria-hidden="true"></i><span>Contraseña</span>
+					<br>
 					<input type="password" name="password" placeholder="Contraseña" id="inputPasswordReg" required>
 					<input type="checkbox" onclick="showPassword()"><span>&nbsp;Mostrar Contraseña</span>
 					<br><br><hr><br>
-					<label for="nameandsurname">
-						<i class="fa fa-user col-sm-1" aria-hidden="true"></i>Nombre y Apellidos
-					</label><br>
-					<input type="text" placeholder="Nombre y apellidos" id="registerNameSurname"required>
+					<i class="fa fa-user col-sm-1" aria-hidden="true"></i><span>Nombre y Apellidos</span>
 					<br>
-					<label for="email">
-						<i class="fa fa-envelope" aria-hidden="true"></i>Correo electrónico
-					</label><br>
+					<input type="text" placeholder="Nombre y apellidos" id="registerNameSurname" required>
+					<br>
+						<i class="fa fa-envelope" aria-hidden="true"></i><span>Correo electrónico</span>
+					<br>
 					<input type="text" name="email" placeholder="Correo" id="registerEmail" required>
 					<br>
-					<label for="date">
-						<i class="fa fa-calendar" aria-hidden="true"></i>Fecha de nacimiento
-					</label><br>
-					<input type="date" placeholder="fecha" id="registerDate" name="date" required>
+					<i class="fa fa-calendar" aria-hidden="true"></i><span>Fecha de nacimiento</span>
 					<br>
-					<label for="dni">
-						<i class="fa fa-address-card-o col-sm-1" aria-hidden="true"></i>DNI
-					</label><br>
+					<input type="date" id="registerDate" name="date" required>
+					<br>
+					<i class="fa fa-address-card-o col-sm-1" aria-hidden="true"></i><span>DNI</span>
+					<br>
 					<input type="text" placeholder="DNI" name="dni" id="registerDNI" required>
 					<br>
-					<label for="uni">
-						<i class="fa fa-university" aria-hidden="true"></i> Universidad
-					</label>
+					<i class="fa fa-university" aria-hidden="true"></i><span>Universidad</span>
 					<br>
 					<input type="text" name="uni" value="Universidad Carlos III de Madrid" id="registerUniversidad" disabled>
 					<br>
-					<label for="rol">
-					<i class="fa fa-user col-sm-1" aria-hidden="true"></i>Elige tu rol
-					</label><br>
+					<i class="fa fa-user col-sm-1" aria-hidden="true"></i><span>Elige tu rol</span>
+					<br>
 					<select name="rol" id="registerRol" onchange="onlyStudent(this.value)">
 						<option value="Estudiante">Estudiante</option>
 						<option value="Profesor">Profesor</option>
 						<option value="Administrador">Administrador</option>
 					</select>
 					<br>
-					<label for="grades">
-						<i class="fa fa-book" aria-hidden="true"></i>
-						Elige tu grado
-					</label><br>
-					<select name="grades" id="registerGrades" onchange="setCampus(this.value)" required>
+					<i class="fa fa-book" aria-hidden="true"></i><span>Elige tu grado</span>
+					<br>
+					<select name="grades" id="registerGrades" onchange="setCampus(this.value)" size="4" required>
 						<option value="Ingeniería Informática">Ingeniería Informática</option>
 						<option value="Ingeniería Aeroespacial">Ingeniería Aeroespacial</option>
 						<option value="Ingeniería Biomédica">Ingeniería Biomédica</option>
 						<option value="Derecho">Derecho</option>
 					</select>
 					<br>
-					<label for="campus">Campus
-					</label><br>
+					<span>Campus</span>
+					<br>
 					<select name="campus" id="registerCampus" disabled>
 						<option value="Campus de Leganés">Campus de Leganés</option>
 						<option value="Campus de Getafe">Campus de Getafe</option>
 					</select>
 					<br>
-					<label for="language">Idioma</label>
+					<span>Idioma</span>
 					<br>
 					<select name="language" id="registerLanguage">
 						<option value="Español">Español</option>
@@ -143,7 +127,6 @@
 						<option value="Italiano">Italiano</option>
 						<option value="Francés">Francés</option>
 						<option value="Alemán">Alemán</option>
-					</option>
 					</select>
 					<br><br>
 
@@ -164,7 +147,7 @@
 
 	<!-- ====== FOOTER CONTAINER ====== -->
 
-	<section class="login-footer">
+	<div class="login-footer">
 		<div class="footer-container">
 			<div class="footer-links">
 				<a target="_blank" href="https://www.uc3m.es/inicio/contacta" class="col-2">Contacta con nosotros</a>
@@ -177,7 +160,7 @@
 				<img src="images/uc3m-footer.jpg" alt="Copyright Universidad Carlos III de Madrid" class="col-3">
 			</div>
 		</div>
-	</section>
+	</div>
 
 	<!-- ======== MAIN JQUERY FUNCTIONS ======== -->
 	<script>

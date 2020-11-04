@@ -11,9 +11,9 @@
 	<!-- ====== SCRIPT JS ====== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<!-- calendar scripts-->
-	<script type="text/javascript" src="js/jquery.simple-calendar.js"></script>
+	<script src="js/jquery.simple-calendar.js"></script>
 	<!-- export excel scripts -->
-	<script type="text/javascript" src="js/jquery.table2excel.js"></script>
+	<script src="js/jquery.table2excel.js"></script>
 </head>
 <body onload="writeNameFromCookie()">
 
@@ -23,7 +23,7 @@
 	  <a href="#" class="mostrarContenidoAsignatura" onclick="closeNav()">Contenido de la asignatura</a>
 	  <a href="#" class="mostrarEstudiantesAsignatura student-list-mobile" onclick="closeNav()">Lista de Estudiantes</a>
 	  <a href="#" class="mostrarCalificacionesAsignatura" onclick="closeNav()">Calificaciones</a>
-	  <a href="#" onclick="closeNav()">Últimas Novedades</a>
+	  <a href="#ultimas-novedades" onclick="closeNav()">Últimas Novedades</a>
 	  <a href="#" id="openModalPhone" onclick="closeNav()">Próximos eventos</a>
 	  <a href="#" class="mostrarForoAsignatura" onclick="closeNav()">Foro del curso</a>
 	  <hr>
@@ -32,7 +32,7 @@
 	</div>
 
 	<!-- ====== CABECERA ====== -->
-		<section class="cabecera col-12">
+		<div class="cabecera col-12">
 			<!-- ====== NAV SUPERIOR ====== -->
 			<ul class="nav" id="top">
 				<li class="col-2 col-s-3">
@@ -44,7 +44,11 @@
 				<li class="col-4 col-s-8">
 					<div class="user-session col-12">
 							<div id="user-session-name" class="col-8"></div>
+<<<<<<< HEAD
+							<img src="images/user.png" alt="imagen-perfil-usuario" class="col-1">
+=======
 							<img src="images/user.png" class="col-1">
+>>>>>>> 02c22097567c3fc5a8994982969267d2f9fdef35
 							<div id="user-session-quit" class="col-3">Cerrar Sesión</div>
 					</div>
 				</li>
@@ -67,7 +71,7 @@
 					</li>
 				</ul>
 			</div>
-		</section>
+		</div>
 
 	<!-- ====== CUERPO O FILA CENTRAL ====== -->
 	<section class="cuerpo">
@@ -96,7 +100,7 @@
 			<!-- ====== COLUMNA CENTRAL ====== -->
 			<div class="col-center column col-6 col-s-9 col-xs-12">
 				<!-- ====== CONTENIDO DE LA ASIGNATURA VIEW ====== -->
-				<section class="contenidoAsignatura">
+				<div class="contenidoAsignatura">
 					<h1 class="title-iframe col-12">CONTENIDO DE LA ASIGNATURA</h1>
 
 					<div class="contenedor-iframe background-iframe">
@@ -199,9 +203,9 @@
 							</div>
 						</div>
 					</div>
-				</section>
+				</div>
 
-				<section class="restoAsignaturas">
+				<div class="restoAsignaturas">
 					<h1 class="title-iframe col-12">LISTADO DE ASIGNATURAS MATRICULADAS</h1>
 					<div class="contenedor-colCentro col-12">
 						<ul class="lista-principal">
@@ -221,9 +225,9 @@
 							</li>
 						</ul>
 					</div>
-				</section>
+				</div>
 				<!-- ====== LISTA DE ESTUDIANTES VIEW ====== -->
-				<section class="estudiantesAsignatura">
+				<div class="estudiantesAsignatura">
 					<h1 class="title-iframe col-12">LISTA DE ESTUDIANTES</h1>
 
 					<div class="contenedor-iframe background-iframe col-12">
@@ -238,194 +242,194 @@
 								<td><img src="images/random-faces/face1.jpg"  alt="cara aleatoria"></td>
 								<td>Irati Robles</td>
 								<td>Profesor</td>
-								<td class="mail-icon"><a href="mailto:profesor@interfaces.com">✉</td>
+								<td class="mail-icon"><a href="mailto:profesor@interfaces.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face0.jpg"  alt="cara aleatoria"></td>
 								<td>Iker Piqueras</td>
 								<td>Profesor</td>
-								<td class="mail-icon"><a href="mailto:profesor@interfaces.com" class="mail-icon">✉</td>
+								<td class="mail-icon"><a href="mailto:profesor@interfaces.com" class="mail-icon">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face2.jpg"  alt="cara aleatoria"></td>
 								<td>Nadia Lara</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face3.jpg"  alt="cara aleatoria"></td>
 								<td>Marcelo Bosch</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face4.jpg"  alt="cara aleatoria"></td>
 								<td>Khalid Vicente</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face5.jpg"  alt="cara aleatoria"></td>
 								<td>Flora Viera</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face6.jpg"  alt="cara aleatoria"></td>
 								<td>Daniel de Castro</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face7.jpg"  alt="cara aleatoria"></td>
 								<td>Urbano Moreno</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face8.jpg"  alt="cara aleatoria"></td>
 								<td>Rafa Melgar</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face9.jpg"  alt="cara aleatoria"></td>
 								<td>Mia Cerdan</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face10.jpg"  alt="cara aleatoria"></td>
 								<td>Igor Montiel</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face11.jpg"  alt="cara aleatoria"></td>
 								<td>Chloe Noguera</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face12.jpg"  alt="cara aleatoria"></td>
 								<td>Augusto Hernandez</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face13.jpg"  alt="cara aleatoria"></td>
 								<td>Saioa Jordan</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face14.jpg"  alt="cara aleatoria"></td>
 								<td>Baldomero Marti</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face15.jpg"  alt="cara aleatoria"></td>
 								<td>Maria-Luisa Losada</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face16.jpg"  alt="cara aleatoria"></td>
 								<td>Anas Pachecho</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face17.jpg"  alt="cara aleatoria"></td>
 								<td>Ursula Olmos</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face18.jpg"  alt="cara aleatoria"></td>
 								<td>Nayara Gamero</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face19.jpg"  alt="cara aleatoria"></td>
 								<td>Ioana Herranz</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face20.jpg"  alt="cara aleatoria"></td>
 								<td>Erika Revilla</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face21.jpg"  alt="cara aleatoria"></td>
 								<td>Mireia Carretero</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face22.jpg"  alt="cara aleatoria"></td>
 								<td>Idoia Ahmed</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face23.jpg"  alt="cara aleatoria"></td>
 								<td>Maria-Jose Jurado</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face24.jpg"  alt="cara aleatoria"></td>
 								<td>Mercedes Mari</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face25.jpg"  alt="cara aleatoria"></td>
 								<td>Gladys Mendez</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face26.jpg"  alt="cara aleatoria"></td>
 								<td>Emiliano Piñero</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face27.jpg"  alt="cara aleatoria"></td>
 								<td>Sonia Molero</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face28.jpg"  alt="cara aleatoria"></td>
 								<td>Diego Arevalo</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face29.jpg"  alt="cara aleatoria"></td>
 								<td>Samir Plasencia</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
 								<td><img src="images/random-faces/face30.jpg"  alt="cara aleatoria"></td>
 								<td>Felisa Salmeron</td>
 								<td>Estudiante</td>
-								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</td>
+								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 						</table>
 					</div>
-				</section>
+				</div>
 
 				<!-- ====== FORO DE LA ASIGNATURA ====== -->
-				<section class="foroAsignatura">
+				<div class="foroAsignatura">
 					<h1 class="title-iframe col-12">FORO DE LA ASIGNATURA</h1>
 					<div class="section-preguntas" id="section-preguntas">
 						<div class="foro-tema" id="foro-tema-1">
@@ -434,10 +438,14 @@
 								<p>02&nbsp;-&nbsp;10&nbsp;-&nbsp;20</p>
 							</div>
 							<div class="tema-contenido col-9">
-									<h3 class="contenido-titulo col-12">"Duda en la creación de un documento HTML"</h3>
-								<p class="contenido-desc col-12">
-									Buenos días, me surgió una duda sobre las etiquetas necesarias que hacen falta en el "<i>head</i>" del documento.
-								</p>
+								<h3 class="contenido-titulo col-12">"Duda en la creación de un documento HTML"</h3>
+								<div class="contenido-desc col-12">
+									<span>Buenos días, me surgió una duda sobre las etiquetas necesarias que hacen falta en el "<i>head</i>" del documento.</span>
+									<div class="contenido-foro-usuario">
+										<img src="images/user.png" alt="imagen de usuario">
+										Rafa Melgar
+									</div>
+								</div>
 							</div>
 							<div class="tema-respuestas col-2">
 								<div class="respuestas-img col-12">
@@ -455,9 +463,13 @@
 							</div>
 							<div class="tema-contenido col-9">
 									<h3 class="contenido-titulo col-12">"Problema con selectores en CSS"</h3>
-								<p class="contenido-desc col-12">
-									Buenas tardes, no consigo hacer funcionar los selectores en CSS. ¿Alguien podría explicármelo?
-								</p>
+								<div class="contenido-desc col-12">
+									<span>Buenas tardes, no consigo hacer funcionar los selectores en CSS. ¿Alguien podría explicármelo?</span>
+									<div class="contenido-foro-usuario">
+										<img src="images/user.png" alt="imagen de usuario">
+										Mercedes Mari
+									</div>
+								</div>
 							</div>
 							<div class="tema-respuestas col-2">
 								<div class="respuestas-img col-12">
@@ -475,9 +487,13 @@
 							</div>
 							<div class="tema-contenido col-9">
 									<h3 class="contenido-titulo col-12">"Error al generar hacer funcionar el script"</h3>
-								<p class="contenido-desc col-12">
-									"No comprendo cómo incluir scripts de terceros dentro de mi código HTML. En la cabecera no me funcionan. ¿Alguna sugerencia?"
-								</p>
+								<div class="contenido-desc col-12">
+									<span>No comprendo cómo incluir scripts de terceros dentro de mi código HTML. En la cabecera no me funcionan. ¿Alguna sugerencia?</span>
+									<div class="contenido-foro-usuario">
+										<img src="images/user.png" alt="imagen de usuario">
+										Mercedes Mari
+									</div>
+								</div>
 							</div>
 							<div class="tema-respuestas col-2">
 								<div class="respuestas-img col-12">
@@ -499,7 +515,7 @@
 								<div class="tema-pregunta col-12">
 									<p class="tema-texto">Buenas tardes, me surgió una duda sobre las etiquetas necesarias que hacen falta en el "<i>head</i>" del documento.</p>
 									<p class="contenido-foro-usuario">
-										<img src="images/user.png" alt="imagen de usuario"> 
+										<img src="images/user.png" alt="imagen de usuario">
 										Rafa Melgar 16:37 --- 02/10/20
 									</p>
 								</div>
@@ -514,7 +530,7 @@
 							</div>
 							<div id="formulario-responder-tema">
 								<form class="formularioRespuestaForo">
-									<label for="respuesta">Escribe tu respuesta</label><br><br>
+									<span>Escribe tu respuesta</span><br><br>
 									<textarea name="respuesta" class="respuesta" cols="30" rows="10"></textarea>
 									<br>
 									<button onclick="insertarRespuesta(0)" class="btn-foro-respuesta">Enviar</button>
@@ -534,9 +550,9 @@
 									</p>
 								</div>
 							</div>
-							<div id="formulario-responder-tema">
+							<div class="formulario-responder-tema">
 								<form class="formularioRespuestaForo">
-									<label for="respuesta">Escribe tu respuesta</label><br><br>
+									<span>Escribe tu respuesta</span><br><br>
 									<textarea name="respuesta" class="respuesta" cols="30" rows="10"></textarea>
 									<br>
 									<button onclick="insertarRespuesta(1)" class="btn-foro-respuesta">Enviar</button>
@@ -556,9 +572,9 @@
 									</p>
 								</div>
 							</div>
-							<div id="formulario-responder-tema">
+							<div class="formulario-responder-tema">
 								<form class="formularioRespuestaForo">
-									<label for="respuesta">Escribe tu respuesta</label><br><br>
+									<span>Escribe tu respuesta</span><br><br>
 									<textarea name="respuesta" class="respuesta" cols="30" rows="10"></textarea>
 									<br>
 									<button onclick="insertarRespuesta(2)" class="btn-foro-respuesta">Enviar</button>
@@ -566,10 +582,10 @@
 							</div>
 						</div>
 					</div>
-				</section>
+				</div>
 
 				<!-- ====== CALIFICACIONES VIEW ====== -->
-				<section class="calificacionesAsignatura">
+				<div class="calificacionesAsignatura">
 					<div class="title-iframe">
 						<h1 class=" col-12">LISTA DE CALIFICACIONES</h1>
 						<div id="exportarExcel" class="col-2">
@@ -822,7 +838,7 @@
 
 						<!-- Tabla del usuario cuando es estudiante -->
 
-						<table class="tabla-user-estudiante" id="table2excel">
+						<table class="tabla-user-estudiante" id="table2excel-alumno">
 							<tr>
 								<th class="noExl"></th>
 								<th>Nombre / Apellidos</th>
@@ -831,8 +847,13 @@
 								<th>Ej. 3</th>
 								<th>Final</th>
 							</tr>
+<<<<<<< HEAD
+							<tr>
+								<td class="noExl"><img src="images/user.png" alt="Foto de perfil"></td>
+=======
 							<tr class="noExl">
 								<td><img src="images/user.png" alt="Foto de perfil"></td>
+>>>>>>> 02c22097567c3fc5a8994982969267d2f9fdef35
 								<td id="nombre-usuario-calificaciones"></td>
 								<td>7</td>
 								<td>4.6</td>
@@ -841,7 +862,7 @@
 							</tr>
 						</table>
 					</div>
-				</section>
+				</div>
 			</div>
 			<!-- ====== COLUMNA DE LA DERECHA ====== -->
 			<div class="col-right column col-3 col-s-12">
@@ -876,21 +897,32 @@
 							</div>
 						</div>
 					</li>
+					<li class="col-12" id="ultimas-novedades">
+						<div class="ultimas-novedades">
+							<p><span>&nbsp;&nbsp;&nbsp;ÚLTIMAS NOVEDADES&nbsp;&nbsp;&nbsp;</span></p>
+							<div>
+								<div><b>Notas publicadas</b></div>
+								<div>02-10-20 : <b>&nbsp;Nueva pregunta en el foro</b></div>
+								<div>28-09-20 : <b>&nbsp;Nueva pregunta en el foro</b></div>
+								<div>06-09-20 : <b>&nbsp;Nueva pregunta en el foro</b></div>
+							</div>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</div>
 	</section>
 
 	<!-- ====== MODAL CALENDAR ====== -->
-	<section id="calendar-modal-container">
+	<div id="calendar-modal-container">
 		<div class="modal-content">
 			<span class="close">&times;</span>
 			<div id="calendarModal"></div>
 		</div>
-	</section>
+	</div>
 
 	<!-- ======= MODAL LOGOUT ====== -->
-	<section id="logout-modal">
+	<div id="logout-modal">
 		<div class="modal-logout-content col-5">
 			<div class="col-12"><b>¿Estás segur@ de que deseas cerrar sesión?</b></div>
 			<div class="col-12 modal-logout-buttons">
@@ -898,7 +930,7 @@
 				<button id="rechazar-logout">No</button>
 			</div>
 		</div>
-	</section>
+	</div>
 
 	<!-- ====== FOOTER ====== -->
 	<footer id="bottom" class="col-12">

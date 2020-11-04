@@ -759,6 +759,25 @@ a:hover{
 .actividad-reciente > div{
 	padding-top: 1rem;
 }
+.ultimas-novedades{
+	padding-top: 20px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-bottom: 1rem;
+}
+.ultimas-novedades span {
+	border-left: 2px solid #000099;
+	border-right: 2px solid #000099;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-weight: bold;
+}
+.ultimas-novedades > div{
+	padding-top: 1rem;
+}
+.ultimas-novedades > div > div{
+	padding-top: 5px;
+}
 .proximos-eventos{
 	padding-top: 20px;
 	padding-left: 1rem;
@@ -1251,6 +1270,7 @@ footer{
 	}
 	.tutoria span{
 		font-size: 16px;
+<<<<<<< HEAD
 	}
 	.proximos-eventos span {
 		font-size: 16px;
@@ -1258,6 +1278,15 @@ footer{
 	.actividad-reciente span {
 		font-size: 16px;
 	}
+=======
+	}
+	.proximos-eventos span {
+		font-size: 16px;
+	}
+	.actividad-reciente span {
+		font-size: 16px;
+	}
+>>>>>>> 02c22097567c3fc5a8994982969267d2f9fdef35
 	.col-center {
     	margin-left: 8px;
     	margin-right: 4px;
@@ -1288,10 +1317,17 @@ footer{
 	}
 	.tema-capitulo-txt{
 		margin-left: 0px;
+<<<<<<< HEAD
 	}
 	.tema-video{
 		height: 260px;
 	}
+=======
+	}
+	.tema-video{
+		height: 260px;
+	}
+>>>>>>> 02c22097567c3fc5a8994982969267d2f9fdef35
 
 	/* MODAL CONTENT */
 	.modal-content {
@@ -1406,11 +1442,19 @@ footer{
 	}
 	.tema-img{
 		display: none;
+<<<<<<< HEAD
 	}
 	.tema-capitulo-txt{
 	padding-left: 10px;
 	padding-right: 10px;
 	}
+=======
+	}
+	.tema-capitulo-txt{
+	padding-left: 10px;
+	padding-right: 10px;
+	}
+>>>>>>> 02c22097567c3fc5a8994982969267d2f9fdef35
 	/* MODAL CONTENT */
 	.modal-content{
 		width: 60%;

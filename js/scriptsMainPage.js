@@ -12,8 +12,8 @@ function insertarRespuesta(i){
     var date = new Date();
     var hour = date.getHours();
     var minute = date.getMinutes();
-    var day = date.getDay();
-    var month = date.getMonth();
+    var day = date.getDay()+1;
+    var month = date.getMonth()+1;
 	var year = date.getFullYear();
 
     bloque_a_insertar = document.createElement("div");
@@ -456,11 +456,25 @@ $("#calendarModal").simpleCalendar({
 //====================================//
 
 $("#exportarExcel").click(function(){
-    $("#table2excel").table2excel({
-        // exclude CSS class
-        exclude: ".noExl",
-        name: "Worksheet Name",
-        filename: "SomeFile", //do not include extension
-        fileext: ".xls" // file extension
-    });
+    alert("1");
+    alert(getCookie("rol"));
+    if(getCookie("rol")==="Estudiante"){
+        alert("3");
+        $("#table2excel-alumno").table2excel({
+            // exclude CSS class
+            exclude: ".noExl",
+            name: "Worksheet Name",
+            filename: "SomeFile", //do not include extension
+            fileext: ".xls" // file extension
+        });
+    }else{
+        alert("no es alumno");
+        $("#table2excel").table2excel({
+            // exclude CSS class
+            exclude: ".noExl",
+            name: "Worksheet Name",
+            filename: "SomeFile", //do not include extension
+            fileext: ".xls" // file extension
+        });
+    }
 });
