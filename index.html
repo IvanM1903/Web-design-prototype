@@ -20,6 +20,22 @@
 	<section class="login-header">
 		<!-- ====== CENTER CONTENT ====== -->
 		<div class="content col-8 col-sm-10">
+			<!-- ====== WELCOME CONTENT ====== -->
+			<div class="welcome col-5 col-sm-12">
+				<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-10 welcome-uc3m-text">
+				<h1>Bienvenid@!</h1>
+				<img src="/images/uc3m-logo-svg.png" alt="Logo Universidad Carlos III de Madrid" class="welcome-uc3m-logo">
+				<div class="welcome-section-log">
+				<div class="welcome-login">Iniciar Sesión</div>
+					<div class="welcome-register">Registrarse</div>
+				</div>
+				<br>
+				<span class="br-media-query"><br><br><br><br></span> <!-- Saltos entre elementos para pantallas pequeñas-->
+				<div class="welcome-info">
+						Visita la web de la Universidad: <br>
+						<a href="#">UC3M</a>
+				</div>
+			</div>
 			<!-- ====== LOGIN FORM ====== -->
 			<div class="login-form col-5 col-sm-12">
 				<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-9">
@@ -47,11 +63,18 @@
 
 			<!-- ====== INFO CONTAINER ====== -->
 			<div class="info-container col-7 col-sm-12">
-				<h1>SERVICIO DE SINGLE SIGN-ON</h1>
-				<img src="images/uc3m-logo-svg.png" alt="Logo UC3M" class="logo-uc3m">
-				<p class="info-login-text">Una vez que se haya autenticado no será necesario identificarse de nuevo para acceder a otros recursos. <br><br>
-				<b>Para desconectarse, recomendamos que cierre su navegador (cerrando todas las ventanas).</b>
-				</p>
+				<div class="info">
+					<h1>SERVICIO DE SINGLE SIGN-ON</h1>
+					<img src="images/single-sign-on.png" alt="Sign On by UC3M" class="logo-uc3m">
+					<p class="info-login-text">Una vez que se haya autenticado no será necesario identificarse de nuevo para acceder a otros recursos. <br><br>
+					<b>Para desconectarse, recomendamos que cierre su navegador (cerrando todas las ventanas).</b>
+					</p>
+				</div>
+				<br><br><br><br><br><br><br><br><br><br>
+				<div class="privacy-pol">
+					Copyright @ 2020 Group 1 Inc. <br>
+					<a href="#">Términos de Uso y Privacidad</a>
+				</div>
 			</div>
 		</div>
 
@@ -173,6 +196,14 @@
 				$(".register-form").slideUp();
 				$(".content").delay(400).slideDown();
 			});
+
+			// Ajustamos los terminos de privacidad al ancho del elemento padre
+			var my_width = $('.privacy-pol').width();
+			var info_width = $('.content').width();
+			$('.privacy-pol').width(info_width);
+			//var myPercentage = (my_width / $('.info-container').parent().width()) * 100;
+			//$('.privacy-pol').width(myPercentage + '%');
+
 		});
 	</script>
 </body>

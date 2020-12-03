@@ -88,11 +88,82 @@
 	justify-content: center;
 	align-items: center;
 	background-color: #FFF;
+	max-height: 75vh;
 	border-radius: 10px;
-	padding-top: 16px;
-	padding-bottom: 16px; 
+	padding-top: 16px; 
+	position: relative;
+}
+.welcome{
+	text-align: center;
+	background-color: #FFF;
+	border-right: 1px solid  #bfbfbf;
+	padding-right: 40px;
+	padding-left: 40px;
+	position: relative;
+	z-index: 3;
+}
+.br-media-query{
+	display: none;
+}
+.welcome-uc3m-text{
+	border-bottom: 2px solid #4b4b4b;
+	margin-bottom: 10px;
+}
+.welcome-uc3m-logo{
+	width: 40%;
+	margin-top: 10px;
+	margin-bottom: 80px;
+}
+.welcome-section-log{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.welcome-login{
+	background-color: #000099;
+	border-radius: 10px;
+	color: #FFF;
+	width: 90%;
+	margin-bottom: 80px;
+	padding: 15px 0;
+	position: absolute;
+}
+.welcome-login:hover{
+	box-shadow: -5px 5px #000b2e;
+	cursor: pointer;
+	border: 2px solid #000;
+	z-index: 3;
+}
+.welcome-register{
+	background-color: #000099;
+	border-radius: 10px;
+	color: #FFF;
+	width: 90%;
+	margin-top: 80px;
+	margin-bottom: 10px;
+	padding: 15px 0;
+	position: absolute;
+}
+.welcome-register:hover{
+	box-shadow: -5px 5px #000b2e;
+	cursor: pointer;
+	border: 2px solid #000;
+	z-index: 3;
+}
+.welcome-info{
+	margin-top: 70px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-top: 2px solid #4b4b4b;
+	text-shadow: 1px 1px #000099;
+}
+.welcome-info a{
+	text-decoration: none;
+	color: #000;
 }
 .login-form{
+	display: none;
 	text-align: center;
 	padding: 12px;
 	border-right: 1px solid  #bfbfbf;
@@ -190,7 +261,10 @@ input.invalid{
 	flex-direction: column;
 	text-align: center;
 }
-.info-container h1{
+.info{
+	width:inherit;
+}
+.info h1{
 	margin-bottom: 20px;
 }
 .logo-uc3m{
@@ -201,6 +275,14 @@ input.invalid{
 	text-align: center;
 	padding-left: 10px;
 	padding-right: 10px;
+}
+.privacy-pol{
+	background-color: #ebebeb;
+	font-weight: bold;
+	padding:10px 0;
+	border-radius: 0 0 10px 0;
+	position: absolute;
+	bottom: 0;
 }
 
 /* ====== FOOTER CONTENT ====== */
@@ -236,6 +318,26 @@ input.invalid{
 
 /* ====== MEDIA QUERIES ====== */
 
+@media screen and (max-width:1044px){
+	.br-media-query{
+		display: block;
+	}
+}
+
+
+@media screen and (max-width:778px){
+	.info-container{
+		display: none;
+	}
+	.welcome{
+		border-right: 0px;
+	}
+	.br-media-query{
+		display: none;
+	}
+}
+
+
 @media screen and (max-width: 600px){
 
 	.col-sm-12{
@@ -264,7 +366,6 @@ input.invalid{
 	.content{
 		flex-direction: column;
 		padding-right: 0;
-		margin-bottom: 0px;
 	}
 	.login-form{
 		border-right: 0px;
