@@ -310,11 +310,6 @@ input.invalid{
 	border-right: 1px solid #000099;
 	color: #000099;
 }
-.footer-img{
-	display: flex;
-	justify-content: flex-end;
-	padding-right: 50px;
-}
 
 /* ====== MEDIA QUERIES ====== */
 
