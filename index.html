@@ -22,74 +22,68 @@
 	<section class="login-header">
 		<!-- ====== CENTER CONTENT ====== -->
 		<div class="content col-8 col-sm-10">
-			<!-- ====== WELCOME CONTENT ====== -->
-			<div class="welcome col-5 col-sm-12">
-<<<<<<< HEAD
-				<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-10 welcome-uc3m-text">
-=======
-				<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-9 welcome-uc3m-text">
->>>>>>> ab7bab573850aef86eb967481a1c1546a820cee0
-				<h1>Bienvenid@!</h1>
-				<img src="/images/uc3m-logo-svg.png" alt="Logo Universidad Carlos III de Madrid" class="welcome-uc3m-logo">
-				<div class="welcome-section-log">
-				<div class="welcome-login">Iniciar Sesión</div>
-					<div class="welcome-register">Registrarse</div>
-				</div>
-				<br>
-<<<<<<< HEAD
-				<span class="br-media-query"><br><br><br><br></span> <!-- Saltos entre elementos para pantallas pequeñas-->
-				<div class="welcome-info">
-						Visita la web de la Universidad: <br>
-						<a href="#">UC3M</a>
-				</div>
-			</div>
-=======
-				<div class="welcome-info">
-						Visita la web de la Universidad: <br>
-						<a href="#">UC3M</a>
-				</p>
-			</div>
-
-
->>>>>>> ab7bab573850aef86eb967481a1c1546a820cee0
-			<!-- ====== LOGIN FORM ====== -->
-			<div class="login-form col-5 col-sm-12">
-				<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-9">
-				<h1>Identificación de usuario</h1>
-				<p id="error-log"></p>
-				<form action ="index-aulaglobal.html" id="loginForm">
-					<i class="fa fa-user" aria-hidden="true"></i><span>Correo</span>
+			<div class="content-left-container col-5 col-md-10 col-sm-12">
+				<!-- ====== WELCOME CONTENT ====== -->
+				<div class="welcome col-12 col-sm-12">
+					<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="welcome-uc3m-text">
+					<h1>Bienvenid@!</h1>
+					<img src="/images/uc3m-logo-svg.png" alt="Logo Universidad Carlos III de Madrid" class="welcome-uc3m-logo">
+					<div class="welcome-section-log">
+					<div class="welcome-login">Iniciar Sesión</div>
+						<div class="welcome-register">Registrarse</div>
+					</div>
 					<br>
-					<input type="text" placeholder="Correo" id="inputEmailLogin" name="inputEmail" required>
-					<br><br>
-					<i class="fa fa-lock" aria-hidden="true"></i><span>Contraseña</span>
+					<span class="br-media-query"><br><br><br><br></span> <!-- Saltos entre elementos para pantallas pequeñas-->
+					<div class="welcome-info">
+							<span>Visita la web de la Universidad:</span> <br>
+							<a href="#">UC3M</a>
+					</div>
+				</div>
+				<!-- ====== LOGIN FORM ====== -->
+				<div class="login-form col-12 col-sm-12">
+					<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="welcome-uc3m-text">
+					<h1>Identificación de usuario</h1>
+					<p id="error-log"></p>
+					<form action ="index-aulaglobal.html" id="loginForm">
+						<i class="fa fa-user" aria-hidden="true"></i><span>Correo</span>
+						<br>
+						<input type="text" placeholder="Correo" id="inputEmailLogin" name="inputEmail" required>
+						<br><br>
+						<i class="fa fa-lock" aria-hidden="true"></i><span>Contraseña</span>
+						<br>
+						<input type="password" placeholder="Contraseña" id="inputPasswordLog" name="inputPassword" required>
+						<br><br>
+						<input type="checkbox" onclick="showPassword()" class="col-12">&nbsp;Mostrar Contraseña
+						<br><br>
+						<button type="submit" class="button-aceptar" onclick="loginUsuario()">Aceptar</button>
+					</form>
+
 					<br>
-					<input type="password" placeholder="Contraseña" id="inputPasswordLog" name="inputPassword" required>
-					<br><br>
-					<input type="checkbox" onclick="showPassword()" class="col-12">&nbsp;Mostrar Contraseña
-					<br><br>
-					<button type="submit" class="button-aceptar" onclick="loginUsuario()">Aceptar</button>
-				</form>
-
-				<br>
-				<p class="register">
-						¿No eres usuario aún? <a href="#" id="AbrirRegistro">Regístrate</a>
-				</p>
-			</div>
-
-			<!-- ====== INFO CONTAINER ====== -->
-			<div class="info-container col-7 col-sm-12">
-				<div class="info">
-					<h1>SERVICIO DE SINGLE SIGN-ON</h1>
-					<img src="images/single-sign-on.png" alt="Sign On by UC3M" class="logo-uc3m">
-					<p class="info-login-text">Una vez que se haya autenticado no será necesario identificarse de nuevo para acceder a otros recursos. <br><br>
-					<b>Para desconectarse, recomendamos que cierre su navegador (cerrando todas las ventanas).</b>
+					<p class="register">
+							¿No eres usuario aún? <a href="#" id="AbrirRegistro">Regístrate</a>
+					</p>
+					<br>
+					<p>
+						Volver al <span class="back-to-welcome">inicio</span>
 					</p>
 				</div>
-				<br><br><br><br><br><br><br><br><br><br>
-				<div class="privacy-pol">
-					Copyright @ 2020 Group 1 Inc. <br>
-					<a href="#">Términos de Uso y Privacidad</a>
+			</div>
+
+			<div class="content-right-container col-7 col-sm-12">
+				<!-- ====== INFO CONTAINER ====== -->
+				<div class="info-container col-12 col-sm-12">
+					<div class="info">
+						<h1>SERVICIO DE SINGLE SIGN-ON</h1>
+						<img src="images/single-sign-on.png" alt="Sign On by UC3M" class="logo-uc3m">
+						<p class="info-login-text">Una vez que se haya autenticado no será necesario identificarse de nuevo para acceder a otros recursos. <br><br>
+						<b>Para desconectarse, recomendamos que cierre su navegador (cerrando todas las ventanas).</b>
+						</p>
+					</div>
+					<br><br><br><br><br><br><br>
+					<div class="privacy-pol">
+						<span>Copyright @ 2020 Group 1 Inc.</span> <br>
+						<a href="#">Términos de Uso y Privacidad</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -97,6 +91,7 @@
 		<!-- ====== REGISTER FORM CONTAINER ====== -->
 		<div class="register-form col-8 col-sm-10" id="Registration">
 				<div class="register-image col-12 col-sm-12">
+					<p>Volver al <span class="back-to-welcome-r">inicio</span></p>
 					<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-3 col-sm-9">
 				</div>
 				<h1>Registro de usuario</h1>
@@ -209,13 +204,29 @@
 				$(".register-form").slideUp();
 				$(".content").delay(400).slideDown();
 			});
+			$(".welcome-login").click(function(){
+				$(".welcome").slideUp();
+				$(".login-form").delay(400).slideDown();
+			});
+			$(".welcome-register").click(function(){
+				$(".content").slideUp();
+				$(".register-form").delay(400).slideDown();
+			});
+			$(".back-to-welcome").click(function(){
+				$(".login-form").slideUp();
+				$(".welcome").delay(400).slideDown();
+			});
+			$(".back-to-welcome-r").click(function(){
+				$(".register-form").slideUp();
+				
+				$(".content").delay(400).slideDown();
+			});
 
 			// Ajustamos los terminos de privacidad al ancho del elemento padre
 			var my_width = $('.privacy-pol').width();
 			var info_width = $('.content').width();
 			$('.privacy-pol').width(info_width);
-			//var myPercentage = (my_width / $('.info-container').parent().width()) * 100;
-			//$('.privacy-pol').width(myPercentage + '%');
+
 
 		});
 	</script>

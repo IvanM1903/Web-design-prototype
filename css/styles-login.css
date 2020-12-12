@@ -88,31 +88,37 @@
 	justify-content: center;
 	align-items: center;
 	background-color: #FFF;
-	max-height: 75vh;
+	max-height: 70vh;
 	border-radius: 10px;
-	padding-top: 16px; 
 	position: relative;
+}
+.content-left-container{
+	background-color: #FFF;
+	display: flex;
+	height: 70vh;
+	border-right: 1px solid #bfbfbf;
+	padding-top: 16px;
+	justify-content: center;
+	align-items: center;
+	z-index: 3;
 }
 .welcome{
 	text-align: center;
 	background-color: #FFF;
-	border-right: 1px solid  #bfbfbf;
 	padding-right: 40px;
 	padding-left: 40px;
 	position: relative;
 	z-index: 3;
 }
+.welcome h1{
+	padding-top: 15px;
+}
 .br-media-query{
 	display: none;
 }
 .welcome-uc3m-text{
-	border-bottom: 2px solid #4b4b4b;
-	margin-bottom: 10px;
-}
-.welcome-uc3m-logo{
-	width: 40%;
-	margin-top: 10px;
-	margin-bottom: 80px;
+	width: 60%;
+	border-bottom: 1px solid #bfbfbf;
 }
 .welcome-section-log{
 	display: flex;
@@ -130,6 +136,12 @@
 	position: absolute;
 }
 .welcome-login:hover{
+	box-shadow: -5px 5px #000b2e;
+	cursor: pointer;
+	border: 2px solid #000;
+	z-index: 3;
+}
+.welcome-login:active{
 	box-shadow: -5px 5px #000b2e;
 	cursor: pointer;
 	border: 2px solid #000;
@@ -162,20 +174,8 @@
 	text-decoration: none;
 	color: #000;
 }
-.welcome{
-	text-align: center;
-	padding: 12px;
-	border-right: 1px solid  #bfbfbf;
-	padding-right: 40px;
-	padding-left: 40px;
-	position: relative;
-}
-.welcome-uc3m-text{
-	border-bottom: 2px solid #4b4b4b;
-	margin-bottom: 20px;
-}
 .welcome-uc3m-logo{
-	width: 40%;
+	width: 30%;
 	margin-top: 30px;
 	margin-bottom: 100px;
 }
@@ -227,12 +227,12 @@
 	color: #000;
 }
 .login-form{
+	background-color: #FFF;
 	display: none;
 	text-align: center;
 	padding: 12px;
-	border-right: 1px solid  #bfbfbf;
-	padding-right: 40px;
-	padding-left: 40px;
+	position: relative;
+	z-index: 3;
 }
 #inputEmailLogin{
 	margin: 4px 0;
@@ -247,12 +247,15 @@
 	box-sizing: border-box;
 }
 .login-form h1{
-	border-top: 2px solid #000;
 	margin-top: 20px;
 	padding-top: 40px;
 	margin-bottom: 16px;
 }
 .register-image{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 	background-color: #FFF;
 	border-bottom: 2px solid #000;
 	padding-top: 10px;
@@ -267,7 +270,6 @@
 .register-form{
 	background-color: #FFF;
 	text-align: center;
-	border-right: 1px solid  #bfbfbf;
 	height: 60vh;
 	padding-left: 40px;
 	padding-right: 40px;
@@ -297,6 +299,23 @@
 	text-decoration: none;
 	color:  #ff3333;
 }
+.back-to-welcome{
+	color: #000099;
+	font-weight: bold;
+}
+.back-to-welcome:hover{
+	cursor: pointer;
+	color: #4141a1;
+}.back-to-welcome-r{
+	color: #000099;
+	font-weight: bold;
+	padding-right: 10px;
+	border-right: 1px solid #bfbfbf;
+}
+.back-to-welcome-r:hover{
+	cursor: pointer;
+	color: #4141a1;
+}
 #registration i{
 	margin-right: 10px;
 }
@@ -310,14 +329,18 @@ input.invalid{
 	background-color: #ff4d4d;
 }
 .button-aceptar{
-	padding: 3px;
-	background-color:#002699;
-	color: white;
-	border-radius: 5px;
+	border: 0px;
+	background-color: #000099;
+	border-radius: 10px;
+	color: #FFF;
+	width: 40%;
+	padding: 7px 0;
 }
 .button-aceptar:hover{
-	background-color: #000099;
+	cursor: pointer;
+	background-color: #000057;
 }
+
 .info-container{
 	display: flex;
 	align-items: center;
@@ -329,6 +352,8 @@ input.invalid{
 	width:inherit;
 }
 .info h1{
+	padding-left: 10px;
+	padding-right: 10px;
 	margin-bottom: 20px;
 }
 .logo-uc3m{
@@ -344,6 +369,7 @@ input.invalid{
 	background-color: #ebebeb;
 	font-weight: bold;
 	padding:10px 0;
+	width: initial;
 	border-radius: 0 0 10px 0;
 	position: absolute;
 	bottom: 0;
@@ -377,22 +403,45 @@ input.invalid{
 
 /* ====== MEDIA QUERIES ====== */
 
-@media screen and (max-width:1044px){
-	.br-media-query{
-		display: block;
+@media screen and (max-width:1150px){
+	.content-left-container{
+		height: 60vh;
+	}
+	.welcome-section-log{
+		padding-top: 30px;
+	}
+	.welcome-uc3m-text{
+		width: 70%;
+	}
+	.welcome-uc3m-logo{
+		margin-top: 0;
+		margin-bottom: 60px;
+		width: 50%;
+	}
+	.welcome h1{
+		padding: 0;
+	}
+	.login-form h1{
+		padding-top: 0;
 	}
 }
 
-
 @media screen and (max-width:778px){
-	.info-container{
+	.col-md-10{
+		flex: 83.3333%;
+		max-width: 83.3333%;
+	}
+	.content-right-container{
 		display: none;
 	}
-	.welcome{
+	.content-left-container{
 		border-right: 0px;
 	}
 	.br-media-query{
 		display: none;
+	}
+	.welcome-uc3m-logo{
+		width: 40%;
 	}
 }
 
