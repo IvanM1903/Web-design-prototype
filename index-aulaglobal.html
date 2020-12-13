@@ -19,39 +19,63 @@
 
 	<!-- ====== MENU OVERLAY MOBILE ====== -->
 	<div id="SideMenuId" class="side-menu">
-	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	  <a href="#" class="mostrarContenidoAsignatura" onclick="closeNav()">Contenido de la asignatura</a>
-	  <a href="#" class="mostrarEstudiantesAsignatura student-list-mobile" onclick="closeNav()">Lista de Estudiantes</a>
-	  <a href="#" class="mostrarCalificacionesAsignatura" onclick="closeNav()">Calificaciones</a>
-	  <a href="#ultimas-novedades" onclick="closeNav()">Últimas Novedades</a>
-	  <a href="#" id="openModalPhone" onclick="closeNav()">Próximos eventos</a>
-	  <a href="#" class="mostrarForoAsignatura" onclick="closeNav()">Foro del curso</a>
-	  <hr>
-	  <a href="https://www.uc3m.es/grado/informatica">Programa de Grado</a>
-	  <a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/FormularioTextoDosColumnas/1371206610152/Contacta">Ayuda</a>
+		<div class="user-session">
+			<img src="images/user.png" alt="imagen-de-usuario">
+			<div id="user-session-name" class="col-12"></div>
+			<div id="user-session-mail" class="col-12"></div>
+			<div id="user-session-quit"><i class="fa fa-sign-out" aria-hidden="true"></i>
+			</div>
+		</div>
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<div class="side-menu-item">
+			<i class="fa fa-book col-1" aria-hidden="true"></i>
+			<a href="#" class="side-menu-asignaturas col-10" onclick="closeNav()">Mis asignaturas</a>
+			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
+		</div>
+		<div class="side-menu-item">
+			<i class="fa fa-th-list col-1" aria-hidden="true"></i>
+			<a href="#" class="side-menu-estudiantes student-list-mobile col-10" onclick="closeNav()">Lista de Estudiantes</a>
+			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
+		</div>
+		<div class="side-menu-item">
+			<i class="fa fa-address-book col-1" aria-hidden="true"></i>
+			<a href="https://contacta.uc3m.es/s/?language=es" class="side-menu-contacto col-10" onclick="closeNav()">Contacto</a>
+			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
+		</div>
+		<div class="side-menu-item">
+			<i class="fa fa-bar-chart col-1" aria-hidden="true"></i>
+			<a href="#" class="side-menu-calificaciones col-10" onclick="closeNav()">Calificaciones</a>
+			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
+		</div>
+		<div class="side-menu-item">
+			<i class="fa fa-bookmark col-1" aria-hidden="true"></i>
+			<a href="#" class="side-menu-notificaciones col-10" onclick="closeNav()">Notificaciones</a>
+			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
+		</div>
+		<div class="side-menu-item">
+			<a href="#" class="side-menu-foro col-11" onclick="closeNav()">Foro del curso</a>
+			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
+		</div>
 	</div>
 
 	<!-- ====== CABECERA ====== -->
 		<div class="cabecera col-12">
 			<!-- ====== NAV SUPERIOR ====== -->
 			<ul class="nav" id="top">
+				<!-- ====== CONTENIDO SOLO DISPONIBLE PARA VERSION MOVIL ====== -->
+				<li class="nav-item nav-icon col-s-1">
+					<span onclick="openNav()">&#9776;</span>
+				</li>	
 				<li class="col-2 col-s-3">
 					<img src="images/logoxikito.png" alt="Logo de la página principal" class="col-9 logo-header">
 				</li>
 				<li class="col-6 titulo">
-					<b>INGENIERIA INFORMATICA - INTERFACES DE USUARIO</b>
+					<b>INGENIERIA INFORMATICA - AULA GLOBAL</b>
 				</li>
-				<li class="col-4 col-s-8">
-					<div class="user-session col-12">
-							<div id="user-session-name" class="col-8"></div>
-							<img src="images/user.png" alt="imagen-de-usuario" class="col-1">
-							<div id="user-session-quit" class="col-3">Cerrar Sesión</div>
-					</div>
-				</li>
-				<!-- ====== CONTENIDO SOLO DISPONIBLE PARA VERSION MOVIL ====== -->
-				<li class="nav-item nav-icon col-s-1">
-						<span onclick="openNav()">&#9776;</span>
-				</li>
+				
+				<li class="col-1 icono-ayuda">
+					<a href="https://www.uc3m.es/ss/Satellite/Infraestructuras/es/TextoDosColumnas/1371264307813/CONTACTA:_La_comunidad_de_ayuda_y_soporte_de_la_UC3M"><i class="fa fa-question-circle col-1" aria-hidden="true"></i></a>
+				</li>				
 			</ul>
 			<!--====== NAV INFERIOR ====== -->
 			<div class="col-12">
@@ -74,19 +98,13 @@
 		<div class="main-row col-12">
 			<!--====== COLUMNA DE LA IZQUIERDA ====== -->
 			<div class="col-left column col-3">
-				<h1>INTERFACES DE USUARIO</h1>
+				<h1>MENÚ</h1>
 					<ul class="menu-left">
-						<li class="default-content mostrarContenidoAsignatura">
-							CONTENIDO DE LA ASIGNATURA
-						</li>
 						<li class="subjects mostrarRestoAsignaturas">
 							MIS ASIGNATURAS
 						</li>
 						<li class="student-list mostrarEstudiantesAsignatura">
 							LISTA DE ESTUDIANTES
-						</li>
-						<li class="forum mostrarForoAsignatura">
-							FORO DE LA ASIGNATURA
 						</li>
 						<li class="grades mostrarCalificacionesAsignatura">
 							CALIFICACIONES
@@ -95,9 +113,37 @@
 			</div>
 			<!-- ====== COLUMNA CENTRAL ====== -->
 			<div class="col-center column col-6 col-s-9 col-xs-12">
+				
+				<div class="restoAsignaturas">
+					<h1 class="title-iframe col-12">INICIO - AULA GLOBAL</h1>
+					<div class="contenedor-colCentro col-12">
+						<ul class="enlaces-orientacion"> 
+							<li class="enlace-inicio">Inicio </li>
+						</ul> 
+						<ul class="lista-principal">
+							<li><i class="fa fa-caret-down mis-cursos-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="mis-cursos">Mis cursos</span>
+								<ul class="ul-bajo-cursos">
+									<li class="asignaturas-estudios-oficiales"><i class="fa fa-caret-down estudios-oficiales-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="estudios-oficiales-toggle">Estudios Oficiales</span>
+										<ul class="ul-bajo-estudios-oficiales">
+											<li class="asignaturas-veinte"><i class="fa fa-caret-down veinte-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="veinte-toggle">20/21</span>
+												<ul class="ul-bajo-veinte">
+													<li id="asignaturas-grado">
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="calendar-container">
+					</div>
+				</div>
+
 				<!-- ====== CONTENIDO DE LA ASIGNATURA VIEW ====== -->
 				<div class="contenidoAsignatura">
-					<h1 class="title-iframe col-12">CONTENIDO DE LA ASIGNATURA</h1>
+					<h1 class="title-iframe col-12">INTERFACES DE USUARIO</h1>
 
 					<div class="contenedor-iframe background-iframe">
 						<div class="tema-asignatura">
@@ -199,29 +245,11 @@
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="restoAsignaturas">
-					<h1 class="title-iframe col-12">LISTADO DE ASIGNATURAS MATRICULADAS</h1>
-					<div class="contenedor-colCentro col-12">
-						<ul class="lista-principal">
-							<li><i class="fa fa-caret-down mis-cursos-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="mis-cursos">Mis cursos</span>
-								<ul class="ul-bajo-cursos">
-									<li class="asignaturas-estudios-oficiales"><i class="fa fa-caret-down estudios-oficiales-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="estudios-oficiales-toggle">Estudios Oficiales</span>
-										<ul class="ul-bajo-estudios-oficiales">
-											<li class="asignaturas-veinte"><i class="fa fa-caret-down veinte-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="veinte-toggle">20/21</span>
-												<ul class="ul-bajo-veinte">
-													<li id="asignaturas-grado">
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
+					<div class="calendar-container">
 					</div>
 				</div>
+
 				<!-- ====== LISTA DE ESTUDIANTES VIEW ====== -->
 				<div class="estudiantesAsignatura">
 					<h1 class="title-iframe col-12">LISTA DE ESTUDIANTES</h1>
@@ -857,58 +885,49 @@
 			</div>
 			<!-- ====== COLUMNA DE LA DERECHA ====== -->
 			<div class="col-right column col-3 col-s-12">
-				<h1>INFORMACIÓN DE LA ASIGNATURA</h1>
+				<h1>INFORMACIÓN DEL CURSO</h1>
 				<ul class="menu-right">
 					<li class="col-12">
-						<div class="proximos-eventos">
-							<p><span>&nbsp;&nbsp;&nbsp;PRÓXIMOS EVENTOS&nbsp;&nbsp;&nbsp;</span></p>
-							<div class="eventos-contenido col-10" id="openModal">
-								<i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;&nbsp;Ver próximos eventos
+						<div class="noticias-uc3m">
+							<p class="col-12 noticias-uc3m-titulo">
+								<span>&nbsp;&nbsp;&nbsp;NOTICIAS EN UC3M&nbsp;&nbsp;&nbsp;</span>
+							</p>
+							<div class="noticias-uc3m-element">
+								<img src="images/covid.jpg" alt="Medidas COVID-19" class="col-10"><br>
+								<a href="https://www.uc3m.es/covid19/inicio"><span>Protocolos y medidas COVID-19</span></a>
+							</div>
+							<hr>
+							<div class="noticias-uc3m-element">
+								<img src="images/mentoring.jpg" alt="Programa mentoring" class="col-10"><br>
+								<a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/Detalle/Comunicacion_C/1371301693542/1371215537949/Nuevo_programa_de_mentoring_de_la_UC3M_para_estudiantes_con_discapacidad"><span>Programa mentoring para discapacitados</span></a>
+							</div>
+							<hr>
+							<div class="noticias-uc3m-element">
+								<img src="images/world-university.jpg" alt="Ranking de universidades mundial" class="col-10"><br>
+								<a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/Detalle/Comunicacion_C/1371301591725/1371215537949/La_UC3M,_entre_las_mejores_universidades_del_mundo_en_empleabilidad"><span>La UC3M entre las mejores universidades en empleabilidad</span></a>
+							</div>
+							<div class="noticias-uc3m-element">
+								<img src="images/caixa.jpg" alt="Fundación Caixa" class="col-10"><br>
+								<a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/Detalle/Comunicacion_C/1371302072327/1371215537949/La_UC3M_consigue_dos_proyectos_de_investigacion_social_de_excelencia_de_Fundacion_%E2%80%9Dla_Caixa%E2%80%9D"><span>La UC3M consigue 2 proyectos de investigación de la Fundación Caixa</span></a>
 							</div>
 						</div>
 					</li>
 					<li class="col-12">
-						<div class="tutoria">
-							<p><span>&nbsp;&nbsp;&nbsp;TUTORÍA&nbsp;&nbsp;&nbsp;</span></p>
-								<div class="tutoria-name">
-									<h5>IVÁN MARTÍN PRIETO</h5>
-									<p>Pendiente de introducir tutorías</p>
-								</div>
-								<div class="tutoria-name">
-									<h5>CESAR MARTÍNEZ LARA</h5>
-									<p>Pendiente de introducir tutorías</p>
-								</div>
-						</div>
-					</li>
-					<li class="col-12">
-						<div class="actividad-reciente">
-							<p><span>&nbsp;&nbsp;&nbsp;ACTIVIDAD RECIENTE&nbsp;&nbsp;&nbsp;</span></p>
-							<div>
-								Sin actividad reciente en esta asignatura desde el día 07 de Octubre.
+						<div class="biblioteca-uc3m">
+							<p class="col-12 biblioteca-uc3m-titulo">
+								<span>&nbsp;&nbsp;&nbsp;BIBLIOTECA UC3M&nbsp;&nbsp;&nbsp;</span>
+							</p>
+							<div class="biblioteca-uc3m-element">
+								<img src="images/biblioteca.jpg" alt="Imagen biblioteca" class="col-10"><br>
+								<a href="https://www.uc3m.es/ss/Satellite/Biblioteca/es/PortadaMiniSite/1371212251593/"><span>Enlace al portal de la biblioteca</span></a>
 							</div>
 						</div>
 					</li>
 					<li class="col-12" id="ultimas-novedades">
-						<div class="ultimas-novedades">
-							<p><span>&nbsp;&nbsp;&nbsp;ÚLTIMAS NOVEDADES&nbsp;&nbsp;&nbsp;</span></p>
-							<div>
-								<div><b>Notas publicadas</b></div>
-								<div>02-10-20 : <b>&nbsp;Nueva pregunta en el foro</b></div>
-								<div>28-09-20 : <b>&nbsp;Nueva pregunta en el foro</b></div>
-								<div>06-09-20 : <b>&nbsp;Nueva pregunta en el foro</b></div>
-							</div>
-						</div>
+						
 					</li>
 				</ul>
 			</div>
-		</div>
-	</div>
-
-	<!-- ====== MODAL CALENDAR ====== -->
-	<div id="calendar-modal-container">
-		<div class="modal-content">
-			<span class="close">&times;</span>
-			<div id="calendarModal"></div>
 		</div>
 	</div>
 
@@ -917,8 +936,9 @@
 		<div class="modal-logout-content col-5">
 			<div class="col-12"><b>¿Estás segur@ de que deseas cerrar sesión?</b></div>
 			<div class="col-12 modal-logout-buttons">
-				<button id="aceptar-logout">Sí</button>
-				<button id="rechazar-logout">No</button>
+				<div id="aceptar-logout">Sí</div>
+				<br>
+				<div id="rechazar-logout">No</div>
 			</div>
 		</div>
 	</div>

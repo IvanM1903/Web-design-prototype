@@ -45,51 +45,202 @@ function insertarRespuesta(i){
 //============================================//
 
 $(document).ready(function(){
-    $(".mostrarContenidoAsignatura").css({
-        "color":"#000099",
-        "font-weight":"bold"
+
+    //================================//
+    // ====== CALENDAR SECTION ====== //
+    //================================//
+
+
+    $(".calendar-container").simpleCalendar();
+    
+
+    $(".calendar-container").simpleCalendar({
+        //Defaults options below
+        //string of months starting from january
+        months: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+        days: ['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'],
+        displayYear: true,              // Display year in header
+        fixedStartDay: true,            // Week begin always by monday or by day set by number 0 = sunday, 7 = saturday, false = month always begin by first day of the month
+        displayEvent: true,             // Display existing event
+        disableEventDetails: false, // disable showing event details
+        disableEmptyDetails: false, // disable showing empty date details
+        events: [
+            {
+                startDate: new Date(2020,10,05),
+                endDate: new Date(2020,10,05),
+                summary: "Entrega de la practica 2"
+            },
+            {
+                startDate: new Date(2020,10,02),
+                endDate: new Date(2020,10,02),
+                summary: "Entrega de memoria - Ingeniería del software"
+            },
+            {
+                startDate: new Date(2020,10,06),
+                endDate: new Date(2020,10,06),
+                summary: "Entrega práctica redes - Redes y Ordenadores"
+            },
+            {
+                startDate: new Date(2020,10,08),
+                endDate: new Date(2020,10,08),
+                summary: "Entrega de práctica 1 - Heurística "
+            },
+            {
+                startDate: new Date(2020,10,10),
+                endDate: new Date(2020,10,10),
+                summary: "Test nivel de red - Redes y Ordenadores"
+            },
+            {
+                startDate: new Date(2020,10,18),
+                endDate: new Date(2020,10,18),
+                summary: "Examen nivel de red - Redes y Ordenadores"
+            }
+        ],                     // List of events
+        onInit: function (calendar) {}, // Callback after first initialization
+        onMonthChange: function (month, year) {}, // Callback on month change
+        onDateSelect: function (date, events) {}, // Callback on date selection
+        onEventSelect: function() { $(this).data('event')}, // Callback on event selection - use $(this).data('event') to access the event
+        onEventCreate: function( $el ) {},          // Callback fired when an HTML event is created - see $(this).data('event')
+        onDayCreate:   function( $el, d, m, y ) {}  // Callback fired when an HTML day is created   - see $(this).data('today'), .data('todayEvents')
     });
+
+
+    $(".side-menu-asignaturas").parent().css({
+        "color":"#000099",
+        "font-weight":"bold",
+        "background-color":"rgba(117, 169, 249,0.6)"
+    });
+    $(".side-menu-foro").parent().hide();
     $(".calificacionesAsignatura").hide();
     $(".estudiantesAsignatura").hide();
     $(".foroAsignatura").hide();
-    $(".restoAsignaturas").hide();
+    $(".contenidoAsignatura").hide();
     $(".tabla-user-estudiante").hide();
-
+    $(".side-menu-calificaciones").parent().hide();
     if(getCookie("rol") === "Estudiante"){
-        $(".mostrarContenidoAsignatura").click(function(){
-            $(".mostrarContenidoAsignatura").css({
+
+        // SIDE MENU ITEMS -> MOBILE
+        $(".side-menu-asignaturas").click(function(){
+            $(".side-menu-asignaturas").parent().css({
                 "color":"#000099",
-                "font-weight":"bold"
+                "font-weight":"bold",
+                "background-color":"rgba(117, 169, 249,0.6)"
             });
-            $(".mostrarRestoAsignaturas").css({
+            $(".side-menu-calificaciones").parent().css({
                 "color":"#000",
-                "font-weight":"normal"
+                "font-weight":"normal",
+                "background-color":"transparent"
             });
-            $(".mostrarForoAsignatura").css({
-                "color":"#000",
-                "font-weight":"normal"
+            $(".side-menu-contacto").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
             });
-            $(".mostrarCalificacionesAsignatura").css({
-                "color":"#000",
-                "font-weight":"normal"
+            $(".side-menu-notificaciones").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
             });
+            $(".contenidoAsignatura").slideUp(800);
             $(".calificacionesAsignatura").slideUp(800);
+            $(".foroAsignatura").slideUp(800);
+            $(".restoAsignaturas").slideDown(800);
+        });
+        $(".side-menu-calificaciones").click(function(){
+            $(".side-menu-calificaciones").parent().css({
+                "color":"#000099",
+                "font-weight":"bold",
+                "background-color":"rgba(117, 169, 249,0.6)"
+            });
+            $(".side-menu-asignaturas").parent().css({
+                "color":"#000",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+            $(".side-menu-contacto").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+            $(".side-menu-notificaciones").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+            //Ocultamos la tabla del resto de alumnos
+            $(".alumnos").hide();
+            //MOstramos la tabla del usuario
+            $(".tabla-user-estudiante").show();
+            document.getElementById("nombre-usuario-calificaciones").innerHTML = getCookie("nameSurname");
+            $(".contenidoAsignatura").slideUp(800);
             $(".restoAsignaturas").slideUp(800);
             $(".foroAsignatura").slideUp(800);
-            $(".contenidoAsignatura").slideDown(800);
+            $(".calificacionesAsignatura").slideDown(800);
         });
+        $(".side-menu-contacto").click(function(){
+            $(".side-menu-contacto").parent().css({
+                "color":"#000099",
+                "font-weight":"bold",
+                "background-color":"rgba(117, 169, 249,0.6)"
+            });
+            $(".side-menu-calificaciones").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+            $(".side-menu-asignaturas").parent().css({
+                "color":"#000",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+            $(".side-menu-notificaciones").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+        });
+        $(".side-menu-notificaciones").click(function(){
+            $(".side-menu-notificaciones").parent().css({
+                "color":"#000099",
+                "font-weight":"bold",
+                "background-color":"rgba(117, 169, 249,0.6)"
+            });
+            $(".side-menu-calificaciones").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+            $(".side-menu-asignaturas").parent().css({
+                "color":"#000",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+            $(".side-menu-contacto").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+        });
+
+        //LEFT MENU -> DESKTOP
         $(".mostrarRestoAsignaturas").click(function(){
             $(".mostrarRestoAsignaturas").css({
                 "color":"#000099",
                 "font-weight":"bold"
             });
-            $(".mostrarContenidoAsignatura").css({
+            $(".mostrarCalificacionesAsignatura").css({
                 "color":"#000",
                 "font-weight":"normal"
             });
-            $(".mostrarForoAsignatura").css({
-                "color":"#000",
-                "font-weight":"normal"
+            $(".contenidoAsignatura").slideUp(800);
+            $(".calificacionesAsignatura").slideUp(800);
+            $(".foroAsignatura").slideUp(800);
+            $(".restoAsignaturas").slideDown(800);
+        });
+        $(".enlace-inicio").click(function(){
+            $(".mostrarRestoAsignaturas").css({
+                "color":"#000099",
+                "font-weight":"bold"
             });
             $(".mostrarCalificacionesAsignatura").css({
                 "color":"#000",
@@ -149,7 +300,17 @@ $(document).ready(function(){
             $(".foroAsignatura").slideUp(800);
             $(".calificacionesAsignatura").slideDown(800);
         });
+        
     }else{
+
+        //Ocultamos el menu de las asignaturas de los estudiantes
+        $(".restoAsignaturas").hide();
+        //Hacemos visibles el contenido de la asignatura por defecto --> Interfaces de usuario
+        $(".contenidoAsignatura").show();
+        //Ocultamos la opcion del menu izquierdo --> Mis asignaturas
+        $(".side-menu-asignaturas").parent().hide();
+
+
         $(".mostrarContenidoAsignatura").click(function(){
             $(".mostrarContenidoAsignatura").css({
                 "color":"#000099",
@@ -254,8 +415,9 @@ $(document).ready(function(){
         var contenedorPadre = document.getElementById("asignaturas-grado");
         var grado = getCookie("grado");
         $(".student-list").hide();
-        $(".student-list-mobile").hide();
+        $(".student-list-mobile").parent().hide();
         $(".subjects").show();
+
 
         //Creamos el bloque donde se insertarán las asignaturas
         var bloque_asignaturas = document.createElement("ul");
@@ -310,7 +472,7 @@ $(document).ready(function(){
 //===============================//
 
 function openNav() {
-	document.getElementById("SideMenuId").style.width = "70%";
+	document.getElementById("SideMenuId").style.width = "60%";
 }
 
 function closeNav() {
@@ -369,86 +531,6 @@ $("#foro-tema-3").click(function(){
     $(".volver-a-foro").delay(600).fadeIn("slow");
     $("#contenido-tema-3").delay(600).fadeIn("slow");
     $("#formularioRespuestaForo").delay(600).fadeIn("slow");
-});
-
-//================================//
-// ====== CALENDAR SECTION ====== //
-//================================//
-
-//Abrimos el modal con las siguientes variables
-var modal = document.getElementById("calendar-modal-container");
-var btn = document.getElementById("openModal");
-var btn2 = document.getElementById("openModalPhone");
-var span = document.getElementsByClassName("close")[0];
-
-span.onclick = function(){
-    modal.style.display = "none";
-}
-
-btn.onclick = function(){
-    modal.style.display = "block";
-}
-
-btn2.onclick = function(){
-    modal.style.display = "block";
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-}
-$(document).ready(function(){
-    $("#calendarModal").simpleCalendar();
-});
-$("#calendarModal").simpleCalendar({
-    //Defaults options below
-    //string of months starting from january
-    months: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
-    days: ['Domingo','Lunes','Martes','Miercoles','Jueves','Viernes','Sabado'],
-    displayYear: true,              // Display year in header
-    fixedStartDay: true,            // Week begin always by monday or by day set by number 0 = sunday, 7 = saturday, false = month always begin by first day of the month
-    displayEvent: true,             // Display existing event
-    disableEventDetails: false, // disable showing event details
-    disableEmptyDetails: false, // disable showing empty date details
-    events: [
-        {
-            startDate: new Date(2020,10,05),
-            endDate: new Date(2020,10,05),
-            summary: "Entrega de la practica 2"
-        },
-        {
-            startDate: new Date(2020,10,02),
-            endDate: new Date(2020,10,02),
-            summary: "Entrega de memoria - Ingeniería del software"
-        },
-        {
-            startDate: new Date(2020,10,06),
-            endDate: new Date(2020,10,06),
-            summary: "Entrega práctica redes - Redes y Ordenadores"
-        },
-        {
-            startDate: new Date(2020,10,08),
-            endDate: new Date(2020,10,08),
-            summary: "Entrega de práctica 1 - Heurística "
-        },
-        {
-            startDate: new Date(2020,10,10),
-            endDate: new Date(2020,10,10),
-            summary: "Test nivel de red - Redes y Ordenadores"
-        },
-        {
-            startDate: new Date(2020,10,18),
-            endDate: new Date(2020,10,18),
-            summary: "Examen nivel de red - Redes y Ordenadores"
-        }
-    ],                     // List of events
-    onInit: function (calendar) {}, // Callback after first initialization
-    onMonthChange: function (month, year) {}, // Callback on month change
-    onDateSelect: function (date, events) {}, // Callback on date selection
-    onEventSelect: function() { $(this).data('event')}, // Callback on event selection - use $(this).data('event') to access the event
-    onEventCreate: function( $el ) {},          // Callback fired when an HTML event is created - see $(this).data('event')
-    onDayCreate:   function( $el, d, m, y ) {}  // Callback fired when an HTML day is created   - see $(this).data('today'), .data('todayEvents')
 });
 
 //====================================//

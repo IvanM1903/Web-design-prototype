@@ -507,7 +507,7 @@ a:hover{
 	align-items: center;
 }
 .logo-header{
-	padding-left: 20px;
+	padding-left: 10px;
 }
 .col-2 > img{
 	width: 100%;
@@ -551,35 +551,44 @@ a:hover{
 }
 .nav-icon{
 	display: none;
+	padding-left: 10px;
 }
 .nav-icon span{
 	font-size:30px;
 	cursor:pointer;
 }
+.icono-ayuda{
+	display: none;
+	font-size: 20px;
+}
 .user-session{
 	display: flex;
-	flex-direction: row;
-	justify-content: right;
+	flex-direction: column;
+	justify-content: space-around;
 	align-items: center;
-	padding-left: 10px;
-	padding-right: 5px;
-	border-radius: 4px;
 }
-#user-session-quit:hover {
-	color:#000099;
+#user-session-quit{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+	padding: 4px;
+}
+#user-session-quit i{
+	font-size: 30px;
+	color: white;
 }
 .user-session img{
-	width: 10%;
-	padding-right: 10px;
-	border-right: 2px solid #808080;
-	margin-right: 10px;
+	width: 40%;
 }
 #user-session-name{
-	
-	padding-right: 15px;
-	
+	padding-top: 5px;
+	color: #FFF;
 	font-size: 20px;
 	text-align: right;
+}
+#user-session-mail{
+	padding-top: 5px;
+	color: #FFF;
 }
 /***************
 **** CUERPO ****
@@ -637,6 +646,7 @@ a:hover{
 	margin-right: 40px;
 	padding-bottom: 15px;
 	border-bottom: 1px solid #ccc;
+	background-color:none !important;
 }
 .menu-left a:focus {
 	color: #000099;
@@ -656,9 +666,8 @@ a:hover{
 	margin-right: 20px;
 }
 .contenedor-colCentro{
-	margin-left: 30px;
-	margin-top: 60px;
-
+	margin-left: 20px;
+	margin-top: 20px;
 }
 .contenedor-colCentro ul{
 	list-style: none;
@@ -699,6 +708,17 @@ a:hover{
 	cursor: pointer;
 	background-color: #e0e0e0;
 }
+.enlaces-orientacion li{
+	display: flex;
+	flex-direction: row;
+	text-decoration: underline;
+}
+.enlaces-orientacion li:hover{
+	color: #002699;
+	background-color: #e0e0e0;
+	cursor:pointer;
+}
+
 /*********************
 **** RIGHT COLUMN ****
 *********************/
@@ -710,7 +730,7 @@ a:hover{
 .col-right > h1{
 	font-size: 18.72px;
 	text-align: center;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 2px solid rgba(20,20,20,0.4);
 	padding-bottom: 10px;
 	padding-right: 1rem;
 	padding-top: 1rem;
@@ -723,107 +743,54 @@ a:hover{
 	border-bottom: 1px solid #ccc;
 }
 
-.tutoria{
+.noticias-uc3m{
 	padding-top: 16px;
-	padding-left: 1rem;
-	padding-right: 1rem;
+	padding-left: 5px;
+	padding-right: 5px;
 }
-.tutoria p{
-	margin-bottom: 16px;
-	padding-top: 4px;
-}
-.tutoria span{
-	border-left: 2px solid #000099;
-	border-right: 2px solid #000099;
-	padding-top: 3px;
-	padding-bottom: 3px;
-	font-weight: bold;
-}
-.tutoria-name{
-	font-size: 17px;
-	padding-top:0px;
-	padding-bottom: 0rem;
-}
-.actividad-reciente{
-	padding-top: 20px;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	margin-bottom: 1rem;
-}
-.actividad-reciente span {
-	border-left: 2px solid #000099;
-	border-right: 2px solid #000099;
-	padding-top: 3px;
-	padding-bottom: 3px;
-	font-weight: bold;
-}
-.actividad-reciente > div{
-	padding-top: 1rem;
-}
-.ultimas-novedades{
-	padding-top: 20px;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	margin-bottom: 1rem;
-}
-.ultimas-novedades span {
-	border-left: 2px solid #000099;
-	border-right: 2px solid #000099;
-	padding-top: 3px;
-	padding-bottom: 3px;
-	font-weight: bold;
-}
-.ultimas-novedades > div{
-	padding-top: 1rem;
-}
-.ultimas-novedades > div > div{
-	padding-top: 5px;
-}
-.proximos-eventos{
-	padding-top: 20px;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	margin-bottom: 1rem;
-}
-.proximos-eventos span{
-	border-left: 2px solid #000099;
-	border-right: 2px solid #000099;
-	padding-top: 3px;
-	padding-bottom: 3px;
-	font-weight: bold;
-}
-.proximos-eventos div{
-	margin-top: 1rem;
-}
-.eventos-contenido{
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin-left: 20%;
-	margin-right: 20%;
-}
-.eventos-contenido:hover{
-	background-color: #e0e0e0;
+.noticias-uc3m-titulo{
+	background-color: #e4e4e4;
+	padding:6px 0;
 	border-radius: 4px;
-	cursor: pointer;
+	font-weight: bold;
 }
-.eventos-contenido:active{
-	background-color: #c7c7c7;
+.noticias-uc3m p{
+	margin-bottom: 16px;
 }
-.eventos-contenido i{
-	background-color: rgba(113, 97, 255, 0.274);
-	padding:5px;
-	border-radius: 5px;
+.noticias-uc3m-element{
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
+hr{
+	border: 1px solid #c7c7c7;
+}
+
+.biblioteca-uc3m{
+	padding-top: 20px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-bottom: 1rem;
+}
+.biblioteca-uc3m-titulo {
+	background-color: #e4e4e4;
+	padding:6px 0;
+	border-radius: 4px;
+	font-weight: bold;
+}
+.biblioteca-uc3m > div{
+	padding-top: 1rem;
+}
+
 
 /************************
 **** SIMPLE CALENDAR ****
 ************************/
-#calendarModal{
+.calendar-container{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 20px;
-	margin-bottom:20px;
+	border-top: 1px solid #c7c7c7;
+	padding-top: 9px;
 }
 .calendar {
 	position: relative;
@@ -832,8 +799,7 @@ a:hover{
 	text-align: center;
 	font: 15px/1em inherit;
 	color: #545A5C;
-	padding-top: 20px;
-	width: 100%;
+	width: 70%;
 }
 .calendar a {
 	text-decoration: none;
@@ -1055,6 +1021,7 @@ footer{
 	border-width:0;
 }
 #aceptar-logout{
+	width: 50%;
 	padding: 10px;
 	background-color:#002699;
 	color: white;
@@ -1062,6 +1029,12 @@ footer{
 }
 #aceptar-logout:active{
 	background-color:#647fcf;
+}
+#aceptar-logout:hover{
+	cursor: pointer;
+}
+#rechazar-logout:hover{
+	cursor: pointer;
 }
 #rechazar-logout:active{
 	background-color:#647fcf;
@@ -1093,7 +1066,6 @@ footer{
 	.links-nav li {
 		font-size: 15px;
 	}
-
 	/*BODY*/
 	.main-row{
 		padding-top: 10px;
@@ -1366,11 +1338,9 @@ footer{
 		display: inline-block;
 		padding-bottom: 10px;
 	}
-
-	.nav{
-		flex-wrap: wrap;
+	.icono-ayuda{
+		display: inline-block;
 	}
-
 	.side-menu{
 	  display: block;
 	  height: 100%;
@@ -1379,30 +1349,42 @@ footer{
 	  z-index: 6;
 	  top: 0;
 	  left: 0;
-	  background-color: rgba(2,2,87, 0.9);
+	  background-color: rgba(2,2,87, 0.98);
 	  overflow-x: hidden;
 	  transition: 0.5s;
 	  padding-top: 60px;
 	}
 
 	.side-menu a {
-	  padding: 8px 8px 8px 32px;
+	  padding: 8px 14px;
 	  text-decoration: none;
 	  font-size: 25px;
 	  color: #FFF !important;
-	  display: block;
+
 	  transition: 0.3s;
 	}
 	.side-menu a:active {
 	  color: #000099 !important;
 	}
-
+	.side-menu-item{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding-left: 8px;
+	}
+	.side-menu-item i{
+		color: #FFF;
+		font-size: 20px;
+	}
+	.fa-angle-right{
+		color: #FFF;
+		font-size: 32px;
+	}
 	.side-menu .closebtn {
 	  position: absolute;
 	  top: 0;
-	  right: 25px;
+	  left: 0px;
 	  font-size: 36px;
-	  margin-left: 50px;
 	}
 
 

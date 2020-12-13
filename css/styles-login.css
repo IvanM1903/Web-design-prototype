@@ -299,22 +299,23 @@
 	text-decoration: none;
 	color:  #ff3333;
 }
-.back-to-welcome{
-	color: #000099;
-	font-weight: bold;
+.register-image p{
+	background-color: #000099;
+	color: white;
+	padding: 5px 15px;
+	border-radius: 6px;
 }
-.back-to-welcome:hover{
-	cursor: pointer;
-	color: #4141a1;
-}.back-to-welcome-r{
-	color: #000099;
-	font-weight: bold;
-	padding-right: 10px;
-	border-right: 1px solid #bfbfbf;
+.login-back-to-welcome{
+	background-color: #000099;
+	color: white;
+	padding: 5px 15px;
+	border-radius: 6px;
 }
-.back-to-welcome-r:hover{
+.login-back-to-welcome:hover{
 	cursor: pointer;
-	color: #4141a1;
+}
+.register-back-to-welcome:hover{
+	cursor: pointer;
 }
 #registration i{
 	margin-right: 10px;
@@ -490,7 +491,6 @@ input.invalid{
 	}
 	.register-form{
 		height: 80vh;
-
 	}
 	.register-form input[type=text],[type=password],[type=date]{
 		margin: 8px 0;

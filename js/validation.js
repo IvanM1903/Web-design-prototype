@@ -200,8 +200,11 @@ function getCookie(cname) {
   }
 function writeNameFromCookie(){
 	  var name = "";
+	  var mail = "";
 	  name = getCookie("nameSurname");
+	  mail = getCookie("email");
 	  document.getElementById("user-session-name").innerHTML = name;
+	  document.getElementById("user-session-mail").innerHTML = mail;
 }
 
 
