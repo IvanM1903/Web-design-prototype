@@ -204,6 +204,7 @@ function writeNameFromCookie(){
 	  name = getCookie("nameSurname");
 	  mail = getCookie("email");
 	  document.getElementById("user-session-name").innerHTML = name;
+	  document.getElementById("user-session-name-desktop").innerHTML = name;
 	  document.getElementById("user-session-mail").innerHTML = mail;
 }
 

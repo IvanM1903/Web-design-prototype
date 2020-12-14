@@ -23,7 +23,8 @@
 			<img src="images/user.png" alt="imagen-de-usuario">
 			<div id="user-session-name" class="col-12"></div>
 			<div id="user-session-mail" class="col-12"></div>
-			<div id="user-session-quit"><i class="fa fa-sign-out" aria-hidden="true"></i>
+			<div class="user-session-quit">
+				<i class="fa fa-sign-out" aria-hidden="true"></i>
 			</div>
 		</div>
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -33,13 +34,18 @@
 			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
 		</div>
 		<div class="side-menu-item">
+			<i class="fa fa-book col-1" aria-hidden="true"></i>
+			<a href="#" class="side-menu-asignatura-profe col-10" onclick="closeNav()">Contenido de la asignatura</a>
+			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
+		</div>
+		<div class="side-menu-item">
 			<i class="fa fa-th-list col-1" aria-hidden="true"></i>
-			<a href="#" class="side-menu-estudiantes student-list-mobile col-10" onclick="closeNav()">Lista de Estudiantes</a>
+			<a href="#" class="side-menu-estudiantes col-10" onclick="closeNav()">Lista de Estudiantes</a>
 			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
 		</div>
 		<div class="side-menu-item">
 			<i class="fa fa-address-book col-1" aria-hidden="true"></i>
-			<a href="https://contacta.uc3m.es/s/?language=es" class="side-menu-contacto col-10" onclick="closeNav()">Contacto</a>
+			<a href="https://aplicaciones.uc3m.es/directorio/" class="side-menu-contacto col-10" onclick="closeNav()">Contacto</a>
 			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
 		</div>
 		<div class="side-menu-item">
@@ -53,7 +59,8 @@
 			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
 		</div>
 		<div class="side-menu-item">
-			<a href="#" class="side-menu-foro col-11" onclick="closeNav()">Foro del curso</a>
+			<i class="fa fa-wpforms col-1" aria-hidden="true"></i>
+			<a href="#" class="side-menu-foro col-10" onclick="closeNav()">Foro del curso</a>
 			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
 		</div>
 	</div>
@@ -72,7 +79,13 @@
 				<li class="col-6 titulo">
 					<b>INGENIERIA INFORMATICA - AULA GLOBAL</b>
 				</li>
-				
+				<li class="col-4 user-session-desktop">
+					<img src="images/user.png" alt="Imagen usuario" class="col-1 col-s-2">
+					<p class="col-7" id="user-session-name-desktop"></p>
+					<div class="user-session-quit-desktop">
+						<i class="fa fa-sign-out" aria-hidden="true"></i>
+					</div>
+				</li>
 				<li class="col-1 icono-ayuda">
 					<a href="https://www.uc3m.es/ss/Satellite/Infraestructuras/es/TextoDosColumnas/1371264307813/CONTACTA:_La_comunidad_de_ayuda_y_soporte_de_la_UC3M"><i class="fa fa-question-circle col-1" aria-hidden="true"></i></a>
 				</li>				
@@ -81,7 +94,7 @@
 			<div class="col-12">
 				<ul class="links-nav">
 					<li class="col-5 nav-left">
-						<a href="#top">AULA GLOBAL</a>
+						<a target="_blank" href="https://www.google.com/maps/dir//Universidad+Carlos+III+de+Madrid:+Campus+de+Legan%C3%A9s,+Avenida+de+la+Universidad,+Legan%C3%A9s/@40.3194024,-3.7952943,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0xd41898b1cc06b5b:0xaf0cadd098b516f8!2m2!1d-3.76511!2d40.3324367">CÓMO LLEGAR</a>
 					</li>
 					<li class="col-2 nav-center">
 						<a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/FormularioTextoDosColumnas/1371206610152/Contacta" target="_blank">AYUDA</a>
@@ -100,14 +113,26 @@
 			<div class="col-left column col-3">
 				<h1>MENÚ</h1>
 					<ul class="menu-left">
-						<li class="subjects mostrarRestoAsignaturas">
+						<li class="mostrarRestoAsignaturas">
 							MIS ASIGNATURAS
 						</li>
-						<li class="student-list mostrarEstudiantesAsignatura">
+						<li class="mostrarContenidoAsignatura">
+							CONTENIDO DE LA ASIGNATURA
+						</li>
+						<li class="mostrarEstudiantesAsignatura">
 							LISTA DE ESTUDIANTES
 						</li>
 						<li class="grades mostrarCalificacionesAsignatura">
 							CALIFICACIONES
+						</li>
+						<li class="mostrarContacto">
+							CONTACTA
+						</li>
+						<li  class="mostrarNotificaciones">
+							NOTIFICACIONES
+						</li>
+						<li  class="mostrarForoAsignatura">
+							FORO DE LA ASIGNATURA
 						</li>
 					</ul>
 			</div>
@@ -612,7 +637,7 @@
 				<div class="calificacionesAsignatura">
 					<div class="title-iframe">
 						<h1 class=" col-12">LISTA DE CALIFICACIONES</h1>
-						<div id="exportarExcel" class="col-2">
+						<div id="exportarExcel">
 							Descargar tabla
 						</div>
 					</div>
@@ -906,6 +931,7 @@
 								<img src="images/world-university.jpg" alt="Ranking de universidades mundial" class="col-10"><br>
 								<a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/Detalle/Comunicacion_C/1371301591725/1371215537949/La_UC3M,_entre_las_mejores_universidades_del_mundo_en_empleabilidad"><span>La UC3M entre las mejores universidades en empleabilidad</span></a>
 							</div>
+							<hr>
 							<div class="noticias-uc3m-element">
 								<img src="images/caixa.jpg" alt="Fundación Caixa" class="col-10"><br>
 								<a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/Detalle/Comunicacion_C/1371302072327/1371215537949/La_UC3M_consigue_dos_proyectos_de_investigacion_social_de_excelencia_de_Fundacion_%E2%80%9Dla_Caixa%E2%80%9D"><span>La UC3M consigue 2 proyectos de investigación de la Fundación Caixa</span></a>
@@ -947,15 +973,14 @@
 	<footer id="bottom" class="col-12">
 		<div class="footer-row">
 			<div class="uc3m-resources footer-column col-3 col-s-12">
-				<b>ACCEDE A LOS CURSOS OCW DEL GRADO</b><br>
-				<a href="http://ocw.uc3m.es/grado-en-ingenieria-informatica?b_start:int=0" target="_blank">Cursos OCW</a>
+				<a href="http://ocw.uc3m.es/grado-en-ingenieria-informatica?b_start:int=0" target="_blank"><b>ACCEDE A LOS CURSOS OCW DEL GRADO</b></a>
 			</div>
 			<div class="copyright footer-column col-3 col-s-12">
 				<p>
-					<a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/"><img alt="Licencia de Creative Commons" src="https://i.creativecommons.org/l/by-nd/4.0/88x31.png" class="creative-commons"/></a>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/" target="_blank"><img alt="Licencia de Creative Commons" src="https://i.creativecommons.org/l/by-nd/4.0/88x31.png" class="creative-commons"/></a>
 				</p>
 				<br>
-				<span>&#169;IVÁN MARTÍN PRIETO, CÉSAR MARTÍNEZ LARA. 2020</span>
+				<span>@ 2020 Group 1 Inc.</span>
 			</div>
 			<div class="privacy-pol footer-column col-3 col-s-12">
 				<a href="https://www.uc3m.es/inicio/informacion-legal/politica-privacidad" target="_blank"><b>POLÍTICA DE PRIVACIDAD</b></a>
