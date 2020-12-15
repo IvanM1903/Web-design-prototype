@@ -7,22 +7,21 @@ $(document).ready(function(){
     
     //Si el rol es estudiante tiene acceso a las siguientes funcionalidades
     /**
-     * Poder subir contenido a los entregadores -> FALTA
+     * Poder subir contenido a los entregadores -> HECHO
      * Ver las calificaciones de la asignatura -> HECHO
-     * Pedir una revisión para una calificación -> FALTA
+     * Pedir una revisión para una calificación -> HECHO
      * Descargarse calificaciones para una asignatura -> HECHO
-     *  Ver un calendario de la asignatura -> FALTA
+     * Ver un calendario de la asignatura -> HECHO
      * Interaccion a traves de foros -> HECHO
      * Inscribirse en un grupo de trabajo -> FALTA
      * 
      */
     //Si el rol es profesor tiene acceso a las siguientes funcionalidades
     /**
-     * Subir nuevo contenido a la asignatura -> FALTA
-     * Crear un nuevo entregable en la asignatura -> FALTA
-     * Crear actividades en la asignatura -> FALTA
-     * Calificar una actividad -> FALTA
-     * Ver gráficas que representen las notas de los alumnos -> FALTA
+     * Subir nuevo contenido a la asignatura -> HECHO
+     * Crear un nuevo entregable en la asignatura -> HECHO
+     * Crear actividades en la asignatura -> HECHO
+     * Calificar una actividad -> HECHO
      * Descargarse las calificaciones de los estudiantes en Excel -> HECHO
      * Interactuar a través de foros -> HECHO
      */
@@ -35,13 +34,36 @@ $(document).ready(function(){
      * Eliminar un estudiante que esté matriculado en una asignatura -> FALTA
      */
     if(rolUsuario === "Estudiante"){
-        $(".solicitar-revision").show();
+        //Hacemos visible la posibilidad de enviar una solicitud
+        $("#solicitar-revision").show();
+        $("#solicitar-revision").click(function(){
+            alert("Solicitud enviada.");
+        });
+        $(".borrar-contenido").css({
+            "display":"none"
+        });
+        $(".contenido-corrector").css({
+            "display":"none"
+        });
+        $(".contenido-agregar").css({
+            "display":"none"
+        });
+        $(".contenido-actividad-agregar").css({
+            "display":"none"
+        });
+    }else if(rolUsuario === "Profesor"){
+        $(".borrar-contenido").click(function(){
+            if(confirm("¿Estás seguro que desas borrar el contenido seleccionado?")){
+                $(this).parent().css({
+                    "display" :"none"
+                });
+            }
+        });
+        $(".contenido-corrector").click(function(){
+            alert("Las notas acaban de ser publicadas satisfactoriamente.");
+        });
     }
 });
-
-
-
-
 
 //======================================//
 // ====== MIS ASIGNATURAS SECTION ======//
@@ -56,16 +78,45 @@ $(document).ready(function(){
     $(".estudiantesAsignatura").hide();
     $(".foroAsignatura").hide();
     $(".tabla-user-estudiante").hide();
+    $(".mostrarEstudiantesAsignatura").hide();
+    $(".side-menu-estudiantes").parent().hide();
+
+    $(".mostrarContacto").hide();
+    $(".mostrarNotificaciones").hide();
+    $(".mostrarCalificacionesAsignatura").hide();
+    $(".mostrarForoAsignatura").hide();
+    $(".mostrarContenidoAsignatura").hide();
+    $(".mostrarEstudiantesAsignatura").hide();
+    $(".mostrarRestoAsignaturas").hide();
+    $(".side-menu-estudiantes").parent().hide();
+    $(".side-menu-asignaturas").parent().hide();
+    $(".side-menu-asignatura-profe").parent().hide();
+    $(".side-menu-contacto").parent().hide();
+    $(".side-menu-calificaciones").parent().hide();
+    $(".side-menu-notificaciones").parent().hide();
+    $(".side-menu-foro").parent().hide();
+
+    $(".administrador-elementos-agregar").hide();
+    $(".administrador-elementos-archivar").hide();
+    $(".administrador-elementos-config").hide();
+    $(".side-menu-agregar-asignatura").parent().hide();
+    $(".side-menu-archivar-asignatura").parent().hide();
+    $(".side-menu-configurar-asignatura").parent().hide();
+
 
     var rolUsuario = getCookie("rol");
     //Ocultamos al estudiante las vistas a las que no tiene acceso
     if(rolUsuario === "Estudiante"){
         var contenedorPadre = document.getElementById("asignaturas-grado");
         var grado = getCookie("grado");
-        $(".mostrarEstudiantesAsignatura").hide();
-        $(".side-menu-estudiantes").parent().hide();
         $(".mostrarRestoAsignaturas").show();
+        $(".mostrarNotificaciones").show();
+        $(".mostrarContacto").show();
+        $(".side-menu-contacto").parent().show();
+        $(".side-menu-notificaciones").parent().show();
+        $(".side-menu-asignaturas").parent().show();
 
+        $(".contenidoAsignatura").hide();
 
         //Creamos el bloque donde se insertarán las asignaturas
         var bloque_asignaturas = document.createElement("ul");
@@ -89,21 +140,7 @@ $(document).ready(function(){
         //Indicamos al contenedor padre cual es su contendor hijo nuevo
         contenedorPadre.appendChild(bloque_asignaturas);
 
-        //Ocultamos los campos del menu que no queremos que aparezcan en la vista del estudiante
-        $(".side-menu-calificaciones").parent().hide();
-        $(".side-menu-foro").parent().hide();
-        $(".side-menu-asignatura-profe").parent().hide();
-        $(".mostrarCalificacionesAsignatura").hide();
-        $(".mostrarForoAsignatura").hide();
-        $(".mostrarContenidoAsignatura").hide();
-        $(".contenidoAsignatura").hide();
-    }
-    else{
-        $(".mostrarEstudiantesAsignatura").show();
-        $(".mostrarRestoAsignaturas").hide();
-    }
-
-    $(".asignatura-grado").click(function(){
+        $(".asignatura-grado").click(function(){
             $(".restoAsignaturas").slideUp(800);
             $(".calificacionesAsignatura").slideUp(800);
             $(".foroAsignatura").slideUp(800);
@@ -124,7 +161,97 @@ $(document).ready(function(){
             $(".mostrarCalificacionesAsignatura").show();
             $(".side-menu-foro").parent().show();
             $(".side-menu-calificaciones").parent().show();
-    });
+            $(".mostrarEstudiantesAsignatura").show();
+            $(".side-menu-estudiantes").parent().show();
+        });
+        $(".enlace-interfaces").click(function(){
+            $(".restoAsignaturas").slideUp(800);
+            $(".calificacionesAsignatura").slideUp(800);
+            $(".foroAsignatura").slideUp(800);
+            $(".contenidoAsignatura").slideDown(800);
+            $(".mostrarRestoAsignaturas").css({
+                "color":"#000",
+                "font-weight":"normal"
+            });
+            $(".mostrarCalificacionesAsignatura").css({
+                "color":"#000",
+                "font-weight":"normal"
+            });
+            $(".side-menu-asignaturas").parent().css({
+                "background-color":"transparent",
+                "font-weight":"normal"
+            });
+            $(".mostrarForoAsignatura").show();
+            $(".mostrarCalificacionesAsignatura").show();
+            $(".side-menu-foro").parent().show();
+            $(".side-menu-calificaciones").parent().show();
+            $(".side-menu-estudiantes").parent().show();
+        });
+
+    }
+    else if(rolUsuario === "Profesor"){
+
+        $(".restoAsignaturas").hide();
+        $(".mostrarEstudiantesAsignatura").show();
+        $(".mostrarCalificacionesAsignatura").show();
+        $(".mostrarForoAsignatura").show();
+        $(".mostrarContenidoAsignatura").show();
+        $(".mostrarNotificaciones").show();
+
+        $(".side-menu-contenido-asignatura-profe").parent().show();
+        $(".side-menu-estudiantes").parent().show();
+        $(".side-menu-calificaciones").parent().show();
+        $(".side-menu-notificaciones").parent().show();
+        $(".side-menu-foro").parent().show();
+
+        $(".enlace-interfaces").click(function(){
+            $(".restoAsignaturas").slideUp(800);
+            $(".calificacionesAsignatura").slideUp(800);
+            $(".foroAsignatura").slideUp(800);
+            $(".contenidoAsignatura").slideDown(800);
+            $(".mostrarRestoAsignaturas").css({
+                "color":"#000",
+                "font-weight":"normal"
+            });
+            $(".mostrarCalificacionesAsignatura").css({
+                "color":"#000",
+                "font-weight":"normal"
+            });
+            $(".side-menu-asignaturas").parent().css({
+                "background-color":"transparent",
+                "font-weight":"normal"
+            });
+            $(".mostrarForoAsignatura").show();
+            $(".mostrarCalificacionesAsignatura").show();
+            $(".side-menu-foro").parent().show();
+            $(".side-menu-calificaciones").parent().show();
+            $(".side-menu-estudiantes").parent().show();
+        });
+
+
+
+    }else if(rolUsuario === "Administrador"){
+
+        $(".contenidoAsignatura").hide();
+
+        var contenedorPadre = document.getElementById("asignaturas-grado");
+        //Creamos el bloque donde se insertarán las asignaturas
+        var bloque_asignaturas = document.createElement("ul");
+        bloque_asignaturas.className = "lista_asignaturas";
+
+        document.getElementById("asignaturas-grado").innerHTML ="<i class='fa fa-caret-down grado-arrow' aria-hidden='true'></i>&nbsp;&nbsp;<span class='nombre-grado'>Grado en Ingeniería Informática"+"</span>";
+
+        bloque_asignaturas.innerHTML = "<li class='asignatura-grado'>Interfaces de Usuario</li><li class='asignatura-grado'>Redes de Ordenadores</li><li class='asignatura-grado'>Arquitectura de Computadores</li><li class='asignatura-grado'>Ingeniería del Software</i></li><li class='asignatura-grado'>Heurística y Optimización</li>";
+
+        //Indicamos al contenedor padre cual es su contendor hijo nuevo
+        contenedorPadre.appendChild(bloque_asignaturas);
+
+        $(".administrador-elementos-agregar").show();
+        $(".administrador-elementos-archivar").show();
+        $(".administrador-elementos-config").show();
+
+    }
+
 
     //Alternamos la vista de los diferentes contenidos mostrados en las asignaturas
     $(".mis-cursos").click(function(){
@@ -144,6 +271,7 @@ $(document).ready(function(){
         $(".grado-arrow").toggleClass("fa-caret-right");
     });
 
+    
 });
 
 //============================//
@@ -324,12 +452,18 @@ $(document).ready(function(){
                 "font-weight":"normal",
                 "background-color":"transparent"
             });
+            $(".side-menu-estudiantes").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
             $(".contenidoAsignatura").slideUp(800);
             $(".calificacionesAsignatura").slideUp(800);
             $(".foroAsignatura").slideUp(800);
             $(".restoAsignaturas").slideDown(800);
             $(".side-menu-foro").parent().hide();
             $(".side-menu-calificaciones").parent().hide();
+            $("side-menu-estuduiantes").parent().hide();
         });
         //Cambiamos los campos del menu lateral al hacer click en calificaciones
         $(".side-menu-calificaciones").click(function(){
@@ -353,6 +487,11 @@ $(document).ready(function(){
                 "font-weight":"normal",
                 "background-color":"transparent"
             });
+            $(".side-menu-estudiantes").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
             //Ocultamos la tabla del resto de alumnos
             $(".alumnos").hide();
             //MOstramos la tabla del usuario
@@ -361,6 +500,7 @@ $(document).ready(function(){
             $(".contenidoAsignatura").slideUp(800);
             $(".restoAsignaturas").slideUp(800);
             $(".foroAsignatura").slideUp(800);
+            $(".estudiantesAsignatura").slideUp(800);
             $(".calificacionesAsignatura").slideDown(800);
         });
         //Cambiamos los campos del menu lateral al hacer click en contacto
@@ -410,6 +550,11 @@ $(document).ready(function(){
                 "font-weight":"normal",
                 "background-color":"transparent"
             });
+            $(".side-menu-estudiantes").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
         });
         //Cambiamos los campos del menu lateral al hacer click en el foro
         $(".side-menu-foro").click(function(){
@@ -438,10 +583,55 @@ $(document).ready(function(){
                 "font-weight":"normal",
                 "background-color":"transparent"
             });
+            $(".side-menu-estudiantes").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+            $(".contenidoAsignatura").slideUp(800);
+            $(".restoAsignaturas").slideUp(800);
+            $(".estudiantesAsignatura").slideUp(800);
+            $(".calificacionesAsignatura").slideUp(800);
+            $(".foroAsignatura").slideDown(800);
+        });
+        //Cambiamos los campos del menu lateral al hacer click en el foro
+        $(".side-menu-estudiantes").click(function(){
+            $(".side-menu-estudiantes").parent().css({
+                "color":"#000099",
+                "font-weight":"bold",
+                "background-color":"rgba(117, 169, 249,0.6)"
+            });
+            $(".side-menu-foro").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+            $(".side-menu-calificaciones").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+            $(".side-menu-asignaturas").parent().css({
+                "color":"#000",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+            $(".side-menu-contacto").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+            $(".side-menu-notificaciones").parent().css({
+                "color":"#000099",
+                "font-weight":"normal",
+                "background-color":"transparent"
+            });
+            $(".alumnos").show();
             $(".contenidoAsignatura").slideUp(800);
             $(".restoAsignaturas").slideUp(800);
             $(".calificacionesAsignatura").slideUp(800);
-            $(".foroAsignatura").slideDown(800);
+            $(".foroAsignatura").slideUp(800);
+            $(".estudiantesAsignatura").slideDown(800);
         });
 
         //=====================================//
@@ -458,12 +648,18 @@ $(document).ready(function(){
                 "color":"#000",
                 "font-weight":"normal"
             });
+            $(".mostrarEstudiantesAsignatura").css({
+                "color":"#000",
+                "font-weight":"normal"
+            });
             $(".contenidoAsignatura").slideUp(800);
             $(".calificacionesAsignatura").slideUp(800);
             $(".foroAsignatura").slideUp(800);
+            $(".estudiantesAsignatura").slideUp(800);
             $(".restoAsignaturas").slideDown(800);
             $(".mostrarForoAsignatura").hide();
             $(".mostrarCalificacionesAsignatura").hide();
+            $(".mostrarEstudiantesAsignatura").hide();
         });
         $(".enlace-inicio").click(function(){
             $(".mostrarRestoAsignaturas").css({
@@ -474,10 +670,22 @@ $(document).ready(function(){
                 "color":"#000",
                 "font-weight":"normal"
             });
+            $(".mostrarEstudiantesAsignatura").css({
+                "color":"#000",
+                "font-weight":"normal"
+            });
+            $(".mostrarForoAsignatura").hide();
+            $(".mostrarCalificacionesAsignatura").hide();
+            $(".mostrarEstudiantesAsignatura").hide();
+
             $(".contenidoAsignatura").slideUp(800);
             $(".calificacionesAsignatura").slideUp(800);
             $(".foroAsignatura").slideUp(800);
+            $(".estudiantesAsignatura").slideUp(800);
             $(".restoAsignaturas").slideDown(800);
+            $(".side-menu-foro").parent().hide();
+            $(".side-menu-calificaciones").parent().hide();
+            $(".side-menu-estudiantes").parent().hide();
         });
         $(".mostrarForoAsignatura").click(function(){
             $(".mostrarForoAsignatura").css({
@@ -499,6 +707,7 @@ $(document).ready(function(){
             $(".contenidoAsignatura").slideUp(800);
             $(".calificacionesAsignatura").slideUp(800);
             $(".restoAsignaturas").slideUp(800);
+            $(".estudiantesAsignatura").slideUp(800);
             $(".foroAsignatura").slideDown(800);
         });
         $(".mostrarCalificacionesAsignatura").click(function(){
@@ -526,7 +735,39 @@ $(document).ready(function(){
             $(".contenidoAsignatura").slideUp(800);
             $(".restoAsignaturas").slideUp(800);
             $(".foroAsignatura").slideUp(800);
+            $(".estudiantesAsignatura").slideUp(800);
             $(".calificacionesAsignatura").slideDown(800);
+        });
+        $(".mostrarEstudiantesAsignatura").click(function(){
+            $(".mostrarEstudiantesAsignatura").css({
+                "color":"#000099",
+                "font-weight":"bold"
+            });
+            $(".mostrarContenidoAsignatura").css({
+                "color":"#000",
+                "font-weight":"normal"
+            });
+            $(".mostrarCalificacionesAsignatura").css({
+                "color":"#000",
+                "font-weight":"normal"
+            });
+            $(".mostrarForoAsignatura").css({
+                "color":"#000",
+                "font-weight":"normal"
+            });
+            $(".mostrarRestoAsignaturas").css({
+                "color":"#000",
+                "font-weight":"normal"
+            });
+            //MOstramos la tabla del usuario
+            $(".alumnos").show();
+            $(".tabla-user-estudiante").show();
+            document.getElementById("nombre-usuario-calificaciones").innerHTML = getCookie("nameSurname");
+            $(".contenidoAsignatura").slideUp(800);
+            $(".restoAsignaturas").slideUp(800);
+            $(".foroAsignatura").slideUp(800);
+            $(".calificacionesAsignatura").slideUp(800);
+            $(".estudiantesAsignatura").slideDown(800);
         });
         $(".mostrarContacto").click(function(){
             $(".mostrarContacto").css({
@@ -549,22 +790,13 @@ $(document).ready(function(){
                 "color":"#000",
                 "font-weight":"normal"
             });
-            window.location.href = "https://aplicaciones.uc3m.es/directorio/";
+            window.open("https://aplicaciones.uc3m.es/directorio/");
         });
-    }else{
+    }else if(rolUsuario === "Profesor"){
 
         //Ocultamos la vista de las asignaturas de los estudiantes
         $(".restoAsignaturas").hide();
-        //Hacemos visibles el contenido de la asignatura por defecto --> Interfaces de usuario
-        $(".contenidoAsignatura").show();
-        $(".mostrarContenidoAsignatura").show();
-        $(".mostrarCalificacionesAsignatura").show();
-        $(".mostrarForo").show();
-        //Ocultamos la opcion del menu izquierdo --> Mis asignaturas y mostramos las restantes: foro, calificaciones y la asignatura impartida
-        $(".side-menu-asignaturas").parent().hide();
-        $(".side-menu-calificaciones").parent().show();
-        $(".side-menu-foro").parent().show();
-        $(".side-menu-asignatura-profe").parent().show();
+        
         //Aplicamos CSS a algunos elementos del menu
         $(".side-menu-asignatura-profe").parent().css({
             "color":"#000099",
@@ -812,6 +1044,7 @@ $(document).ready(function(){
                 "color":"#000",
                 "font-weight":"normal"
             });
+            $(".alumnos").show();
             $(".contenidoAsignatura").slideUp(800);
             $(".calificacionesAsignatura").slideUp(800);
             $(".foroAsignatura").slideUp(800);
@@ -882,7 +1115,7 @@ $(document).ready(function(){
                 "color":"#000",
                 "font-weight":"normal"
             });
-            window.location.href = "https://aplicaciones.uc3m.es/directorio/";
+            window.open("https://aplicaciones.uc3m.es/directorio/");
         });
     }
 });
@@ -917,6 +1150,90 @@ $("#aceptar-logout").click(function(){
 });
 $("#rechazar-logout").click(function(){
     document.getElementById("logout-modal").style.display = "none";
+});
+
+//==================================//
+// ===== NOTIFICATION BUTTON ====== //
+//==================================//
+
+$(".mostrarNotificaciones").click(function(){
+    document.getElementById("notif-modal").style.display = "block";
+});
+$(".side-menu-notificaciones").click(function(){
+    document.getElementById("notif-modal").style.display = "block";
+});
+$("#aceptar-notif").click(function(){
+    document.getElementById("notif-modal").style.display = "none";
+});
+
+//==================================//
+// ======= ENTREGA BUTTON ======== //
+//==================================//
+$(".contenido-asignatura-entregador-enlace").click(function(){
+    document.getElementById("entrega-modal").style.display = "block";
+});
+$("#aceptar-entrega").click(function(){
+    document.getElementById("entrega-modal").style.display = "none";
+});
+
+//==================================//
+// ======= SUBIR BUTTON ======== //
+//==================================//
+$(".contenido-agregar-documento").click(function () {
+    document.getElementById("subir-modal").style.display = "block";
+});
+$("#aceptar-subir").click(function () {
+    document.getElementById("subir-modal").style.display = "none";
+});
+
+//==================================//
+// === SUBIR ACTIVIDAD BUTTON ===== //
+//==================================//
+$(".contenido-actividad-agregar-documento").click(function () {
+    document.getElementById("actividad-modal").style.display = "block";
+});
+$("#aceptar-actividad").click(function () {
+    document.getElementById("actividad-modal").style.display = "none";
+});
+
+//==================================//
+// === AGREGAR ASIGNATURA BUTTON === //
+//==================================//
+$(".administrador-elementos-agregar").click(function () {
+    document.getElementById("agregar-modal").style.display = "block";
+});
+$("#aceptar-agregar").click(function () {
+    document.getElementById("agregar-modal").style.display = "none";
+});
+
+$(".side-menu-agregar-asignatura").click(function () {
+    document.getElementById("agregar-modal").style.display = "block";
+});
+
+//==================================//
+// ======= ARCHIVAR BUTTON ======= //
+//==================================//
+$(".administrador-elementos-archivar").click(function () {
+    document.getElementById("archivar-modal").style.display = "block";
+});
+$(".side-menu-archivar-asignatura").click(function () {
+    document.getElementById("archivar-modal").style.display = "block";
+});
+$("#aceptar-archivar").click(function () {
+    document.getElementById("archivar-modal").style.display = "none";
+});
+
+//==================================//
+// ====== CONFIGURAR BUTTON ======= //
+//==================================//
+$(".administrador-elementos-config").click(function () {
+    document.getElementById("configuracion-modal").style.display = "block";
+});
+$("#aceptar-configuracion").click(function () {
+    document.getElementById("configuracion-modal").style.display = "none";
+});
+$(".side-menu-configurar-asignatura").click(function () {
+    document.getElementById("configuracion-modal").style.display = "block";
 });
 
 //====================================//

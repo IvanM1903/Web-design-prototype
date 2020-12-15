@@ -64,97 +64,123 @@
 			<a href="#" class="side-menu-foro col-10" onclick="closeNav()">Foro del curso</a>
 			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
 		</div>
+		<div class="side-menu-item">
+			<i class="fa fa-wpforms col-1" aria-hidden="true"></i>
+			<a href="#" class="side-menu-agregar-asignatura col-10" onclick="closeNav()">Agregar asignatura</a>
+			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
+		</div>
+		<div class="side-menu-item">
+			<i class="fa fa-wpforms col-1" aria-hidden="true"></i>
+			<a href="#" class="side-menu-archivar-asignatura col-10" onclick="closeNav()">Archivar asignatura</a>
+			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
+		</div>
+		<div class="side-menu-item">
+			<i class="fa fa-wpforms col-1" aria-hidden="true"></i>
+			<a href="#" class="side-menu-configurar-asignatura col-10" onclick="closeNav()">Configurar asignatura</a>
+			<i class="fa fa-angle-right col-1" aria-hidden="true"></i>
+		</div>
 	</div>
 
 	<!-- ====== CABECERA ====== -->
-		<div class="cabecera col-12">
-			<!-- ====== NAV SUPERIOR ====== -->
-			<ul class="nav" id="top">
-				<li class="nav-item nav-icon col-s-1">
-					<span onclick="openNav()">&#9776;</span> <!-- Icono del menu de hamburguesa-->
+	<div class="cabecera col-12">
+		<!-- ====== NAV SUPERIOR ====== -->
+		<ul class="nav" id="top">
+			<li class="nav-item nav-icon col-s-1">
+				<span onclick="openNav()">&#9776;</span> <!-- Icono del menu de hamburguesa-->
+			</li>
+			<li class="col-2 col-s-3">
+				<img src="images/logoxikito.png" alt="Logo de la página principal" class="col-9 logo-header">
+			</li>
+			<li class="col-6 titulo">
+				<b>INGENIERIA INFORMATICA - AULA GLOBAL</b>
+			</li>
+			<!-- Zona del usuario (imagen, nombre y boton para cerrar sesion)-->
+			<li class="col-4 user-session-desktop">
+				<img src="images/user.png" alt="Imagen usuario" class="col-1 col-s-2">
+				<p class="col-7" id="user-session-name-desktop"></p>
+				<div class="user-session-quit-desktop">
+					<i class="fa fa-sign-out" aria-hidden="true"></i>
+				</div>
+			</li>
+			<li class="col-1 icono-ayuda">
+				<a href="https://www.uc3m.es/ss/Satellite/Infraestructuras/es/TextoDosColumnas/1371264307813/CONTACTA:_La_comunidad_de_ayuda_y_soporte_de_la_UC3M"><i class="fa fa-question-circle col-1" aria-hidden="true"></i></a>
+			</li>
+		</ul>
+		<!--====== NAV INFERIOR ====== -->
+		<!-- Disponible en todos los tamaños excepto para movil -->
+		<div class="col-12">
+			<ul class="links-nav">
+				<li class="col-5 nav-left">
+					<a target="_blank" href="https://www.google.com/maps/dir//Universidad+Carlos+III+de+Madrid:+Campus+de+Legan%C3%A9s,+Avenida+de+la+Universidad,+Legan%C3%A9s/@40.3194024,-3.7952943,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0xd41898b1cc06b5b:0xaf0cadd098b516f8!2m2!1d-3.76511!2d40.3324367">CÓMO LLEGAR</a>
 				</li>
-				<li class="col-2 col-s-3">
-					<img src="images/logoxikito.png" alt="Logo de la página principal" class="col-9 logo-header">
+				<li class="col-2 nav-center">
+					<a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/FormularioTextoDosColumnas/1371206610152/Contacta" target="_blank">AYUDA</a>
 				</li>
-				<li class="col-6 titulo">
-					<b>INGENIERIA INFORMATICA - AULA GLOBAL</b>
-				</li>
-				<!-- Zona del usuario (imagen, nombre y boton para cerrar sesion)-->
-				<li class="col-4 user-session-desktop">
-					<img src="images/user.png" alt="Imagen usuario" class="col-1 col-s-2">
-					<p class="col-7" id="user-session-name-desktop"></p>
-					<div class="user-session-quit-desktop">
-						<i class="fa fa-sign-out" aria-hidden="true"></i>
-					</div>
-				</li>
-				<li class="col-1 icono-ayuda">
-					<a href="https://www.uc3m.es/ss/Satellite/Infraestructuras/es/TextoDosColumnas/1371264307813/CONTACTA:_La_comunidad_de_ayuda_y_soporte_de_la_UC3M"><i class="fa fa-question-circle col-1" aria-hidden="true"></i></a>
+				<li class="col-5 nav-right">
+					<a href="https://www.uc3m.es/grado/informatica" target="_blank">PROGRAMA DE GRADO</a>
 				</li>
 			</ul>
-			<!--====== NAV INFERIOR ====== -->
-			<!-- Disponible en todos los tamaños excepto para movil -->
-			<div class="col-12">
-				<ul class="links-nav">
-					<li class="col-5 nav-left">
-						<a target="_blank" href="https://www.google.com/maps/dir//Universidad+Carlos+III+de+Madrid:+Campus+de+Legan%C3%A9s,+Avenida+de+la+Universidad,+Legan%C3%A9s/@40.3194024,-3.7952943,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0xd41898b1cc06b5b:0xaf0cadd098b516f8!2m2!1d-3.76511!2d40.3324367">CÓMO LLEGAR</a>
-					</li>
-					<li class="col-2 nav-center">
-						<a href="https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/FormularioTextoDosColumnas/1371206610152/Contacta" target="_blank">AYUDA</a>
-					</li>
-					<li class="col-5 nav-right">
-						<a href="https://www.uc3m.es/grado/informatica" target="_blank">PROGRAMA DE GRADO</a>
-					</li>
-				</ul>
-			</div>
 		</div>
+	</div>
 
 	<!-- ====== CUERPO O FILA CENTRAL ====== -->
 	<div class="cuerpo">
 		<div class="main-row col-12">
 			<!-- Separamos en 3 columnas con un formato 25-50-25 -->
-
 			<!--====== COLUMNA DE LA IZQUIERDA ====== -->
 			<div class="col-left column col-3">
 				<h1>MENÚ</h1>
-					<ul class="menu-left">
-						<li class="mostrarRestoAsignaturas">
-							MIS ASIGNATURAS
-						</li>
-						<li class="mostrarContenidoAsignatura">
-							CONTENIDO DE LA ASIGNATURA
-						</li>
-						<li class="mostrarEstudiantesAsignatura">
-							LISTA DE ESTUDIANTES
-						</li>
-						<li class="grades mostrarCalificacionesAsignatura">
-							CALIFICACIONES
-						</li>
-						<li class="mostrarContacto">
-							CONTACTA
-						</li>
-						<li  class="mostrarNotificaciones">
-							NOTIFICACIONES
-						</li>
-						<li  class="mostrarForoAsignatura">
-							FORO DE LA ASIGNATURA
-						</li>
-					</ul>
+				<ul class="menu-left">
+					<li class="mostrarRestoAsignaturas">
+						MIS ASIGNATURAS
+					</li>
+					<li class="mostrarContenidoAsignatura">
+						CONTENIDO DE LA ASIGNATURA
+					</li>
+					<li class="mostrarEstudiantesAsignatura">
+						LISTA DE ESTUDIANTES
+					</li>
+					<li class="grades mostrarCalificacionesAsignatura">
+						CALIFICACIONES
+					</li>
+					<li class="mostrarContacto">
+						CONTACTA
+					</li>
+					<li class="mostrarNotificaciones">
+						NOTIFICACIONES
+					</li>
+					<li class="mostrarForoAsignatura">
+						FORO DE LA ASIGNATURA
+					</li>
+					<li class="administrador-elementos-agregar">
+						AÑADIR ASIGNATURA
+					</li>
+					<li class="administrador-elementos-archivar">
+						ARCHIVAR ASIGNATURA
+					</li>
+					<li class="administrador-elementos-config">
+						CONFIGURAR ASIGNATURA
+					</li>
+				</ul>
 			</div>
 			<!-- ====== COLUMNA CENTRAL ====== -->
 			<div class="col-center column col-6 col-s-9 col-xs-12">
 				<!-- Zona que contiene las asignaturas de los alumnos (solo visible si eres estudiante)-->
 				<div class="restoAsignaturas">
-					<h1 class="title-iframe col-12">INICIO - AULA GLOBAL</h1>
+					<ul class="enlaces-orientacion">
+						<li class="enlace-inicio">Inicio / </li>
+					</ul>
+					<h1 class="title-iframe col-12">Inicio</h1>
 					<div class="contenedor-colCentro col-12">
-						<ul class="enlaces-orientacion">
-							<li class="enlace-inicio">Inicio </li>
-						</ul>
 						<ul class="lista-principal">
-							<li><i class="fa fa-caret-down mis-cursos-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="mis-cursos">Mis cursos</span>
+							<li>
+								<i class="fa fa-caret-down mis-cursos-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="mis-cursos">Mis cursos</span>
 								<ul class="ul-bajo-cursos">
-									<li class="asignaturas-estudios-oficiales"><i class="fa fa-caret-down estudios-oficiales-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="estudios-oficiales-toggle">Estudios Oficiales</span>
+									<li class="asignaturas-estudios-oficiales">
+										<i class="fa fa-caret-down estudios-oficiales-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="estudios-oficiales-toggle">Estudios Oficiales</span>
 										<ul class="ul-bajo-estudios-oficiales">
-											<li class="asignaturas-veinte"><i class="fa fa-caret-down veinte-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="veinte-toggle">20/21</span>
+											<li class="asignaturas-veinte">
+												<i class="fa fa-caret-down veinte-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="veinte-toggle">20/21</span>
 												<ul class="ul-bajo-veinte">
 													<li id="asignaturas-grado">
 													</li>
@@ -165,6 +191,7 @@
 								</ul>
 							</li>
 						</ul>
+						<br>
 					</div>
 					<!-- Contenedor que guarda la zona del calendario-->
 					<div class="calendar-container">
@@ -174,7 +201,11 @@
 				<!-- ====== CONTENIDO DE LA ASIGNATURA VIEW ====== -->
 				<!-- Zona que almacena el contenido de una asignatura (solo visible si eres profesor/admin)-->
 				<div class="contenidoAsignatura">
-					<h1 class="title-iframe col-12">INTERFACES DE USUARIO</h1>
+					<ul class="enlaces-orientacion">
+						<li class="enlace-inicio">Inicio / </li>
+						<li class="enlace-interfaces"> Interfaces de usuario /</li>
+					</ul>
+					<h1 class="title-iframe col-12">Interfaces de usuario</h1>
 
 					<div class="contenedor-iframe background-iframe">
 						<div class="tema-asignatura">
@@ -208,6 +239,41 @@
 								</div>
 								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/Wjgv2GJUe2I" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
+							<hr>
+							<div class="contenido-asignatura">
+								<h4>TEMA 1 - DOCUMENTOS</h4>
+								<div class="contenido-agregar">
+									<i class="fa fa-plus-square" aria-hidden="true"></i>
+									<a href="#" class="col-11 contenido-agregar-documento">Agregar documentos</a>
+								</div>
+								<div class="contenido-actividad-agregar">
+									<i class="fa fa-plus-square" aria-hidden="true"></i>
+									<a href="#" class="col-11 contenido-actividad-agregar-documento">Agregar actividad</a>
+								</div>
+								<div class="contenido-asignatura-doc">
+									<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+									<a href="#" class="col-11">PDF - Tema Introducción al HTML</a>
+									<span class="col-1 borrar-contenido">&times;</span>
+								</div>
+								<div class="contenido-asignatura-doc">
+									<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+									<a href="#" class="col-11">PDF - Tema Conceptos Básicos</a>
+									<span class="col-1 borrar-contenido">&times;</span>
+								</div>
+								<div class="contenido-asignatura-doc">
+									<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+									<a href="#" class="col-11">PDF - Tema Estructuras HTML</a>
+									<span class="col-1 borrar-contenido">&times;</span>
+								</div>
+								<div class="contenido-asignatura-entregador">
+									<i class="fa fa-cloud-upload" aria-hidden="true"></i>
+									<a href="#" class="col-10 contenido-asignatura-entregador-enlace">Subir ejercicios tema 1</a>
+									<!--<button class="col-1">Calificar</button>-->
+									<i class="fa fa-check-square-o contenido-corrector" aria-hidden="true"></i>
+									<span class="col-1 borrar-contenido">&times;</span>
+								</div>
+							</div>
+							<hr>
 						</div>
 						<br>
 						<div class="tema-asignatura">
@@ -222,32 +288,67 @@
 							</div>
 							<div class="tema-capitulo">
 								<div class="tema-capitulo-txt col-5 col-s-12">
-									<h3 class="tema-capitulo-titulo">CSS - Introducción</h3>
+									<h3 class="tema-capitulo-titulo">CSS - Introducción:</h3>
 									<p class="tema-capitulo-desc">Nos introducimos en este vídeo en CSS. Vemos dónde puede ir el código CSS, tipos de selectores y el modelo de caja-contenedor.</p>
 								</div>
 								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/1LTzUf327cQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
 							<div class="tema-capitulo">
 								<div class="tema-capitulo-txt col-5 col-s-12">
-									<h3 class="tema-capitulo-titulo">CSS - Modelo caja contenedor</h3>
+									<h3 class="tema-capitulo-titulo">CSS - Modelo caja contenedor:</h3>
 									<p class="tema-capitulo-desc">En este vídeo tratamos el modelo caja contenedor de CSS, así como las propiedades CSS float, margin y padding.</p>
 								</div>
 								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/4JoRVs-I8Uk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
 							<div class="tema-capitulo">
 								<div class="tema-capitulo-txt col-5 col-s-12">
-									<h3 class="tema-capitulo-titulo">CSS - Clases y subclases</h3>
+									<h3 class="tema-capitulo-titulo">CSS - Clases y subclases:</h3>
 									<p class="tema-capitulo-desc">En este vídeo vemos los selectores de clase y subclase, así como reglas que permiten redondear esquinas y agregar sombras a contenedores y texto.</p>
 								</div>
 								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/qFRmgfS1qpA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
 						</div>
+						<hr>
+						<div class="contenido-asignatura">
+							<h4>TEMA 2 - DOCUMENTOS</h4>
+							<div class="contenido-agregar">
+								<i class="fa fa-plus-square" aria-hidden="true"></i>
+								<a href="#" class="col-11 contenido-agregar-documento">Agregar documentos</a>
+							</div>
+							<div class="contenido-actividad-agregar">
+								<i class="fa fa-plus-square" aria-hidden="true"></i>
+								<a href="#" class="col-11 contenido-actividad-agregar-documento">Agregar actividad</a>
+							</div>
+							<div class="contenido-asignatura-doc">
+								<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+								<a href="#" class="col-11">PDF - Introducción</a>
+								<span class="col-1 borrar-contenido">&times;</span>
+							</div>
+							<div class="contenido-asignatura-doc">
+								<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+								<a href="#" class="col-11">PDF - Modelo caja contenedor</a>
+								<span class="col-1 borrar-contenido">&times;</span>
+							</div>
+							<div class="contenido-asignatura-doc">
+								<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+								<a href="#" class="col-11">PDF - Clases y subclases</a>
+								<span class="col-1 borrar-contenido">&times;</span>
+							</div>
+							<div class="contenido-asignatura-entregador">
+								<i class="fa fa-cloud-upload" aria-hidden="true"></i>
+								<a href="#" class="col-10 contenido-asignatura-entregador-enlace">Subir ejercicios tema 2</a>
+								<!--<button class="col-1">Calificar</button>-->
+								<i class="fa fa-check-square-o contenido-corrector" aria-hidden="true"></i>
+								<span class="col-1 borrar-contenido">&times;</span>
+							</div>
+						</div>
+						<hr>
 						<br>
 						<div class="tema-asignatura">
 							<div class="tema-presentacion js">
 								<h2 class="tema-titulo">TEMA 3: JavaScript</h2>
 								<div class="tema-intro">
-									<div  class="tema-img col-2">
+									<div class="tema-img col-2">
 										<img src="images/JS_logo.png" alt="logo (no real) de javascript" class="col-7">
 									</div>
 									<div class="tema-intro-txt col-10 col-s-12"><p>JavaScript (abreviado comúnmente JS) es un lenguaje de programación interpretado. Se utiliza principalmente del lado del cliente, implementado como parte de un navegador web permitiendo mejoras en la interfaz de usuario y páginas web dinámicas.</p></div>
@@ -255,7 +356,7 @@
 							</div>
 							<div class="tema-capitulo">
 								<div class="tema-capitulo-txt col-5 col-s-12">
-									<h3 class="tema-capitulo-titulo">JS - Introducción</h3>
+									<h3 class="tema-capitulo-titulo">JS - Introducción:</h3>
 									<p class="tema-capitulo-desc">En este vídeo nos introducimos en JavaScript. Vemos dónde puede ir situado el código JavaScript dentro de un documento HTML y cómo crear un documento JavaScript externo.</p>
 								</div>
 								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/XxiFkKr685g" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -269,12 +370,51 @@
 							</div>
 							<div class="tema-capitulo">
 								<div class="tema-capitulo-txt col-5 col-s-12">
-									<h3 class="tema-capitulo-titulo">JS - Eventos</h3>
+									<h3 class="tema-capitulo-titulo">JS - Eventos:</h3>
 									<p class="tema-capitulo-desc">En este vídeo vemos los eventos de JavaScript, los cuales permiten la interacción entre las aplicaciones JavaScript y los usuarios.</p>
 								</div>
 								<iframe class="tema-video col-7 col-s-12" src="https://www.youtube.com/embed/SxN4NwDCUcc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
 						</div>
+						<hr>
+						<div class="contenido-asignatura">
+							<h4>TEMA 3 - DOCUMENTOS</h4>
+							<div class="contenido-agregar">
+								<i class="fa fa-plus-square" aria-hidden="true"></i>
+								<a href="#" class="col-11 contenido-agregar-documento">Agregar documentos</a>
+							</div>
+							<div class="contenido-actividad-agregar">
+								<i class="fa fa-plus-square" aria-hidden="true"></i>
+								<a href="#" class="col-11 contenido-actividad-agregar-documento">Agregar actividad</a>
+							</div>
+							<div class="contenido-asignatura-doc">
+								<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+								<a href="#" class="col-11">PDF - Introducción</a>
+								<span class="col-1 borrar-contenido">&times;</span>
+							</div>
+							<div class="contenido-asignatura-doc">
+								<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+								<a href="#" class="col-11">PDF - Identificación de elementos</a>
+								<span class="col-1 borrar-contenido">&times;</span>
+							</div>
+							<div class="contenido-asignatura-doc">
+								<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+								<a href="#" class="col-11">PDF - Eventos</a>
+								<span class="col-1 borrar-contenido">&times;</span>
+							</div>
+							<div class="contenido-asignatura-entregador">
+								<i class="fa fa-cloud-upload" aria-hidden="true"></i>
+								<a href="#" class="col-10 contenido-asignatura-entregador-enlace">Subir ejercicios tema 3</a>
+								<!--<button class="col-1">Calificar</button>-->
+								<i class="fa fa-check-square-o contenido-corrector" aria-hidden="true"></i>
+								<span class="col-1 borrar-contenido">&times;</span>
+							</div>
+							<div class="contenido-asignatura-entregador contenido-asignatura-examen">
+								<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+								<a href="#" class="col-11">Examen Parcial 1 - Modelado con HTML, CSS y JS</a>
+							</div>
+						</div>
+						<hr>
 					</div>
 					<!-- Contenedor que guarda la zona del calendario-->
 					<div class="calendar-container">
@@ -284,7 +424,12 @@
 				<!-- ====== LISTA DE ESTUDIANTES VIEW ====== -->
 				<!-- Zona que almacena la lista de estudiantes-->
 				<div class="estudiantesAsignatura">
-					<h1 class="title-iframe col-12">LISTA DE ESTUDIANTES</h1>
+					<ul class="enlaces-orientacion">
+						<li class="enlace-inicio">Inicio / </li>
+						<li class="enlace-interfaces"> Interfaces de usuario /</li>
+						<li> Lista de estudiantes</li>
+					</ul>
+					<h1 class="title-iframe col-12">Lista de estudiantes</h1>
 
 					<div class="contenedor-iframe background-iframe col-12">
 						<!-- Tabla visible para profesores y administradores -->
@@ -296,187 +441,187 @@
 								<th>Enviar Correo</th>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face1.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face1.jpg" alt="cara aleatoria"></td>
 								<td>Irati Robles</td>
 								<td>Profesor</td>
 								<td class="mail-icon"><a href="mailto:profesor@interfaces.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face0.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face0.jpg" alt="cara aleatoria"></td>
 								<td>Iker Piqueras</td>
 								<td>Profesor</td>
 								<td class="mail-icon"><a href="mailto:profesor@interfaces.com" class="mail-icon">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face2.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face2.jpg" alt="cara aleatoria"></td>
 								<td>Nadia Lara</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face3.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face3.jpg" alt="cara aleatoria"></td>
 								<td>Marcelo Bosch</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face4.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face4.jpg" alt="cara aleatoria"></td>
 								<td>Khalid Vicente</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face5.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face5.jpg" alt="cara aleatoria"></td>
 								<td>Flora Viera</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face6.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face6.jpg" alt="cara aleatoria"></td>
 								<td>Daniel de Castro</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face7.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face7.jpg" alt="cara aleatoria"></td>
 								<td>Urbano Moreno</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face8.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face8.jpg" alt="cara aleatoria"></td>
 								<td>Rafa Melgar</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face9.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face9.jpg" alt="cara aleatoria"></td>
 								<td>Mia Cerdan</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face10.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face10.jpg" alt="cara aleatoria"></td>
 								<td>Igor Montiel</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face11.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face11.jpg" alt="cara aleatoria"></td>
 								<td>Chloe Noguera</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face12.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face12.jpg" alt="cara aleatoria"></td>
 								<td>Augusto Hernandez</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face13.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face13.jpg" alt="cara aleatoria"></td>
 								<td>Saioa Jordan</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face14.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face14.jpg" alt="cara aleatoria"></td>
 								<td>Baldomero Marti</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face15.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face15.jpg" alt="cara aleatoria"></td>
 								<td>Maria-Luisa Losada</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face16.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face16.jpg" alt="cara aleatoria"></td>
 								<td>Anas Pachecho</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face17.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face17.jpg" alt="cara aleatoria"></td>
 								<td>Ursula Olmos</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face18.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face18.jpg" alt="cara aleatoria"></td>
 								<td>Nayara Gamero</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face19.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face19.jpg" alt="cara aleatoria"></td>
 								<td>Ioana Herranz</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face20.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face20.jpg" alt="cara aleatoria"></td>
 								<td>Erika Revilla</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face21.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face21.jpg" alt="cara aleatoria"></td>
 								<td>Mireia Carretero</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face22.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face22.jpg" alt="cara aleatoria"></td>
 								<td>Idoia Ahmed</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face23.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face23.jpg" alt="cara aleatoria"></td>
 								<td>Maria-Jose Jurado</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face24.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face24.jpg" alt="cara aleatoria"></td>
 								<td>Mercedes Mari</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face25.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face25.jpg" alt="cara aleatoria"></td>
 								<td>Gladys Mendez</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face26.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face26.jpg" alt="cara aleatoria"></td>
 								<td>Emiliano Piñero</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face27.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face27.jpg" alt="cara aleatoria"></td>
 								<td>Sonia Molero</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face28.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face28.jpg" alt="cara aleatoria"></td>
 								<td>Diego Arevalo</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face29.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face29.jpg" alt="cara aleatoria"></td>
 								<td>Samir Plasencia</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
 							</tr>
 							<tr>
-								<td><img src="images/random-faces/face30.jpg"  alt="cara aleatoria"></td>
+								<td><img src="images/random-faces/face30.jpg" alt="cara aleatoria"></td>
 								<td>Felisa Salmeron</td>
 								<td>Estudiante</td>
 								<td class="mail-icon"><a href="mailto:alumno@uc3m.com">✉</a></td>
@@ -488,7 +633,12 @@
 				<!-- ====== FORO DE LA ASIGNATURA ====== -->
 				<!-- Zona visible una vez se ha entrado al contenido de una asignatura. Disponible en el menu lateral izquierdo-->
 				<div class="foroAsignatura">
-					<h1 class="title-iframe col-12">FORO DE LA ASIGNATURA</h1>
+					<ul class="enlaces-orientacion">
+						<li class="enlace-inicio">Inicio / </li>
+						<li class="enlace-interfaces"> Interfaces de usuario /</li>
+						<li> Foro de la asignatura</li>
+					</ul>
+					<h1 class="title-iframe col-12">Foro de la asignatura</h1>
 					<div class="section-preguntas" id="section-preguntas">
 						<div class="foro-tema" id="foro-tema-1">
 							<div class="tema-color col-1">
@@ -496,7 +646,7 @@
 								<p>02&nbsp;-&nbsp;10&nbsp;-&nbsp;20</p>
 							</div>
 							<div class="tema-contenido col-9">
-									<h3 class="contenido-titulo col-12">"Duda en la creación de un documento HTML"</h3>
+								<h3 class="contenido-titulo col-12">"Duda en la creación de un documento HTML"</h3>
 								<div class="contenido-desc col-12">
 									Buenos días, me surgió una duda sobre las etiquetas necesarias que hacen falta en el "<i>head</i>" del documento.
 									<div class="contenido-foro-usuario">
@@ -520,7 +670,7 @@
 								<p>28&nbsp;-&nbsp;09&nbsp;-&nbsp;20</p>
 							</div>
 							<div class="tema-contenido col-9">
-									<h3 class="contenido-titulo col-12">"Problema con selectores en CSS"</h3>
+								<h3 class="contenido-titulo col-12">"Problema con selectores en CSS"</h3>
 								<div class="contenido-desc col-12">
 									Buenas tardes, no consigo hacer funcionar los selectores en CSS. ¿Alguien podría explicármelo?
 									<div class="contenido-foro-usuario">
@@ -544,7 +694,7 @@
 								<p>06&nbsp;-&nbsp;09&nbsp;-&nbsp;20</p>
 							</div>
 							<div class="tema-contenido col-9">
-									<h3 class="contenido-titulo col-12">"Error al generar hacer funcionar el script"</h3>
+								<h3 class="contenido-titulo col-12">"Error al generar hacer funcionar el script"</h3>
 								<div class="contenido-desc col-12">
 									No comprendo cómo incluir scripts de terceros dentro de mi código HTML. En la cabecera no me funcionan. ¿Alguna sugerencia?
 									<div class="contenido-foro-usuario">
@@ -573,13 +723,15 @@
 								<div class="tema-pregunta col-12">
 									<p class="tema-texto">Buenas tardes, me surgió una duda sobre las etiquetas necesarias que hacen falta en el "<i>head</i>" del documento.</p>
 									<p class="contenido-foro-usuario">
-										<img src="images/user.png" alt="imagen de usuario"> 
+										<img src="images/user.png" alt="imagen de usuario">
 										Rafa Melgar 16:37 --- 02/10/20
 									</p>
 								</div>
 								<div class="tema-respuesta col-12">
-									<p class="tema-texto">Buenas Rafa, para poder enlazar documentos CSS es necesario utilizar la etiqueta <i>link</i> y en el atributo style añadir el valor <i>stylesheet</i>. <br>
-									Por otro lado, también debes introducir los campos <i>charset</i> y <i>viewport</i> para poder ver tu página en dispositivos móviles. <br> Espero que te sea de ayuda. </p>
+									<p class="tema-texto">
+										Buenas Rafa, para poder enlazar documentos CSS es necesario utilizar la etiqueta <i>link</i> y en el atributo style añadir el valor <i>stylesheet</i>. <br>
+										Por otro lado, también debes introducir los campos <i>charset</i> y <i>viewport</i> para poder ver tu página en dispositivos móviles. <br> Espero que te sea de ayuda.
+									</p>
 									<p class="contenido-foro-usuario">
 										<img src="images/user.png" alt="imagen de usuario">
 										Chloe Noguera 18:21 --- 02/10/20
@@ -603,7 +755,7 @@
 								<div class="tema-pregunta col-12">
 									<p class="tema-texto">Buenas tardes no consigo hacer funcionar los selectores en CSS. ¿Alguien podría explicármelo?</p>
 									<p class="contenido-foro-usuario">
-										<img src="images/user.png" alt="imagen de usuario"> 
+										<img src="images/user.png" alt="imagen de usuario">
 										Mercedes Mari 19:01 --- 28/09/20
 									</p>
 								</div>
@@ -625,7 +777,7 @@
 								<div class="tema-pregunta col-12">
 									<p class="tema-texto">No comprendo cómo incluir scripts de terceros dentro de mi código HTML. En la cabecera no me funcionan. ¿Alguna sugerencia?</p>
 									<p class="contenido-foro-usuario">
-										<img src="images/user.png" alt="imagen de usuario"> 
+										<img src="images/user.png" alt="imagen de usuario">
 										Mercedes Mari 04:20 --- 06/09/20
 									</p>
 								</div>
@@ -645,14 +797,20 @@
 				<!-- ====== CALIFICACIONES VIEW ====== -->
 				<!-- Zona que almacena las calificaciones de los usuarios.-->
 				<div class="calificacionesAsignatura">
+					<ul class="enlaces-orientacion">
+						<li class="enlace-inicio">Inicio / </li>
+						<li class="enlace-interfaces"> Interfaces de usuario /</li>
+						<li> Lista de calificaciones</li>
+					</ul>
 					<div class="title-iframe">
-						<h1 class=" col-12">LISTA DE CALIFICACIONES</h1>
+						<h1 class=" col-12"> Lista de calificaciones</h1>
 						<!-- Boton para descargar la tabla a excel-->
 						<div id="exportarExcel">
 							Descargar tabla
 						</div>
 					</div>
 					<div class="contenedor-iframe background-iframe col-12">
+
 						<table class="alumnos" id="table2excel">
 							<tr>
 								<th class="noExl">Foto</th>
@@ -663,7 +821,7 @@
 								<th>Final</th>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face2.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face2.jpg" alt="cara aleatoria"></td>
 								<td>Nadia Lara</td>
 								<td class="nota">4</td>
 								<td class="nota">6</td>
@@ -671,7 +829,7 @@
 								<td class="nota">7.65</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face3.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face3.jpg" alt="cara aleatoria"></td>
 								<td>Marcelo Bosch</td>
 								<td class="nota">3</td>
 								<td class="nota">6</td>
@@ -679,7 +837,7 @@
 								<td class="nota">3.58</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face4.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face4.jpg" alt="cara aleatoria"></td>
 								<td>Khalid Vicente</td>
 								<td class="nota">8</td>
 								<td class="nota">6</td>
@@ -687,7 +845,7 @@
 								<td class="nota">9.24</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face5.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face5.jpg" alt="cara aleatoria"></td>
 								<td>Flora Viera</td>
 								<td class="nota">4</td>
 								<td class="nota">6</td>
@@ -695,7 +853,7 @@
 								<td class="nota">7.87</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face6.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face6.jpg" alt="cara aleatoria"></td>
 								<td>Daniel de Castro</td>
 								<td class="nota">9</td>
 								<td class="nota">8</td>
@@ -703,7 +861,7 @@
 								<td class="nota">9.82</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face7.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face7.jpg" alt="cara aleatoria"></td>
 								<td>Urbano Moreno</td>
 								<td class="nota">6</td>
 								<td class="nota">3</td>
@@ -711,7 +869,7 @@
 								<td class="nota">4.53</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face8.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face8.jpg" alt="cara aleatoria"></td>
 								<td>Rafa Melgar</td>
 								<td class="nota">6</td>
 								<td class="nota">8</td>
@@ -719,7 +877,7 @@
 								<td class="nota">7.84</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face9.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face9.jpg" alt="cara aleatoria"></td>
 								<td>Mia Cerdan</td>
 								<td class="nota">9</td>
 								<td class="nota">8</td>
@@ -727,7 +885,7 @@
 								<td class="nota">9.58</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face10.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face10.jpg" alt="cara aleatoria"></td>
 								<td>Igor Montiel</td>
 								<td class="nota">4</td>
 								<td class="nota">6</td>
@@ -735,7 +893,7 @@
 								<td class="nota">9.17</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face11.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face11.jpg" alt="cara aleatoria"></td>
 								<td>Chloe Noguera</td>
 								<td class="nota">6</td>
 								<td class="nota">8</td>
@@ -743,7 +901,7 @@
 								<td class="nota">7.33</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face12.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face12.jpg" alt="cara aleatoria"></td>
 								<td>Augusto Hernandez</td>
 								<td class="nota">6</td>
 								<td class="nota">8</td>
@@ -751,7 +909,7 @@
 								<td class="nota">8.26</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face13.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face13.jpg" alt="cara aleatoria"></td>
 								<td>Saioa Jordan</td>
 								<td class="nota">8</td>
 								<td class="nota">6</td>
@@ -759,7 +917,7 @@
 								<td class="nota">7.66</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face14.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face14.jpg" alt="cara aleatoria"></td>
 								<td>Baldomero Marti</td>
 								<td class="nota">6</td>
 								<td class="nota">4</td>
@@ -767,7 +925,7 @@
 								<td class="nota">3.91</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face15.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face15.jpg" alt="cara aleatoria"></td>
 								<td>Maria-Luisa Losada</td>
 								<td class="nota">6</td>
 								<td class="nota">6</td>
@@ -775,7 +933,7 @@
 								<td class="nota">4.11</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face16.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face16.jpg" alt="cara aleatoria"></td>
 								<td>Anas Pachecho</td>
 								<td class="nota">6</td>
 								<td class="nota">8</td>
@@ -783,7 +941,7 @@
 								<td class="nota">4.33</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face17.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face17.jpg" alt="cara aleatoria"></td>
 								<td>Ursula Olmos</td>
 								<td class="nota">6</td>
 								<td class="nota">3</td>
@@ -791,7 +949,7 @@
 								<td class="nota">5.66</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face18.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face18.jpg" alt="cara aleatoria"></td>
 								<td>Nayara Gamero</td>
 								<td class="nota">3</td>
 								<td class="nota">6</td>
@@ -799,7 +957,7 @@
 								<td class="nota">6.44</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face19.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face19.jpg" alt="cara aleatoria"></td>
 								<td>Ioana Herranz</td>
 								<td class="nota">6</td>
 								<td class="nota">8</td>
@@ -807,7 +965,7 @@
 								<td class="nota">7.51</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face20.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face20.jpg" alt="cara aleatoria"></td>
 								<td>Erika Revilla</td>
 								<td class="nota">6</td>
 								<td class="nota">8</td>
@@ -815,7 +973,7 @@
 								<td class="nota">7.63</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face21.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face21.jpg" alt="cara aleatoria"></td>
 								<td>Mireia Carretero</td>
 								<td class="nota">6</td>
 								<td class="nota">6</td>
@@ -823,7 +981,7 @@
 								<td class="nota">9.51</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face22.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face22.jpg" alt="cara aleatoria"></td>
 								<td>Idoia Ahmed</td>
 								<td class="nota">8</td>
 								<td class="nota">6</td>
@@ -831,7 +989,7 @@
 								<td class="nota">6.96</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face23.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face23.jpg" alt="cara aleatoria"></td>
 								<td>Maria-Jose Jurado</td>
 								<td class="nota">6</td>
 								<td class="nota">8</td>
@@ -839,7 +997,7 @@
 								<td class="nota">5.66</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face24.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face24.jpg" alt="cara aleatoria"></td>
 								<td>Mercedes Mari</td>
 								<td class="nota">6</td>
 								<td class="nota">9</td>
@@ -847,7 +1005,7 @@
 								<td class="nota">9.69</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face25.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face25.jpg" alt="cara aleatoria"></td>
 								<td>Gladys Mendez</td>
 								<td class="nota">6</td>
 								<td class="nota">3</td>
@@ -855,7 +1013,7 @@
 								<td class="nota">5.74</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face26.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face26.jpg" alt="cara aleatoria"></td>
 								<td>Emiliano Piñero</td>
 								<td class="nota">4</td>
 								<td class="nota">6</td>
@@ -863,7 +1021,7 @@
 								<td class="nota">4.93</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face27.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face27.jpg" alt="cara aleatoria"></td>
 								<td>Sonia Molero</td>
 								<td class="nota">6</td>
 								<td class="nota">8</td>
@@ -871,7 +1029,7 @@
 								<td class="nota">7.26</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face28.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face28.jpg" alt="cara aleatoria"></td>
 								<td>Diego Arevalo</td>
 								<td class="nota">8</td>
 								<td class="nota">6</td>
@@ -879,7 +1037,7 @@
 								<td class="nota">8.87</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face29.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face29.jpg" alt="cara aleatoria"></td>
 								<td>Samir Plasencia</td>
 								<td class="nota">6</td>
 								<td class="nota">3</td>
@@ -887,7 +1045,7 @@
 								<td class="nota">3.76</td>
 							</tr>
 							<tr>
-								<td class="noExl"><img src="images/random-faces/face30.jpg"  alt="cara aleatoria"></td>
+								<td class="noExl"><img src="images/random-faces/face30.jpg" alt="cara aleatoria"></td>
 								<td>Felisa Salmeron</td>
 								<td class="nota">6</td>
 								<td class="nota">3</td>
@@ -915,6 +1073,7 @@
 								<td>6.2</td>
 							</tr>
 						</table>
+						<a id="solicitar-revision">Solicitar Revisión</a>
 					</div>
 				</div>
 			</div>
@@ -968,12 +1127,121 @@
 
 	<!-- ======= MODAL LOGOUT ====== -->
 	<div id="logout-modal">
-		<div class="modal-logout-content col-5">
+		<div class="modal-logout-content col-5 col-s-8 col-xs-10">
 			<div class="col-12"><b>¿Estás segur@ de que deseas cerrar sesión?</b></div>
 			<div class="col-12 modal-logout-buttons">
 				<div id="aceptar-logout">Sí</div>
 				<br>
 				<div id="rechazar-logout">No</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ======= MODAL NOTIF ====== -->
+	<div id="notif-modal">
+		<div class="modal-notif-content col-5 col-s-8 col-xs-10">
+			<div class="col-12"><b>No tienes ninguna notificación</b></div>
+			<div class="col-12 modal-notif-buttons">
+				<div id="aceptar-notif">OK</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ======= MODAL ENTREGADOR ====== -->
+	<div id="entrega-modal">
+		<div class="modal-entrega-content col-5 col-s-8 col-xs-10">
+			<div class="col-12">
+				<form action="#">
+					<p>Selecciona el fichero: (Máximo 200MB)</p>
+					<br><br>
+					<input type="file">
+				</form>
+			</div>
+			<div class="col-12 modal-entrega-buttons">
+				<div id="aceptar-entrega">OK</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ======= MODAL SUBIR ====== -->
+	<div id="subir-modal">
+		<div class="modal-subir-content col-5 col-s-8 col-xs-10">
+			<div class="col-12">
+				<form action="#">
+					<p>Selecciona la asignatura que quieras añadir:</p>
+					<br><br>
+					<input type="text">
+				</form>
+			</div>
+			<div class="col-12 modal-subir-buttons">
+				<div id="aceptar-subir">OK</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ======= MODAL ACTIVIDAD ====== -->
+	<div id="actividad-modal">
+		<div class="modal-actividad-content col-5 col-s-8 col-xs-10">
+			<div class="col-12">
+				<form action="#">
+					<p>Selecciona el fichero: (Máximo 200MB)</p>
+					<br><br>
+					<select name="selector-actividad-modal">
+						<option value="Entregable">Entregable</option>
+						<option value="Examen">Examen</option>
+					</select>
+				</form>
+			</div>
+			<div class="col-12 modal-actividad-buttons">
+				<div id="aceptar-actividad">OK</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ======= MODAL AGREGAR ====== -->
+	<div id="agregar-modal">
+		<div class="modal-agregar-asignatura col-5 col-s-8 col-xs-10">
+			<div class="col-12">
+				<form action="#">
+					<p>Introduzca la asignatura que desea añadir:</p>
+					<br><br>
+					<input type="text">
+				</form>
+			</div>
+			<div class="col-12 modal-agregar-buttons">
+				<div id="aceptar-agregar">OK</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ======= MODAL ARCHIVAR ====== -->
+	<div id="archivar-modal">
+		<div class="modal-archivar-asignatura col-5 col-s-8 col-xs-10">
+			<div class="col-12">
+				<form action="#">
+					<p>Introduzca la asignatura que desea archivar:</p>
+					<br><br>
+					<input type="text">
+				</form>
+			</div>
+			<div class="col-12 modal-archivar-buttons">
+				<div id="aceptar-archivar">OK</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ======= MODAL CONFIGURACION ====== -->
+	<div id="configuracion-modal">
+		<div class="modal-configuracion-asignatura col-5 col-s-8 col-xs-10">
+			<div class="col-12">
+				<form action="#">
+					<p>Señale que asignatura desea modificar:</p>
+					<br><br>
+					<input type="text">
+				</form>
+			</div>
+			<div class="col-12 modal-configuracion-buttons">
+				<div id="aceptar-configuracion">OK</div>
 			</div>
 		</div>
 	</div>
@@ -986,7 +1254,7 @@
 			</div>
 			<div class="copyright footer-column col-3 col-s-12">
 				<p>
-					<a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/" target="_blank"><img alt="Licencia de Creative Commons" src="https://i.creativecommons.org/l/by-nd/4.0/88x31.png" class="creative-commons"/></a>
+					<a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/" target="_blank"><img alt="Licencia de Creative Commons" src="https://i.creativecommons.org/l/by-nd/4.0/88x31.png" class="creative-commons" /></a>
 				</p>
 				<br>
 				<span>@ 2020 Group 1 Inc.</span>
