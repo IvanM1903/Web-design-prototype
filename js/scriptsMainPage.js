@@ -1,3 +1,47 @@
+//=======================================//
+// ====== FUNCTIONALITIES PART - 3 ======//
+//=======================================//
+
+$(document).ready(function(){
+    var rolUsuario = getCookie("rol");
+    
+    //Si el rol es estudiante tiene acceso a las siguientes funcionalidades
+    /**
+     * Poder subir contenido a los entregadores -> FALTA
+     * Ver las calificaciones de la asignatura -> HECHO
+     * Pedir una revisión para una calificación -> FALTA
+     * Descargarse calificaciones para una asignatura -> HECHO
+     *  Ver un calendario de la asignatura -> FALTA
+     * Interaccion a traves de foros -> HECHO
+     * Inscribirse en un grupo de trabajo -> FALTA
+     * 
+     */
+    //Si el rol es profesor tiene acceso a las siguientes funcionalidades
+    /**
+     * Subir nuevo contenido a la asignatura -> FALTA
+     * Crear un nuevo entregable en la asignatura -> FALTA
+     * Crear actividades en la asignatura -> FALTA
+     * Calificar una actividad -> FALTA
+     * Ver gráficas que representen las notas de los alumnos -> FALTA
+     * Descargarse las calificaciones de los estudiantes en Excel -> HECHO
+     * Interactuar a través de foros -> HECHO
+     */
+    //Si el rol es admin tiene acceso a las siguientes funcionalidades
+    /**
+     * Crear una nueva asignatura -> FALTA
+     * Archivar una asignatura existente -> FALTA
+     * Definir o cambiar los profesores que dan una asignatura -> FALTA
+     * Matricular un estudiante en la asignatura -> FALTA
+     * Eliminar un estudiante que esté matriculado en una asignatura -> FALTA
+     */
+    if(rolUsuario === "Estudiante"){
+        $(".solicitar-revision").show();
+    }
+});
+
+
+
+
 
 //======================================//
 // ====== MIS ASIGNATURAS SECTION ======//
