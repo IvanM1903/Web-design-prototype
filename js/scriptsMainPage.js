@@ -5,34 +5,6 @@
 $(document).ready(function(){
     var rolUsuario = getCookie("rol");
     
-    //Si el rol es estudiante tiene acceso a las siguientes funcionalidades
-    /**
-     * Poder subir contenido a los entregadores -> HECHO
-     * Ver las calificaciones de la asignatura -> HECHO
-     * Pedir una revisión para una calificación -> HECHO
-     * Descargarse calificaciones para una asignatura -> HECHO
-     * Ver un calendario de la asignatura -> HECHO
-     * Interaccion a traves de foros -> HECHO
-     * Inscribirse en un grupo de trabajo -> FALTA
-     * 
-     */
-    //Si el rol es profesor tiene acceso a las siguientes funcionalidades
-    /**
-     * Subir nuevo contenido a la asignatura -> HECHO
-     * Crear un nuevo entregable en la asignatura -> HECHO
-     * Crear actividades en la asignatura -> HECHO
-     * Calificar una actividad -> HECHO
-     * Descargarse las calificaciones de los estudiantes en Excel -> HECHO
-     * Interactuar a través de foros -> HECHO
-     */
-    //Si el rol es admin tiene acceso a las siguientes funcionalidades
-    /**
-     * Crear una nueva asignatura -> FALTA
-     * Archivar una asignatura existente -> FALTA
-     * Definir o cambiar los profesores que dan una asignatura -> FALTA
-     * Matricular un estudiante en la asignatura -> FALTA
-     * Eliminar un estudiante que esté matriculado en una asignatura -> FALTA
-     */
     if(rolUsuario === "Estudiante"){
         //Hacemos visible la posibilidad de enviar una solicitud
         $("#solicitar-revision").show();
@@ -198,7 +170,7 @@ $(document).ready(function(){
         $(".mostrarContenidoAsignatura").show();
         $(".mostrarNotificaciones").show();
 
-        $(".side-menu-contenido-asignatura-profe").parent().show();
+        $(".side-menu-asignatura-profe").parent().show();
         $(".side-menu-estudiantes").parent().show();
         $(".side-menu-calificaciones").parent().show();
         $(".side-menu-notificaciones").parent().show();
@@ -249,6 +221,11 @@ $(document).ready(function(){
         $(".administrador-elementos-agregar").show();
         $(".administrador-elementos-archivar").show();
         $(".administrador-elementos-config").show();
+
+        $(".side-menu-agregar-asignatura").parent().show();
+        $(".side-menu-archivar-asignatura").parent().show();
+        $(".side-menu-configurar-asignatura").parent().show();
+
 
     }
 
@@ -792,10 +769,7 @@ $(document).ready(function(){
             });
             window.open("https://aplicaciones.uc3m.es/directorio/");
         });
-    }else if(rolUsuario === "Profesor"){
-
-        //Ocultamos la vista de las asignaturas de los estudiantes
-        $(".restoAsignaturas").hide();
+    }else{
         
         //Aplicamos CSS a algunos elementos del menu
         $(".side-menu-asignatura-profe").parent().css({
