@@ -17,11 +17,12 @@
 <body>
 
 	<!-- ======= MAIN CONTAINER ====== -->
-
-
+	<!-- Contiene el contenedor principal donde se encuentra el login, la zona de registro y la bienvenida al sistema-->
 	<section class="login-header">
 		<!-- ====== CENTER CONTENT ====== -->
 		<div class="content col-8 col-sm-10">
+			<!-- Separamos en dos contenedores, uno a la izquierda y otro a la derecha-->
+			<!-- Contenedor de la izquierda-->
 			<div class="content-left-container col-5 col-md-10 col-sm-12">
 				<!-- ====== WELCOME CONTENT ====== -->
 				<div class="welcome col-12 col-sm-12">
@@ -44,6 +45,7 @@
 					<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="welcome-uc3m-text">
 					<h1>Identificación de usuario</h1>
 					<p id="error-log"></p>
+					<!-- Formulario que se usa para iniciar sesion-->
 					<form action ="index-aulaglobal.html" id="loginForm">
 						<i class="fa fa-user" aria-hidden="true"></i><span>Correo</span>
 						<br>
@@ -89,12 +91,14 @@
 		</div>
 
 		<!-- ====== REGISTER FORM CONTAINER ====== -->
+		<!-- Contenedor de la derecha -->
 		<div class="register-form col-8 col-sm-10" id="Registration">
 				<div class="register-image col-12 col-sm-12">
 					<p class="register-back-to-welcome">Volver al inicio</p>
 					<img src="images/logo.png" alt="Universidad Carlos III de Madrid" class="col-3 col-sm-9">
 				</div>
 				<h1>Registro de usuario</h1>
+				<!-- Formulario de registro -->
 				<form id="registration" class="col-12" action="index-aulaglobal.html">
 					<i class="fa fa-user" aria-hidden="true"></i><span>Nombre de usuario</span>
 					<br>
@@ -207,7 +211,6 @@
 				$(".content").delay(400).slideDown();
 				$(".welcome").slideUp();
 				$(".login-form").delay(400).slideDown();
-				
 			});
 			//Aparece la pantalla de login desde welcome
 			$(".welcome-login").click(function(){

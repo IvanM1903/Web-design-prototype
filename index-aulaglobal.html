@@ -18,6 +18,7 @@
 <body onload="writeNameFromCookie()">
 
 	<!-- ====== MENU OVERLAY MOBILE ====== -->
+	<!-- Menu que solo sera visible desde telefonos. Es el menu hamburguesa encontrado arriba a la izquierda-->
 	<div id="SideMenuId" class="side-menu">
 		<div class="user-session">
 			<img src="images/user.png" alt="imagen-de-usuario">
@@ -69,16 +70,16 @@
 		<div class="cabecera col-12">
 			<!-- ====== NAV SUPERIOR ====== -->
 			<ul class="nav" id="top">
-				<!-- ====== CONTENIDO SOLO DISPONIBLE PARA VERSION MOVIL ====== -->
 				<li class="nav-item nav-icon col-s-1">
-					<span onclick="openNav()">&#9776;</span>
-				</li>	
+					<span onclick="openNav()">&#9776;</span> <!-- Icono del menu de hamburguesa-->
+				</li>
 				<li class="col-2 col-s-3">
 					<img src="images/logoxikito.png" alt="Logo de la página principal" class="col-9 logo-header">
 				</li>
 				<li class="col-6 titulo">
 					<b>INGENIERIA INFORMATICA - AULA GLOBAL</b>
 				</li>
+				<!-- Zona del usuario (imagen, nombre y boton para cerrar sesion)-->
 				<li class="col-4 user-session-desktop">
 					<img src="images/user.png" alt="Imagen usuario" class="col-1 col-s-2">
 					<p class="col-7" id="user-session-name-desktop"></p>
@@ -88,9 +89,10 @@
 				</li>
 				<li class="col-1 icono-ayuda">
 					<a href="https://www.uc3m.es/ss/Satellite/Infraestructuras/es/TextoDosColumnas/1371264307813/CONTACTA:_La_comunidad_de_ayuda_y_soporte_de_la_UC3M"><i class="fa fa-question-circle col-1" aria-hidden="true"></i></a>
-				</li>				
+				</li>
 			</ul>
 			<!--====== NAV INFERIOR ====== -->
+			<!-- Disponible en todos los tamaños excepto para movil -->
 			<div class="col-12">
 				<ul class="links-nav">
 					<li class="col-5 nav-left">
@@ -109,6 +111,8 @@
 	<!-- ====== CUERPO O FILA CENTRAL ====== -->
 	<div class="cuerpo">
 		<div class="main-row col-12">
+			<!-- Separamos en 3 columnas con un formato 25-50-25 -->
+
 			<!--====== COLUMNA DE LA IZQUIERDA ====== -->
 			<div class="col-left column col-3">
 				<h1>MENÚ</h1>
@@ -138,13 +142,13 @@
 			</div>
 			<!-- ====== COLUMNA CENTRAL ====== -->
 			<div class="col-center column col-6 col-s-9 col-xs-12">
-				
+				<!-- Zona que contiene las asignaturas de los alumnos (solo visible si eres estudiante)-->
 				<div class="restoAsignaturas">
 					<h1 class="title-iframe col-12">INICIO - AULA GLOBAL</h1>
 					<div class="contenedor-colCentro col-12">
-						<ul class="enlaces-orientacion"> 
+						<ul class="enlaces-orientacion">
 							<li class="enlace-inicio">Inicio </li>
-						</ul> 
+						</ul>
 						<ul class="lista-principal">
 							<li><i class="fa fa-caret-down mis-cursos-arrow" aria-hidden="true"></i>&nbsp;&nbsp;<span class="mis-cursos">Mis cursos</span>
 								<ul class="ul-bajo-cursos">
@@ -162,11 +166,13 @@
 							</li>
 						</ul>
 					</div>
+					<!-- Contenedor que guarda la zona del calendario-->
 					<div class="calendar-container">
 					</div>
 				</div>
 
 				<!-- ====== CONTENIDO DE LA ASIGNATURA VIEW ====== -->
+				<!-- Zona que almacena el contenido de una asignatura (solo visible si eres profesor/admin)-->
 				<div class="contenidoAsignatura">
 					<h1 class="title-iframe col-12">INTERFACES DE USUARIO</h1>
 
@@ -270,16 +276,18 @@
 							</div>
 						</div>
 					</div>
-
+					<!-- Contenedor que guarda la zona del calendario-->
 					<div class="calendar-container">
 					</div>
 				</div>
 
 				<!-- ====== LISTA DE ESTUDIANTES VIEW ====== -->
+				<!-- Zona que almacena la lista de estudiantes-->
 				<div class="estudiantesAsignatura">
 					<h1 class="title-iframe col-12">LISTA DE ESTUDIANTES</h1>
 
 					<div class="contenedor-iframe background-iframe col-12">
+						<!-- Tabla visible para profesores y administradores -->
 						<table class="alumnos">
 							<tr>
 								<th>Foto</th>
@@ -478,6 +486,7 @@
 				</div>
 
 				<!-- ====== FORO DE LA ASIGNATURA ====== -->
+				<!-- Zona visible una vez se ha entrado al contenido de una asignatura. Disponible en el menu lateral izquierdo-->
 				<div class="foroAsignatura">
 					<h1 class="title-iframe col-12">FORO DE LA ASIGNATURA</h1>
 					<div class="section-preguntas" id="section-preguntas">
@@ -634,9 +643,11 @@
 				</div>
 
 				<!-- ====== CALIFICACIONES VIEW ====== -->
+				<!-- Zona que almacena las calificaciones de los usuarios.-->
 				<div class="calificacionesAsignatura">
 					<div class="title-iframe">
 						<h1 class=" col-12">LISTA DE CALIFICACIONES</h1>
+						<!-- Boton para descargar la tabla a excel-->
 						<div id="exportarExcel">
 							Descargar tabla
 						</div>
@@ -886,7 +897,6 @@
 						</table>
 
 						<!-- Tabla del usuario cuando es estudiante -->
-
 						<table class="tabla-user-estudiante" id="table2excel-alumno">
 							<tr>
 								<th class="noExl"></th>
@@ -913,6 +923,7 @@
 				<h1>INFORMACIÓN DEL CURSO</h1>
 				<ul class="menu-right">
 					<li class="col-12">
+						<!-- Apartado de noticias-->
 						<div class="noticias-uc3m">
 							<p class="col-12 noticias-uc3m-titulo">
 								<span>&nbsp;&nbsp;&nbsp;NOTICIAS EN UC3M&nbsp;&nbsp;&nbsp;</span>
@@ -939,6 +950,7 @@
 						</div>
 					</li>
 					<li class="col-12">
+						<!-- Zona de enlace al portal de la biblioteca-->
 						<div class="biblioteca-uc3m">
 							<p class="col-12 biblioteca-uc3m-titulo">
 								<span>&nbsp;&nbsp;&nbsp;BIBLIOTECA UC3M&nbsp;&nbsp;&nbsp;</span>
@@ -948,9 +960,6 @@
 								<a href="https://www.uc3m.es/ss/Satellite/Biblioteca/es/PortadaMiniSite/1371212251593/"><span>Enlace al portal de la biblioteca</span></a>
 							</div>
 						</div>
-					</li>
-					<li class="col-12" id="ultimas-novedades">
-						
 					</li>
 				</ul>
 			</div>

@@ -1,7 +1,112 @@
+
+//======================================//
+// ====== MIS ASIGNATURAS SECTION ======//
+//======================================//
+
+//Comprobamos al cargar la página el rol que tiene el usuario
+
+$(document).ready(function(){
+
+    //Primeramente ocultamos aquellas vistas que no van a ser usadas por defecto
+    $(".calificacionesAsignatura").hide();
+    $(".estudiantesAsignatura").hide();
+    $(".foroAsignatura").hide();
+    $(".tabla-user-estudiante").hide();
+
+    var rolUsuario = getCookie("rol");
+    //Ocultamos al estudiante las vistas a las que no tiene acceso
+    if(rolUsuario === "Estudiante"){
+        var contenedorPadre = document.getElementById("asignaturas-grado");
+        var grado = getCookie("grado");
+        $(".mostrarEstudiantesAsignatura").hide();
+        $(".side-menu-estudiantes").parent().hide();
+        $(".mostrarRestoAsignaturas").show();
+
+
+        //Creamos el bloque donde se insertarán las asignaturas
+        var bloque_asignaturas = document.createElement("ul");
+        bloque_asignaturas.className = "lista_asignaturas";
+
+        document.getElementById("asignaturas-grado").innerHTML ="<i class='fa fa-caret-down grado-arrow' aria-hidden='true'></i>&nbsp;&nbsp;<span class='nombre-grado'>Grado en "+ grado+"</span>";
+
+        //Escribimos las asignaturas del estudiante dependiendo de su grado
+        if(grado === "Ingeniería Informática"){
+            bloque_asignaturas.innerHTML = "<li class='asignatura-grado'>Interfaces de Usuario</li><li class='asignatura-grado'>Redes de Ordenadores</li><li class='asignatura-grado'>Arquitectura de Computadores</li><li class='asignatura-grado'>Ingeniería del Software</li><li class='asignatura-grado'>Heurística y Optimización</li>";
+        }else if(grado === "Ingeniería Aeroespacial"){
+            bloque_asignaturas.innerHTML = "<li class='asignatura-grado'>Aerodinámica I</li><li class='asignatura-grado'>Fundamentos de Ingeniería Electrónica</li><li class='asignatura-grado'>Estructuras Aeroespaciales</li><li class='asignatura-grado'>Sistemas e Instalaciones del Avión</li><li class='asignatura-grado'>Humanidades II</li><li class='asignatura-grado'>Propulsión Aeroespacial I</li>";
+        }else if(grado === "Ingeniería Biomédica"){
+            bloque_asignaturas.innerHTML = "<li class='asignatura-grado'>Técnicas de Búsqueda y Uso de la Información</li><li class='asignatura-grado'>Fisiología Médica I</li><li class='asignatura-grado'>Estadística</li><li class='asignatura-grado'>Fenómenos de transporte en biomedicina</li><li class='asignatura-grado'>Ingeniería de Control</li><li class='asignatura-grado'>Instrumentos de medida</li><li class='asignatura-grado'>Hojas de cálculo - Nivel avanzado</li>";
+        }else if(grado === "Derecho"){
+            bloque_asignaturas.innerHTML = "<li class='asignatura-grado'>Delitos contra las personas y contra la sociedad</li><li class='asignatura-grado'>Contratación y medios de las Administraciones Públicas</li><li class='asignatura-grado'>Derecho procesal penal</li><li class='asignatura-grado'>Derechos Reales</li><li class='asignatura-grado'>El empresario y su estatuto jurídico</li>";
+        }else{
+            bloque_asignaturas.innerHTML = "No estás matriculado en ninguna asignatura";
+        }
+
+        //Indicamos al contenedor padre cual es su contendor hijo nuevo
+        contenedorPadre.appendChild(bloque_asignaturas);
+
+        //Ocultamos los campos del menu que no queremos que aparezcan en la vista del estudiante
+        $(".side-menu-calificaciones").parent().hide();
+        $(".side-menu-foro").parent().hide();
+        $(".side-menu-asignatura-profe").parent().hide();
+        $(".mostrarCalificacionesAsignatura").hide();
+        $(".mostrarForoAsignatura").hide();
+        $(".mostrarContenidoAsignatura").hide();
+        $(".contenidoAsignatura").hide();
+    }
+    else{
+        $(".mostrarEstudiantesAsignatura").show();
+        $(".mostrarRestoAsignaturas").hide();
+    }
+
+    $(".asignatura-grado").click(function(){
+            $(".restoAsignaturas").slideUp(800);
+            $(".calificacionesAsignatura").slideUp(800);
+            $(".foroAsignatura").slideUp(800);
+            $(".contenidoAsignatura").slideDown(800);
+            $(".mostrarRestoAsignaturas").css({
+                "color":"#000",
+                "font-weight":"normal"
+            });
+            $(".mostrarCalificacionesAsignatura").css({
+                "color":"#000",
+                "font-weight":"normal"
+            });
+            $(".side-menu-asignaturas").parent().css({
+                "background-color":"transparent",
+                "font-weight":"normal"
+            });
+            $(".mostrarForoAsignatura").show();
+            $(".mostrarCalificacionesAsignatura").show();
+            $(".side-menu-foro").parent().show();
+            $(".side-menu-calificaciones").parent().show();
+    });
+
+    //Alternamos la vista de los diferentes contenidos mostrados en las asignaturas
+    $(".mis-cursos").click(function(){
+        $(".ul-bajo-cursos").toggle("slow");
+        $(".mis-cursos-arrow").toggleClass("fa-caret-right");
+    });
+    $(".estudios-oficiales-toggle").click(function(){
+        $(".ul-bajo-estudios-oficiales").toggle("slow");
+        $(".estudios-oficiales-arrow").toggleClass("fa-caret-right");
+    });
+    $(".veinte-toggle").click(function(){
+        $(".ul-bajo-veinte").toggle("slow");
+        $(".veinte-arrow").toggleClass("fa-caret-right");
+    });
+    $(".nombre-grado").click(function(){
+        $(".lista_asignaturas").toggle("slow");
+        $(".grado-arrow").toggleClass("fa-caret-right");
+    });
+
+});
+
 //============================//
-// ====== FORO METHODS ====== //
+// ====== FORO SECTION ====== //
 //============================//
 
+//Inserta una resspuesta en el foro
 function insertarRespuesta(i){
     var contenedor;
     var bloque_a_insertar;
@@ -40,9 +145,39 @@ function insertarRespuesta(i){
     });
 }
 
-//============================================//
-// ====== CHANGE CENTER COLUMN SECTION ====== //
-//============================================//
+$(document).ready(function(){
+    $("#contenido-tema-1").hide();
+    $("#contenido-tema-2").hide();
+    $("#contenido-tema-3").hide();
+    $("#formularioRespuestaForo").hide();
+    $(".volver-a-foro").hide();
+});
+$(".volver-a-foro").click(function(){
+    $("#formularioRespuestaForo").fadeOut("slow");
+    $("#contenido-tema-1").fadeOut("slow");
+    $("#contenido-tema-2").fadeOut("slow");
+    $("#contenido-tema-3").fadeOut("slow");
+    $("#section-preguntas").delay(600).fadeIn("slow");
+    $(".volver-a-foro").hide();
+});
+$("#foro-tema-1").click(function(){
+    $("#section-preguntas").fadeOut("slow");
+    $(".volver-a-foro").delay(600).fadeIn("slow");
+    $("#contenido-tema-1").delay(600).fadeIn("slow");
+    $("#formularioRespuestaForo").delay(600).fadeIn("slow");
+});
+$("#foro-tema-2").click(function(){
+    $("#section-preguntas").fadeOut("slow");
+    $(".volver-a-foro").delay(600).fadeIn("slow");
+    $("#contenido-tema-2").delay(600).fadeIn("slow");
+    $("#formularioRespuestaForo").delay(600).fadeIn("slow");
+});
+$("#foro-tema-3").click(function(){
+    $("#section-preguntas").fadeOut("slow");
+    $(".volver-a-foro").delay(600).fadeIn("slow");
+    $("#contenido-tema-3").delay(600).fadeIn("slow");
+    $("#formularioRespuestaForo").delay(600).fadeIn("slow");
+});
 
 $(document).ready(function(){
 
@@ -50,9 +185,7 @@ $(document).ready(function(){
     // ====== CALENDAR SECTION ====== //
     //================================//
 
-
     $(".calendar-container").simpleCalendar();
-    
 
     $(".calendar-container").simpleCalendar({
         //Defaults options below
@@ -103,35 +236,29 @@ $(document).ready(function(){
         onEventCreate: function( $el ) {},          // Callback fired when an HTML event is created - see $(this).data('event')
         onDayCreate:   function( $el, d, m, y ) {}  // Callback fired when an HTML day is created   - see $(this).data('today'), .data('todayEvents')
     });
-    
 
-    $(".side-menu-asignaturas").parent().css({
-        "color":"#000099",
-        "font-weight":"bold",
-        "background-color":"rgba(117, 169, 249,0.6)"
-    });
-    $(".mostrarRestoAsignaturas").css({
-        "color":"#000099",
-        "font-weight":"bold"
-    });
-    $(".calificacionesAsignatura").hide();
-    $(".estudiantesAsignatura").hide();
-    $(".foroAsignatura").hide();
-    $(".contenidoAsignatura").hide();
-    $(".tabla-user-estudiante").hide();
-    $(".side-menu-calificaciones").parent().hide();
-    $(".side-menu-foro").parent().hide();
-    $(".side-menu-asignatura-profe").parent().hide();
-    $(".mostrarCalificacionesAsignatura").hide();
-    $(".mostrarForoAsignatura").hide();
-    $(".mostrarContenidoAsignatura").hide();
+    //============================================//
+    // ====== CHANGE CENTER COLUMN SECTION ====== //
+    //============================================//
 
-    if(getCookie("rol") === "Estudiante"){ 
+    if(getCookie("rol") === "Estudiante"){
 
         //=================================//
         // ====== SIDE MENU SECTION ====== //
         //=================================//
 
+        //Aplicamos CSS para dar valores por defecto a algunos items de los menus
+        $(".side-menu-asignaturas").parent().css({
+            "color":"#000099",
+            "font-weight":"bold",
+            "background-color":"rgba(117, 169, 249,0.6)"
+        });
+        $(".mostrarRestoAsignaturas").css({
+            "color":"#000099",
+            "font-weight":"bold"
+        });
+
+        //Cambiamos los campos del menu lateral al hacer click en mis asignaturas
         $(".side-menu-asignaturas").click(function(){
             $(".side-menu-asignaturas").parent().css({
                 "color":"#000099",
@@ -160,6 +287,7 @@ $(document).ready(function(){
             $(".side-menu-foro").parent().hide();
             $(".side-menu-calificaciones").parent().hide();
         });
+        //Cambiamos los campos del menu lateral al hacer click en calificaciones
         $(".side-menu-calificaciones").click(function(){
             $(".side-menu-calificaciones").parent().css({
                 "color":"#000099",
@@ -191,6 +319,7 @@ $(document).ready(function(){
             $(".foroAsignatura").slideUp(800);
             $(".calificacionesAsignatura").slideDown(800);
         });
+        //Cambiamos los campos del menu lateral al hacer click en contacto
         $(".side-menu-contacto").click(function(){
             $(".side-menu-contacto").parent().css({
                 "color":"#000099",
@@ -215,6 +344,7 @@ $(document).ready(function(){
             $(".side-menu-foro").parent().hide();
             $(".side-menu-calificaciones").parent().hide();
         });
+        //Cambiamos los campos del menu lateral al hacer click en notificaciones
         $(".side-menu-notificaciones").click(function(){
             $(".side-menu-notificaciones").parent().css({
                 "color":"#000099",
@@ -237,6 +367,7 @@ $(document).ready(function(){
                 "background-color":"transparent"
             });
         });
+        //Cambiamos los campos del menu lateral al hacer click en el foro
         $(".side-menu-foro").click(function(){
             $(".side-menu-foro").parent().css({
                 "color":"#000099",
@@ -273,6 +404,7 @@ $(document).ready(function(){
         // ======= DESKTOP MENU SECTION ====== //
         //=====================================//
 
+        //Cambiamos los campos del menu izquierdo al hacer click en mis asignaturas
         $(".mostrarRestoAsignaturas").click(function(){
             $(".mostrarRestoAsignaturas").css({
                 "color":"#000099",
@@ -375,21 +507,21 @@ $(document).ready(function(){
             });
             window.location.href = "https://aplicaciones.uc3m.es/directorio/";
         });
-        
     }else{
 
-        //Ocultamos el menu de las asignaturas de los estudiantes
+        //Ocultamos la vista de las asignaturas de los estudiantes
         $(".restoAsignaturas").hide();
         //Hacemos visibles el contenido de la asignatura por defecto --> Interfaces de usuario
         $(".contenidoAsignatura").show();
         $(".mostrarContenidoAsignatura").show();
         $(".mostrarCalificacionesAsignatura").show();
         $(".mostrarForo").show();
-        //Ocultamos la opcion del menu izquierdo --> Mis asignaturas
+        //Ocultamos la opcion del menu izquierdo --> Mis asignaturas y mostramos las restantes: foro, calificaciones y la asignatura impartida
         $(".side-menu-asignaturas").parent().hide();
         $(".side-menu-calificaciones").parent().show();
         $(".side-menu-foro").parent().show();
         $(".side-menu-asignatura-profe").parent().show();
+        //Aplicamos CSS a algunos elementos del menu
         $(".side-menu-asignatura-profe").parent().css({
             "color":"#000099",
             "font-weight":"bold",
@@ -438,7 +570,7 @@ $(document).ready(function(){
             $(".calificacionesAsignatura").slideUp(800);
             $(".foroAsignatura").slideUp(800);
             $(".contenidoAsignatura").slideDown(800);
-        });  
+        }); 
         $(".side-menu-estudiantes").click(function(){
             $(".side-menu-estudiantes").parent().css({
                 "color":"#000099",
@@ -474,7 +606,7 @@ $(document).ready(function(){
             $(".calificacionesAsignatura").slideUp(800);
             $(".foroAsignatura").slideUp(800);
             $(".estudiantesAsignatura").slideDown(800);
-        });       
+        });
 
         $(".side-menu-calificaciones").click(function(){
             $(".side-menu-calificaciones").parent().css({
@@ -711,93 +843,6 @@ $(document).ready(function(){
     }
 });
 
-//======================================//
-// ====== MIS ASIGNATURAS SECTION ======//
-//======================================//
-
-//Comprobamos al cargar la página el rol que tiene el usuario
-
-$(document).ready(function(){
-    var rolUsuario = getCookie("rol");
-    //Ocultamos al estudiante las vistas a las que no tiene acceso
-    if(rolUsuario === "Estudiante"){
-        var contenedorPadre = document.getElementById("asignaturas-grado");
-        var grado = getCookie("grado");
-        $(".mostrarEstudiantesAsignatura").hide();
-        $(".side-menu-estudiantes").parent().hide();
-        $(".mostrarRestoAsignaturas").show();
-
-
-        //Creamos el bloque donde se insertarán las asignaturas
-        var bloque_asignaturas = document.createElement("ul");
-        bloque_asignaturas.className = "lista_asignaturas";
-
-        document.getElementById("asignaturas-grado").innerHTML ="<i class='fa fa-caret-down grado-arrow' aria-hidden='true'></i>&nbsp;&nbsp;<span class='nombre-grado'>Grado en "+ grado+"</span>";
-
-        //Escribimos las asignaturas del estudiante dependiendo de su grado
-        if(grado === "Ingeniería Informática"){
-            bloque_asignaturas.innerHTML = "<li class='asignatura-grado'>Interfaces de Usuario</li><li class='asignatura-grado'>Redes de Ordenadores</li><li class='asignatura-grado'>Arquitectura de Computadores</li><li class='asignatura-grado'>Ingeniería del Software</li><li class='asignatura-grado'>Heurística y Optimización</li>";
-        }else if(grado === "Ingeniería Aeroespacial"){
-            bloque_asignaturas.innerHTML = "<li class='asignatura-grado'>Aerodinámica I</li><li class='asignatura-grado'>Fundamentos de Ingeniería Electrónica</li><li class='asignatura-grado'>Estructuras Aeroespaciales</li><li class='asignatura-grado'>Sistemas e Instalaciones del Avión</li><li class='asignatura-grado'>Humanidades II</li><li class='asignatura-grado'>Propulsión Aeroespacial I</li>";
-        }else if(grado === "Ingeniería Biomédica"){
-            bloque_asignaturas.innerHTML = "<li class='asignatura-grado'>Técnicas de Búsqueda y Uso de la Información</li><li class='asignatura-grado'>Fisiología Médica I</li><li class='asignatura-grado'>Estadística</li><li class='asignatura-grado'>Fenómenos de transporte en biomedicina</li><li class='asignatura-grado'>Ingeniería de Control</li><li class='asignatura-grado'>Instrumentos de medida</li><li class='asignatura-grado'>Hojas de cálculo - Nivel avanzado</li>";
-        }else if(grado === "Derecho"){
-            bloque_asignaturas.innerHTML = "<li class='asignatura-grado'>Delitos contra las personas y contra la sociedad</li><li class='asignatura-grado'>Contratación y medios de las Administraciones Públicas</li><li class='asignatura-grado'>Derecho procesal penal</li><li class='asignatura-grado'>Derechos Reales</li><li class='asignatura-grado'>El empresario y su estatuto jurídico</li>";
-        }else{
-            bloque_asignaturas.innerHTML = "No estás matriculado en ninguna asignatura";
-        }
-
-        //Indicamos al contenedor padre cual es su contendor hijo nuevo
-        contenedorPadre.appendChild(bloque_asignaturas);
-    }
-    else{
-        $(".mostrarEstudiantesAsignatura").show();
-        $(".mostrarRestoAsignaturas").hide();
-    }
-
-    $(".asignatura-grado").click(function(){
-            $(".restoAsignaturas").slideUp(800);
-            $(".calificacionesAsignatura").slideUp(800);
-            $(".foroAsignatura").slideUp(800);
-            $(".contenidoAsignatura").slideDown(800);
-            $(".mostrarRestoAsignaturas").css({
-                "color":"#000",
-                "font-weight":"normal"
-            });
-            $(".mostrarCalificacionesAsignatura").css({
-                "color":"#000",
-                "font-weight":"normal"
-            });
-            $(".side-menu-asignaturas").parent().css({
-                "background-color":"transparent",
-                "font-weight":"normal"
-            });
-            $(".mostrarForoAsignatura").show();
-            $(".mostrarCalificacionesAsignatura").show();
-            $(".side-menu-foro").parent().show();
-            $(".side-menu-calificaciones").parent().show();
-    });
-
-    //Alternamos la vista de los diferentes contenidos mostrados en las asignaturas
-    $(".mis-cursos").click(function(){
-        $(".ul-bajo-cursos").toggle("slow");
-        $(".mis-cursos-arrow").toggleClass("fa-caret-right");
-    });
-    $(".estudios-oficiales-toggle").click(function(){
-        $(".ul-bajo-estudios-oficiales").toggle("slow");
-        $(".estudios-oficiales-arrow").toggleClass("fa-caret-right");
-    });
-    $(".veinte-toggle").click(function(){
-        $(".ul-bajo-veinte").toggle("slow");
-        $(".veinte-arrow").toggleClass("fa-caret-right");
-    });
-    $(".nombre-grado").click(function(){
-        $(".lista_asignaturas").toggle("slow");
-        $(".grado-arrow").toggleClass("fa-caret-right");
-    });
-
-
-});
 
 //===============================//
 // ====== NAV MOBILE MENU ====== //
@@ -828,44 +873,6 @@ $("#aceptar-logout").click(function(){
 });
 $("#rechazar-logout").click(function(){
     document.getElementById("logout-modal").style.display = "none";
-});
-
-//============================//
-// ====== FORO SECTION ====== //
-//============================//
-
-$(document).ready(function(){
-    $("#contenido-tema-1").hide();
-    $("#contenido-tema-2").hide();
-    $("#contenido-tema-3").hide();
-    $("#formularioRespuestaForo").hide();
-    $(".volver-a-foro").hide();
-});
-$(".volver-a-foro").click(function(){
-    $("#formularioRespuestaForo").fadeOut("slow");
-    $("#contenido-tema-1").fadeOut("slow");
-    $("#contenido-tema-2").fadeOut("slow");
-    $("#contenido-tema-3").fadeOut("slow");
-    $("#section-preguntas").delay(600).fadeIn("slow");
-    $(".volver-a-foro").hide();
-});
-$("#foro-tema-1").click(function(){
-    $("#section-preguntas").fadeOut("slow");
-    $(".volver-a-foro").delay(600).fadeIn("slow");
-    $("#contenido-tema-1").delay(600).fadeIn("slow");
-    $("#formularioRespuestaForo").delay(600).fadeIn("slow");
-});
-$("#foro-tema-2").click(function(){
-    $("#section-preguntas").fadeOut("slow");
-    $(".volver-a-foro").delay(600).fadeIn("slow");
-    $("#contenido-tema-2").delay(600).fadeIn("slow");
-    $("#formularioRespuestaForo").delay(600).fadeIn("slow");
-});
-$("#foro-tema-3").click(function(){
-    $("#section-preguntas").fadeOut("slow");
-    $(".volver-a-foro").delay(600).fadeIn("slow");
-    $("#contenido-tema-3").delay(600).fadeIn("slow");
-    $("#formularioRespuestaForo").delay(600).fadeIn("slow");
 });
 
 //====================================//
