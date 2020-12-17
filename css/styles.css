@@ -887,7 +887,9 @@ a:hover{
 	margin-bottom: 1rem;
 }
 
-
+canvas{
+	position: responsive;
+}
 /********************
 **** LEFT COLUMN ****
 ********************/

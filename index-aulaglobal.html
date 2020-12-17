@@ -14,6 +14,8 @@
 	<script src="js/jquery.simple-calendar.js"></script>
 	<!-- export excel scripts -->
 	<script src="js/jquery.table2excel.js"></script>
+
+	<script src="js/charts/Chart.bundle.min.js"></script>
 </head>
 <body onload="writeNameFromCookie()">
 
@@ -826,7 +828,7 @@
 								<td class="nota">4</td>
 								<td class="nota">6</td>
 								<td class="nota">8</td>
-								<td class="nota">7.65</td>
+								<td class="nota nota-final">7.65</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face3.jpg" alt="cara aleatoria"></td>
@@ -834,7 +836,7 @@
 								<td class="nota">3</td>
 								<td class="nota">6</td>
 								<td class="nota">6</td>
-								<td class="nota">3.58</td>
+								<td class="nota nota-final">3.58</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face4.jpg" alt="cara aleatoria"></td>
@@ -842,7 +844,7 @@
 								<td class="nota">8</td>
 								<td class="nota">6</td>
 								<td class="nota">9</td>
-								<td class="nota">9.24</td>
+								<td class="nota nota-final">9.24</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face5.jpg" alt="cara aleatoria"></td>
@@ -850,7 +852,7 @@
 								<td class="nota">4</td>
 								<td class="nota">6</td>
 								<td class="nota">8</td>
-								<td class="nota">7.87</td>
+								<td class="nota nota-final">7.87</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face6.jpg" alt="cara aleatoria"></td>
@@ -858,7 +860,7 @@
 								<td class="nota">9</td>
 								<td class="nota">8</td>
 								<td class="nota">6</td>
-								<td class="nota">9.82</td>
+								<td class="nota nota-final">9.82</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face7.jpg" alt="cara aleatoria"></td>
@@ -866,7 +868,7 @@
 								<td class="nota">6</td>
 								<td class="nota">3</td>
 								<td class="nota">4</td>
-								<td class="nota">4.53</td>
+								<td class="nota nota-final">4.53</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face8.jpg" alt="cara aleatoria"></td>
@@ -874,7 +876,7 @@
 								<td class="nota">6</td>
 								<td class="nota">8</td>
 								<td class="nota">6</td>
-								<td class="nota">7.84</td>
+								<td class="nota nota-final">7.84</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face9.jpg" alt="cara aleatoria"></td>
@@ -882,7 +884,7 @@
 								<td class="nota">9</td>
 								<td class="nota">8</td>
 								<td class="nota">9</td>
-								<td class="nota">9.58</td>
+								<td class="nota nota-final">9.58</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face10.jpg" alt="cara aleatoria"></td>
@@ -890,7 +892,7 @@
 								<td class="nota">4</td>
 								<td class="nota">6</td>
 								<td class="nota">8</td>
-								<td class="nota">9.17</td>
+								<td class="nota nota-final">9.17</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face11.jpg" alt="cara aleatoria"></td>
@@ -898,7 +900,7 @@
 								<td class="nota">6</td>
 								<td class="nota">8</td>
 								<td class="nota">6</td>
-								<td class="nota">7.33</td>
+								<td class="nota nota-final">7.33</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face12.jpg" alt="cara aleatoria"></td>
@@ -906,7 +908,7 @@
 								<td class="nota">6</td>
 								<td class="nota">8</td>
 								<td class="nota">6</td>
-								<td class="nota">8.26</td>
+								<td class="nota nota-final">8.26</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face13.jpg" alt="cara aleatoria"></td>
@@ -914,7 +916,7 @@
 								<td class="nota">8</td>
 								<td class="nota">6</td>
 								<td class="nota">6</td>
-								<td class="nota">7.66</td>
+								<td class="nota nota-final">7.66</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face14.jpg" alt="cara aleatoria"></td>
@@ -922,7 +924,7 @@
 								<td class="nota">6</td>
 								<td class="nota">4</td>
 								<td class="nota">3</td>
-								<td class="nota">3.91</td>
+								<td class="nota nota-final">3.91</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face15.jpg" alt="cara aleatoria"></td>
@@ -930,7 +932,7 @@
 								<td class="nota">6</td>
 								<td class="nota">6</td>
 								<td class="nota">8</td>
-								<td class="nota">4.11</td>
+								<td class="nota nota-final">4.11</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face16.jpg" alt="cara aleatoria"></td>
@@ -938,7 +940,7 @@
 								<td class="nota">6</td>
 								<td class="nota">8</td>
 								<td class="nota">6</td>
-								<td class="nota">4.33</td>
+								<td class="nota nota-final">4.33</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face17.jpg" alt="cara aleatoria"></td>
@@ -946,7 +948,7 @@
 								<td class="nota">6</td>
 								<td class="nota">3</td>
 								<td class="nota">4</td>
-								<td class="nota">5.66</td>
+								<td class="nota nota-final">5.66</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face18.jpg" alt="cara aleatoria"></td>
@@ -954,7 +956,7 @@
 								<td class="nota">3</td>
 								<td class="nota">6</td>
 								<td class="nota">6</td>
-								<td class="nota">6.44</td>
+								<td class="nota nota-final">6.44</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face19.jpg" alt="cara aleatoria"></td>
@@ -962,7 +964,7 @@
 								<td class="nota">6</td>
 								<td class="nota">8</td>
 								<td class="nota">8</td>
-								<td class="nota">7.51</td>
+								<td class="nota nota-final">7.51</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face20.jpg" alt="cara aleatoria"></td>
@@ -970,7 +972,7 @@
 								<td class="nota">6</td>
 								<td class="nota">8</td>
 								<td class="nota">4</td>
-								<td class="nota">7.63</td>
+								<td class="nota nota-final">7.63</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face21.jpg" alt="cara aleatoria"></td>
@@ -978,7 +980,7 @@
 								<td class="nota">6</td>
 								<td class="nota">6</td>
 								<td class="nota">9</td>
-								<td class="nota">9.51</td>
+								<td class="nota nota-final">9.51</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face22.jpg" alt="cara aleatoria"></td>
@@ -986,7 +988,7 @@
 								<td class="nota">8</td>
 								<td class="nota">6</td>
 								<td class="nota">3</td>
-								<td class="nota">6.96</td>
+								<td class="nota nota-final">6.96</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face23.jpg" alt="cara aleatoria"></td>
@@ -994,7 +996,7 @@
 								<td class="nota">6</td>
 								<td class="nota">8</td>
 								<td class="nota">4</td>
-								<td class="nota">5.66</td>
+								<td class="nota nota-final">5.66</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face24.jpg" alt="cara aleatoria"></td>
@@ -1002,7 +1004,7 @@
 								<td class="nota">6</td>
 								<td class="nota">9</td>
 								<td class="nota">6</td>
-								<td class="nota">9.69</td>
+								<td class="nota nota-final">9.69</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face25.jpg" alt="cara aleatoria"></td>
@@ -1010,7 +1012,7 @@
 								<td class="nota">6</td>
 								<td class="nota">3</td>
 								<td class="nota">3</td>
-								<td class="nota">5.74</td>
+								<td class="nota nota-final">5.74</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face26.jpg" alt="cara aleatoria"></td>
@@ -1018,7 +1020,7 @@
 								<td class="nota">4</td>
 								<td class="nota">6</td>
 								<td class="nota">6</td>
-								<td class="nota">4.93</td>
+								<td class="nota nota-final">4.93</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face27.jpg" alt="cara aleatoria"></td>
@@ -1026,7 +1028,7 @@
 								<td class="nota">6</td>
 								<td class="nota">8</td>
 								<td class="nota">6</td>
-								<td class="nota">7.26</td>
+								<td class="nota nota-final">7.26</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face28.jpg" alt="cara aleatoria"></td>
@@ -1034,7 +1036,7 @@
 								<td class="nota">8</td>
 								<td class="nota">6</td>
 								<td class="nota">4</td>
-								<td class="nota">8.87</td>
+								<td class="nota nota-final">8.87</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face29.jpg" alt="cara aleatoria"></td>
@@ -1042,7 +1044,7 @@
 								<td class="nota">6</td>
 								<td class="nota">3</td>
 								<td class="nota">3</td>
-								<td class="nota">3.76</td>
+								<td class="nota nota-final">3.76</td>
 							</tr>
 							<tr>
 								<td class="noExl"><img src="images/random-faces/face30.jpg" alt="cara aleatoria"></td>
@@ -1050,9 +1052,11 @@
 								<td class="nota">6</td>
 								<td class="nota">3</td>
 								<td class="nota">1</td>
-								<td class="nota">1.78</td>
+								<td class="nota nota-final">1.78</td>
 							</tr>
 						</table>
+
+						<canvas id="myChart" width="400" height="400"></canvas>
 
 						<!-- Tabla del usuario cuando es estudiante -->
 						<table class="tabla-user-estudiante" id="table2excel-alumno">

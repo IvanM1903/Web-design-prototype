@@ -1,3 +1,55 @@
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['0', '1', '2', '3', '4', '5','6','7','8','9','10'],
+        datasets: [{
+            label: '# de notas finales',
+            data: [0, 1, 0, 3, 4, 3, 2, 8, 2, 6, 0],
+            backgroundColor: [
+                'rgba(153, 102, 255, 0.6)',
+                'rgba(153, 102, 255, 0.6)',
+                'rgba(153, 102, 255, 0.6)',
+                'rgba(153, 102, 255, 0.6)',
+                'rgba(153, 102, 255, 0.6)',
+                'rgba(153, 102, 255, 0.6)',
+                'rgba(153, 102, 255, 0.6)',
+                'rgba(153, 102, 255, 0.6)',
+                'rgba(153, 102, 255, 0.6)',
+                'rgba(153, 102, 255, 0.6)',
+                'rgba(153, 102, 255, 0.6)'
+            ],
+            borderColor: [
+                'rgba(0, 0, 0, 1)',
+                'rgba(0, 0, 0, 1)',
+                'rgba(0, 0, 0, 1)',
+                'rgba(0, 0, 0, 1)',
+                'rgba(0, 0, 0, 1)',
+                'rgba(0, 0, 0, 1)',
+                'rgba(0, 0, 0, 1)',
+                'rgba(0, 0, 0, 1)',
+                'rgba(0, 0, 0, 1)',
+                'rgba(0, 0, 0, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+
+
+
+
 //=======================================//
 // ====== FUNCTIONALITIES PART - 3 ======//
 //=======================================//
@@ -21,6 +73,9 @@ $(document).ready(function(){
             "display":"none"
         });
         $(".contenido-actividad-agregar").css({
+            "display":"none"
+        });
+        $("#myChart").css({
             "display":"none"
         });
     }else if(rolUsuario === "Profesor"){
