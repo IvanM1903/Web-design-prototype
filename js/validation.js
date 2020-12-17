@@ -1,3 +1,51 @@
+$(document).ready(function(){
+	//Aparece el formulario de registro -> cierra el contenido previo
+	$("#AbrirRegistro").click(function(){
+		$(".content").slideUp();
+		$(".register-form").delay(400).slideDown();
+	});
+	//Se cierra el formulario de registro -> abre login & desaparece el welcome
+	$("#CerrarRegistro").click(function(){
+		$(".register-form").slideUp();
+		$(".content").delay(400).slideDown();
+		$(".welcome").slideUp();
+		$(".login-form").delay(400).slideDown();
+	});
+	//Aparece la pantalla de login desde welcome
+	$(".welcome-login").click(function(){
+		$(".welcome").slideUp();
+		$(".login-form").delay(400).slideDown();
+	});
+	//Abre la pantalla de registro desde welcome
+	$(".welcome-register").click(function(){
+		$(".content").slideUp();
+		$(".register-form").delay(400).slideDown();
+	});
+	//Regresa al welcome desde login
+	$(".login-back-to-welcome").click(function(){
+		$(".login-form").slideUp();
+		$(".welcome").delay(400).slideDown();
+	});
+	//Regresa al welcome desde registro
+	$(".register-back-to-welcome").click(function(){
+		$(".register-form").slideUp();
+		$(".content").delay(400).slideDown();
+		$(".login-form").slideUp();
+		$(".welcome").delay(400).slideDown();
+	});
+
+	// Ajustamos el contenedor de los terminos de privacidad al ancho del elemento padre
+	var my_width = $('.privacy-pol').width();
+	var info_width = $('.content-right-container').width();
+	$('.privacy-pol').width(info_width);
+
+
+});
+
+
+
+
+
 // ====== AUXILIAR FUNCTIONS ====== //
 
 function showPassword() {
